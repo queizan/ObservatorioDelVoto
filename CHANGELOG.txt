@@ -1,0 +1,36 @@
+OBSERVATORIO DEL VOTO · 29N
+Historial del proyecto
+
+VERSIÓN 1.0 · 14 octubre 2026
+
+- Creado dashboard web estático, minimalista y de fondo claro.
+- Incluidas 35 encuestas nacionales del 1 de septiembre al 14 de octubre, de 18 institutos.
+- CIS: incorporados septiembre y octubre; opción de excluir organismo público.
+- Agregación por defecto: última encuesta por empresa demoscópica.
+- Opción alternativa: media de todas las encuestas publicadas (sin ponderar).
+- Gráfico semicircular por partido y porcentajes de intención de voto.
+- Visualización ilustrativa de escaños publicados y rangos entre encuestadoras.
+- Evolución de la media nacional a partir de las fechas de publicación.
+- Comparador interactivo de dos encuestas cualquiera (precargado CIS vs 40dB).
+- Archivo completo con búsqueda, filtros, fichas individuales y fuentes.
+- Exportación a CSV compatible con Excel en español.
+- Diseño responsive, sin librerías externas, apto para GitHub Pages.
+- Archivos de datos JSON/JS, herramienta de sincronización y control GitHub Actions.
+
+LÍMITES Y PRÓXIMOS PASOS
+
+- Los datos constituyen un corte editorial fijo, sin actualizaciones automáticas.
+- Revisar enlaces secundarios y contrastar los campos con las fichas originales.
+- Ampliar catálogo de formaciones (Podemos y partidos territoriales) cuando
+  haya suficiente homogeneidad entre fuentes.
+- Posible siguiente versión: histórico de actualización automatizada supervisada.
+- Las proyecciones de escaños no constituyen predicciones propias.
+
+v2.0.0 — 14/10/2026
+- Página «Tu afinidad»: test de 20 preguntas aleatorias entre 34 temas y propuestas de los programas 2023.
+- Resultado de primera y segunda coincidencia programática, detalle 0–100 de cuatro partidos.
+- Fuentes oficiales, metodología publicada, modalidad local privada y consentimiento antes de participar.
+- Panel en la portada de afinidades colectivas con gráfico, sin fabricar estadísticas.
+- Estructura opcional de base de datos de contadores Supabase con acceso público de lectura y RPC limitada.
+- Protección de coherencia del banco de preguntas en GitHub Actions.
+- Pendiente de habilitar base de datos y completar aviso de privacidad antes de publicar participaciones reales.

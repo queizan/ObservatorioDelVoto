@@ -1,0 +1,17 @@
+name: Comprobar datos y web
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate survey data and regenerate bundle
+        run: python3 scripts/sync-data.py
+      - name: Validate and regenerate affinity data
+        run: python3 scripts/sync-affinity.py
+      - name: Verify derived data is committed
+        run: git diff --exit-code -- data/polls.js data/affinity.js
+      - name: Verify JavaScript syntax
+        run: node --check app.js && node --check data/polls.js && node --check affinity.js && node --check data/affinity.js

@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""Validate source question bank and emit data/affinity.js. No dependencies."""
+from pathlib import Path
+import json
+BASE=Path(__file__).resolve().parents[1]
+src=BASE/'data/affinity.json'
+tgt=BASE/'data/affinity.js'
+d=json.loads(src.read_text('utf8'))
+assert d['questionCount']==20
+assert len(d['questions'])>=d['questionCount']
+assert len(set(q['id'] for q in d['questions']))==len(d['questions'])
+expected={'PP','PSOE','VOX','SUMAR'}
+for question in d['questions']:
+    assert all(question.get(k) for k in ('id','topic','text','source'))
+    assert question['source'].startswith('https://')
+    assert set(question['positions'])==expected
+    assert all(isinstance(v,int) and -2<=v<=2 for v in question['positions'].values())
+assert set(d['parties'])==expected
+assert set(x['key'] for x in d['programmes'])==expected
+for program in d['programmes']:
+    assert program['url'].startswith('https://')
+tgt.write_text('/* AUTO-GENERATED from data/affinity.json */\nwindow.AFFINITY_BANK = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n','utf8')
+print(f"OK: {len(d['questions'])} validated questions; quiz displays {d['questionCount']}")
