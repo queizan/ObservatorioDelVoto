@@ -109,7 +109,7 @@
     el('affinityApp').innerHTML=`<div class="affinity-result"><p class="panel-eyebrow">TU COINCIDENCIA PROGRAMÁTICA · ${r.answered} RESPUESTAS</p><h2>Dos programas más próximos a tus respuestas</h2><p class="affinity-result-lead">Una comparación orientativa entre las propuestas de 2023 de los cuatro partidos incluidos.</p><div class="affinity-top-two"><div class="affinity-top-card"><small>1.ª AFINIDAD</small><strong style="color:${best.color}">${best.label}</strong><span>${r.scores[0].score.toFixed(1).replace('.',',')} / 100 puntos</span></div><div class="affinity-top-card"><small>2.ª AFINIDAD</small><strong style="color:${second.color}">${second.label}</strong><span>${r.scores[1].score.toFixed(1).replace('.',',')} / 100 puntos</span></div></div>${hasTie?'<p class="affinity-tie-notice">Los dos primeros resultados están muy próximos; se trata prácticamente de un empate en este cuestionario.</p>':''}
     <div class="affinity-all-scores">${r.scores.map(resultRow).join('')}</div><p class="affinity-score-caption">Los puntos expresan similitud con las posiciones editoriales asignadas en este test (0–100), <strong>no</strong> porcentaje de voto, probabilidad ni respaldo político. No son posiciones oficiales avaladas por los partidos.</p>
     <div class="affinity-actions"><button type="button" id="affinityRestart" class="button button-outline">↺ Repetir cuestionario</button><button type="button" id="affinitySave" class="button button-outline">Guardar en este dispositivo</button></div>
-    <div class="affinity-participate"><p class="panel-eyebrow">ESTADÍSTICAS VOLUNTARIAS</p><h3>¿Quieres contribuir al gráfico público?</h3><p>Solo se sumará tu primera afinidad, una única participación por cuestionario, al contador público. No se enviarán ni conservarán en la base de datos tus respuestas a las 25 preguntas. El proveedor técnico puede tratar datos de conexión según su propia política.</p>
+    <div class="affinity-participate"><p class="panel-eyebrow">ESTADÍSTICAS VOLUNTARIAS</p><h3>¿Quieres contribuir al gráfico público?</h3><p>Solo se sumará tu primera afinidad, una única participación por cuestionario, al contador público. No se enviarán ni conservarán en la base de datos tus respuestas a las 25 preguntas ni tu segunda afinidad. El proveedor técnico puede tratar datos de conexión según su propia política.</p>
     <label class="affinity-consent"><input type="checkbox" id="affinityConsent" ${shared?'disabled':''}/> <span>Consiento expresamente contribuir con mi primera etiqueta de afinidad al recuento agregado. Sé que, al no guardarse un registro individual, no podré retirar posteriormente mi contribución del total.</span></label>
     <button type="button" id="affinityPublish" class="button button-dark" disabled>${shared?'Ya incorporado desde este navegador':'Compartir mi primera afinidad'}</button><p id="affinityPublishMessage" role="status">${!backendReady()?'El botón está desactivado porque todavía no está conectada la base de datos pública. No es un error de tu selección.':shared?'Este navegador ya contribuyó al recuento.':'Compartir es opcional: tu resultado sigue siendo privado si no pulsas este botón.'}</p></div></div>`;
     el('affinityRestart').addEventListener('click',startTest);
@@ -124,7 +124,7 @@
       if(!el('affinityConsent').checked||!backendReady()||readLocal(deviceKey)==='yes')return;
       publish.disabled=true;el('affinityPublishMessage').textContent='Enviando únicamente la primera afinidad…';
       try{
-        const res=await fetch(endpoint('rpc/submit_affinity_vote'),{method:'POST',headers:reqHeaders(),body:JSON.stringify({p_first:r.primary,p_second:r.secondary})});
+        const res=await fetch(endpoint('rpc/submit_affinity_vote'),{method:'POST',headers:reqHeaders(),body:JSON.stringify({p_first:r.primary})});
         if(!res.ok)throw Error('HTTP '+res.status);
         writeLocal(deviceKey,'yes');publish.textContent='✓ Gracias por participar';
         el('affinityPublishMessage').textContent='Tu contribución se ha incorporado al recuento público.';
@@ -139,7 +139,7 @@
       return;
     }
     try{
-      const res=await fetch(endpoint('affinity_totals?select=party,first_count,second_count'),{headers:reqHeaders(),cache:'no-store'});
+      const res=await fetch(endpoint('affinity_totals?select=party,first_count'),{headers:reqHeaders(),cache:'no-store'});
       if(!res.ok)throw Error('HTTP '+res.status);
       const records=await res.json();
       if(!Array.isArray(records))throw Error('Formato de estadísticas inválido');
