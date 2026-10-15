@@ -100,3 +100,17 @@
 .affinity-all-scores{grid-template-columns:repeat(2,minmax(0,1fr))}
 .affinity-top-card strong{font-size:29px}
 @media(max-width:680px){.affinity-programme-links,.affinity-all-scores{grid-template-columns:1fr}.affinity-stat-row{grid-template-columns:65px minmax(30px,1fr) 40px 49px;gap:7px}.affinity-top-card strong{font-size:24px}}
+
+/* Public affinity: same semicircular SVG language as “Distribución nacional”. */
+.affinity-gauge-wrap{height:285px;margin:10px auto 12px;max-width:620px}
+.affinity-gauge-wrap svg{max-width:570px}
+.affinity-gauge-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px 16px;margin:18px auto 26px;max-width:1080px}
+.affinity-legend-item{display:flex;align-items:center;gap:8px;min-width:0;background:#f8faf7;border:1px solid #ecf0e9;border-radius:6px;padding:11px 12px;font-size:11px}
+.affinity-legend-item .legend-swatch{flex:0 0 9px}
+.affinity-legend-party{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:750;color:#34413c}
+.affinity-legend-count{margin-left:auto;color:#85938b;font-size:10px}
+.affinity-legend-item b{font-weight:800;margin-left:2px;color:#34413c;white-space:nowrap}
+.affinity-zero-note{text-align:center}
+@media(max-width:960px){.affinity-gauge-legend{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.affinity-gauge-wrap{height:220px;margin:0 auto 4px}.affinity-gauge-legend{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.affinity-legend-item{padding:10px 8px;gap:6px}.affinity-legend-count{font-size:9px}.affinity-legend-item b{font-size:10px}}
+@media(max-width:385px){.affinity-gauge-legend{grid-template-columns:1fr}}
