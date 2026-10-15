@@ -1,34 +1,109 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-14-2023-programmes-v1",
+  "version": "2026-10-15-2023-programmes-v2",
   "programYear": 2023,
-  "questionCount": 25,
+  "questionCount": 30,
   "parties": [
     "PP",
     "PSOE",
     "VOX",
-    "SUMAR"
+    "SUMAR",
+    "ERC",
+    "JUNTS",
+    "BILDU",
+    "PNV",
+    "BNG",
+    "PACMA",
+    "CC"
   ],
   "programmes": [
     {
       "key": "PP",
       "label": "Partido Popular",
-      "url": "https://www.pp.es/categoria/elecciones-generales/"
+      "url": "https://www.pp.es/categoria/elecciones-generales/",
+      "territory": "España",
+      "type": "Programa generales 2023",
+      "year": 2023
     },
     {
       "key": "PSOE",
       "label": "Partido Socialista Obrero Español",
-      "url": "https://www.psoe.es/actualidad/noticias-actualidad/programa-electoral-del-psoe-para-el-23j/"
+      "url": "https://www.psoe.es/actualidad/noticias-actualidad/programa-electoral-del-psoe-para-el-23j/",
+      "territory": "España",
+      "type": "Programa generales 2023",
+      "year": 2023
     },
     {
       "key": "VOX",
       "label": "Vox",
-      "url": "https://www.voxespana.es/programa/programa-electoral-Vox"
+      "url": "https://www.voxespana.es/programa/programa-electoral-Vox",
+      "territory": "España",
+      "type": "Programa generales 2023",
+      "year": 2023
     },
     {
       "key": "SUMAR",
       "label": "Sumar (coalición 2023)",
-      "url": "https://movimientosumar.es/wp-content/uploads/2023/07/Un-Programa-para-ti.pdf"
+      "url": "https://movimientosumar.es/wp-content/uploads/2023/07/Un-Programa-para-ti.pdf",
+      "territory": "España",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "ERC",
+      "label": "ERC · Esquerra Republicana",
+      "territory": "Cataluña",
+      "url": "https://beteve.cat/politica/programa-erc-eleccions-generals-2023/",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "JUNTS",
+      "label": "Junts per Catalunya",
+      "territory": "Cataluña",
+      "url": "https://beteve.cat/politica/programa-junts-eleccions-generals-2023/",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "BILDU",
+      "label": "EH Bildu",
+      "territory": "País Vasco y Navarra",
+      "url": "https://votoclaro.app/programas/bildu/generales-2023",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "PNV",
+      "label": "EAJ-PNV",
+      "territory": "País Vasco",
+      "url": "https://www.eaj-pnv.eus/es/documentos/20945/con-voz-propia-programa-electoral-23-j",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "BNG",
+      "label": "BNG",
+      "territory": "Galicia",
+      "url": "https://www.bng.gal/estaticas/programas-eleitorais.html",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "PACMA",
+      "label": "PACMA",
+      "territory": "España",
+      "url": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf",
+      "type": "Programa generales 2023",
+      "year": 2023
+    },
+    {
+      "key": "CC",
+      "label": "Coalición Canaria · coalición 23J",
+      "territory": "Canarias",
+      "url": "https://coalicioncanaria.org/acuerdos/",
+      "type": "Manifiesto electoral 2023 (alcance limitado)",
+      "year": 2023
     }
   ],
   "questions": [
@@ -40,7 +115,14 @@ window.AFFINITY_BANK = {
         "PP": -2,
         "PSOE": 1,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/vivienda"
     },
@@ -52,7 +134,14 @@ window.AFFINITY_BANK = {
         "PP": 1,
         "PSOE": 2,
         "VOX": 0,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/vivienda"
     },
@@ -64,7 +153,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 2,
         "VOX": 1,
-        "SUMAR": 0
+        "SUMAR": 0,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/vivienda"
     },
@@ -76,7 +172,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -2,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/vivienda"
     },
@@ -88,7 +191,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 1,
         "VOX": -1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 1,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/vivienda"
     },
@@ -100,7 +210,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -1,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/impuestos"
     },
@@ -112,7 +229,14 @@ window.AFFINITY_BANK = {
         "PP": -2,
         "PSOE": 1,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/impuestos"
     },
@@ -124,7 +248,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -1,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/impuestos"
     },
@@ -136,7 +267,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/impuestos"
     },
@@ -148,7 +286,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 1,
         "VOX": 2,
-        "SUMAR": 1
+        "SUMAR": 1,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/impuestos"
     },
@@ -160,7 +305,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": 1,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/empleo"
     },
@@ -172,7 +324,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/empleo"
     },
@@ -184,7 +343,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 1,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/empleo"
     },
@@ -196,7 +362,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 0,
         "VOX": 2,
-        "SUMAR": -1
+        "SUMAR": -1,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/educacion"
     },
@@ -208,7 +381,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -1,
         "VOX": 1,
-        "SUMAR": -1
+        "SUMAR": -1,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/educacion"
     },
@@ -220,7 +400,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": 0,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/educacion"
     },
@@ -232,7 +419,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 2,
         "VOX": 1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/educacion"
     },
@@ -244,7 +438,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 1,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": 1,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/inmigracion"
     },
@@ -256,7 +457,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 0,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/inmigracion"
     },
@@ -268,7 +476,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": -2,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/inmigracion"
     },
@@ -280,7 +495,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": 1,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/inmigracion"
     },
@@ -292,7 +514,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -1,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": -2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/energia-y-medio-ambiente"
     },
@@ -304,7 +533,14 @@ window.AFFINITY_BANK = {
         "PP": 1,
         "PSOE": 2,
         "VOX": -1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/energia-y-medio-ambiente"
     },
@@ -316,7 +552,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/energia-y-medio-ambiente"
     },
@@ -328,7 +571,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": -2,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/modelo-territorial"
     },
@@ -340,7 +590,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": 1,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": 2
       },
       "source": "https://programaelectoral.org/temas/modelo-territorial"
     },
@@ -352,7 +609,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": 1,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": 2
       },
       "source": "https://programaelectoral.org/temas/modelo-territorial"
     },
@@ -364,7 +628,14 @@ window.AFFINITY_BANK = {
         "PP": 1,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 1,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/igualdad"
     },
@@ -376,7 +647,14 @@ window.AFFINITY_BANK = {
         "PP": 0,
         "PSOE": 2,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 1,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/igualdad"
     },
@@ -388,7 +666,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 2,
         "VOX": 2,
-        "SUMAR": -1
+        "SUMAR": -1,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/seguridad"
     },
@@ -400,7 +685,14 @@ window.AFFINITY_BANK = {
         "PP": -1,
         "PSOE": 0,
         "VOX": -2,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/seguridad"
     },
@@ -412,7 +704,14 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": -2,
         "VOX": 2,
-        "SUMAR": -2
+        "SUMAR": -2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/seguridad"
     },
@@ -424,7 +723,14 @@ window.AFFINITY_BANK = {
         "PP": 1,
         "PSOE": 2,
         "VOX": 1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/pensiones"
     },
@@ -436,10 +742,397 @@ window.AFFINITY_BANK = {
         "PP": 2,
         "PSOE": 2,
         "VOX": 1,
-        "SUMAR": 2
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 1,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
       },
       "source": "https://programaelectoral.org/temas/sanidad"
+    },
+    {
+      "id": "q35",
+      "topic": "Protección animal",
+      "text": "Deberían prohibirse los espectáculos taurinos en los que se cause sufrimiento o muerte al animal.",
+      "positions": {
+        "PP": -1,
+        "PSOE": null,
+        "VOX": -2,
+        "SUMAR": 1,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": 2,
+        "CC": null
+      },
+      "source": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf"
+    },
+    {
+      "id": "q36",
+      "topic": "Protección animal",
+      "text": "Las administraciones deberían priorizar alternativas a la experimentación con animales cuando existan métodos científicamente válidos.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": 2,
+        "CC": null
+      },
+      "source": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf"
+    },
+    {
+      "id": "q37",
+      "topic": "Protección animal",
+      "text": "Deberían ampliarse los recursos públicos destinados a prevenir el abandono de animales y mejorar su protección.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": 2,
+        "CC": null
+      },
+      "source": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf"
+    },
+    {
+      "id": "q38",
+      "topic": "Transporte",
+      "text": "Los gobiernos autonómicos deberían asumir más competencias y recursos sobre los servicios ferroviarios de cercanías de su territorio.",
+      "positions": {
+        "PP": null,
+        "PSOE": null,
+        "VOX": -2,
+        "SUMAR": null,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://beteve.cat/politica/programa-junts-eleccions-generals-2023/"
+    },
+    {
+      "id": "q39",
+      "topic": "Transporte",
+      "text": "La inversión ferroviaria debería dar prioridad a conexiones regionales y al transporte público frente a nuevas autopistas.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q40",
+      "topic": "Transporte",
+      "text": "Deben mantenerse las bonificaciones específicas de transporte para residentes en territorios insulares.",
+      "positions": {
+        "PP": 1,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": null,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": 2
+      },
+      "source": "https://coalicioncanaria.org/acuerdos/"
+    },
+    {
+      "id": "q41",
+      "topic": "Autogobierno",
+      "text": "Las comunidades con una reivindicación nacional propia deberían poder celebrar una consulta pactada sobre su relación con el Estado.",
+      "positions": {
+        "PP": -2,
+        "PSOE": -1,
+        "VOX": -2,
+        "SUMAR": null,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://beteve.cat/politica/programa-erc-eleccions-generals-2023/"
+    },
+    {
+      "id": "q42",
+      "topic": "Autogobierno",
+      "text": "Las comunidades autónomas deberían poder gestionar íntegramente más impuestos y negociar una financiación territorial diferenciada.",
+      "positions": {
+        "PP": null,
+        "PSOE": null,
+        "VOX": -2,
+        "SUMAR": null,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": null,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": 2
+      },
+      "source": "https://www.eaj-pnv.eus/es/documentos/20945/con-voz-propia-programa-electoral-23-j"
+    },
+    {
+      "id": "q43",
+      "topic": "Lenguas",
+      "text": "Las lenguas cooficiales deberían poder utilizarse con normalidad en el Congreso de los Diputados.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": -2,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q44",
+      "topic": "Lenguas",
+      "text": "El Estado debería financiar medidas para proteger y promover las lenguas y culturas propias de los territorios.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": -1,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q45",
+      "topic": "Participación",
+      "text": "La edad mínima para votar en elecciones generales debería rebajarse a los 16 años.",
+      "positions": {
+        "PP": -2,
+        "PSOE": null,
+        "VOX": -2,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": 2,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://beteve.cat/politica/programa-junts-eleccions-generals-2023/"
+    },
+    {
+      "id": "q46",
+      "topic": "Participación",
+      "text": "Deberían facilitarse las consultas ciudadanas y los mecanismos de participación directa en las decisiones públicas.",
+      "positions": {
+        "PP": null,
+        "PSOE": null,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": 1,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://beteve.cat/politica/programa-erc-eleccions-generals-2023/"
+    },
+    {
+      "id": "q47",
+      "topic": "Digitalización",
+      "text": "Las administraciones deberían garantizar atención presencial para quienes no pueden realizar trámites por Internet.",
+      "positions": {
+        "PP": 1,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q48",
+      "topic": "Digitalización",
+      "text": "La financiación pública debería dar prioridad a reducir la brecha digital en zonas rurales y despobladas.",
+      "positions": {
+        "PP": 2,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q49",
+      "topic": "Mundo rural",
+      "text": "Las ayudas al campo deberían vincularse también a prácticas agrícolas sostenibles y a la protección de la biodiversidad.",
+      "positions": {
+        "PP": null,
+        "PSOE": 1,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": null,
+        "BNG": 1,
+        "PACMA": 2,
+        "CC": null
+      },
+      "source": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf"
+    },
+    {
+      "id": "q50",
+      "topic": "Mundo rural",
+      "text": "Se deberían aumentar los servicios públicos e infraestructuras en municipios con pérdida de población.",
+      "positions": {
+        "PP": 2,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q51",
+      "topic": "Cuidados",
+      "text": "La red pública de atención a la dependencia debería ampliarse y reducir los tiempos de espera.",
+      "positions": {
+        "PP": null,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": 2,
+        "BNG": 2,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://www.bng.gal/estaticas/programas-eleitorais.html"
+    },
+    {
+      "id": "q52",
+      "topic": "Cuidados",
+      "text": "Deberían ampliarse los permisos remunerados para atender a hijos y familiares dependientes.",
+      "positions": {
+        "PP": null,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": 2,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": null,
+        "PACMA": null,
+        "CC": null
+      },
+      "source": "https://votoclaro.app/programas/bildu/generales-2023"
+    },
+    {
+      "id": "q53",
+      "topic": "Salud mental",
+      "text": "La atención psicológica en la sanidad pública debería aumentar considerablemente, también en atención primaria.",
+      "positions": {
+        "PP": null,
+        "PSOE": 2,
+        "VOX": null,
+        "SUMAR": 2,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": 2,
+        "PNV": null,
+        "BNG": 2,
+        "PACMA": 2,
+        "CC": null
+      },
+      "source": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf"
+    },
+    {
+      "id": "q54",
+      "topic": "Fiscalidad territorial",
+      "text": "El sistema fiscal debería compensar expresamente los sobrecostes de vivir y producir en Canarias y otros territorios insulares.",
+      "positions": {
+        "PP": 1,
+        "PSOE": 1,
+        "VOX": null,
+        "SUMAR": null,
+        "ERC": null,
+        "JUNTS": null,
+        "BILDU": null,
+        "PNV": 1,
+        "BNG": null,
+        "PACMA": null,
+        "CC": 2
+      },
+      "source": "https://coalicioncanaria.org/acuerdos/"
     }
   ],
-  "notice": "Comparación interpretativa y orientativa basada en programas de 2023. No mide intención de voto ni sustituye a los programas vigentes. No incluye todos los partidos ni factores personales."
+  "notice": "Experimento educativo no oficial con lectura editorial orientativa de programas electorales generales de 2023 (Coalición Canaria: manifiesto de la coalición). No representa intención de voto, encuesta representativa ni recomendación; los partidos territoriales no concurren en todo el país. Posiciones no acreditadas se omiten, nunca equivalen a neutralidad. Se actualizará con nuevas candidaturas y programas cuando existan documentos verificables."
 };
