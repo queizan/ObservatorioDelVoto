@@ -1,160 +1,138 @@
 'use strict';
-(() => {
-  const BANK = window.AFFINITY_BANK;
-  const CFG = window.AFFINITY_PUBLIC_CONFIG || {};
-  if (!BANK || !Array.isArray(BANK.questions)) return;
-  const el = id => document.getElementById(id);
-  const partyInfo = {
-    PP:{label:'PP',color:'#1767b2'},
-    PSOE:{label:'PSOE',color:'#e0454d'},
-    VOX:{label:'Vox',color:'#5c9739'},
-    SUMAR:{label:'Sumar',color:'#d64d9b'}
-  };
-  const answerLabels=[
-    [-2,'Muy en desacuerdo'],[-1,'En desacuerdo'],[0,'Ni de acuerdo ni en desacuerdo'],
-    [1,'De acuerdo'],[2,'Muy de acuerdo'],['skip','Prefiero no responder']
-  ];
-  const state={questions:[],answers:new Map(),index:0,result:null,publicMode:'primary'};
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const backendReady=()=>CFG.enabled===true && /^https:\/\/[a-z0-9.-]+$/i.test(CFG.supabaseUrl||'') && /^[-\w.]+$/.test(CFG.publishableKey||'');
-  const deviceKey='observatorio-affinity-published-'+BANK.version;
-  const readLocal=key=>{try{return localStorage.getItem(key)}catch{return null;}};
-  const writeLocal=(key,value)=>{try{localStorage.setItem(key,value);return true;}catch{return false;}};
-  const formatN=n=>Number(n).toLocaleString('es-ES');
-  const endpoint=path=>CFG.supabaseUrl.replace(/\/$/,'')+'/rest/v1/'+path;
-  function reqHeaders(){
-    const h={'apikey':CFG.publishableKey,'Content-Type':'application/json'};
-    if(CFG.publishableKey.startsWith('eyJ'))h['Authorization']='Bearer '+CFG.publishableKey;
-    return h;
+(function affinityModule(){
+  const BANK=window.AFFINITY_BANK;
+  const CFG=window.AFFINITY_PUBLIC_CONFIG||{};
+  if(!BANK||!Array.isArray(BANK.questions))return;
+  const el=id=>document.getElementById(id);
+  const color={PP:"#1767b2",PSOE:"#e0454d",VOX:"#5c9739",SUMAR:"#d64d9b",ERC:"#e0a621",JUNTS:"#36aab7",BILDU:"#83ab58",PNV:"#277653",BNG:"#79a7bf",PACMA:"#aa9c43",CC:"#bf793d"};
+  const parties=Object.fromEntries(BANK.programmes.map(p=>[p.key,{label:p.key==="BILDU"?"EH Bildu":p.key==="JUNTS"?"Junts":p.key,territory:p.territory,color:color[p.key]||"#77868a"}]));
+  const labels=[[-2,"Muy en desacuerdo"],[-1,"En desacuerdo"],[0,"Ni de acuerdo ni en desacuerdo"],[1,"De acuerdo"],[2,"Muy de acuerdo"],["skip","Prefiero no responder"]];
+  const s={questions:[],answers:new Map(),idx:0,result:null,shared:false,schemaReady:false};
+  const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt=v=>Number(v).toLocaleString("es-ES");
+  const pct=v=>v.toFixed(1).replace(".",",");
+  const ready=()=>CFG.enabled===true&&/^https:\/\/[a-z0-9.-]+$/i.test(CFG.supabaseUrl||"")&&/^[-\w.]+$/.test(CFG.publishableKey||"");
+  const endpoint=x=>CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/"+x;
+  const headers=()=>{return {"apikey":CFG.publishableKey,"Content-Type":"application/json"};};
+  function shuffle(a){
+    const b=[...a];
+    for(let i=b.length-1;i>0;i--){
+      let n;
+      if(globalThis.crypto?.getRandomValues){const u=new Uint32Array(1);crypto.getRandomValues(u);n=u[0]%(i+1);}
+      else n=Math.floor(Math.random()*(i+1));
+      [b[i],b[n]]=[b[n],b[i]];
+    }
+    return b;
   }
-  // Shuffle with modern CSPRNG where available; no external script or tracking required.
-  function shuffle(values){
-    const a=[...values];
-    const random=max=>{
-      if(globalThis.crypto?.getRandomValues){const b=new Uint32Array(1);globalThis.crypto.getRandomValues(b);return b[0]%max;}
-      return Math.floor(Math.random()*max);
-    };
-    for(let i=a.length-1;i>0;i--){const j=random(i+1);[a[i],a[j]]=[a[j],a[i]];}
-    return a;
-  }
-  // Stratification prevents 20 independently sampled items from omitting whole topic groups.
-  function drawQuestions(){
+  // One item per topic first, then fresh random rounds: 30 questions from 21 diverse topics.
+  function draw(){
     const groups=new Map();
     for(const q of BANK.questions){if(!groups.has(q.topic))groups.set(q.topic,[]);groups.get(q.topic).push(q);}
-    const first=[...groups.values()].map(q=>shuffle(q)[0]);
-    const selectedIds=new Set(first.map(q=>q.id));
-    const remaining=shuffle(BANK.questions.filter(q=>!selectedIds.has(q.id)));
-    return shuffle([...first,...remaining].slice(0,BANK.questionCount));
+    const buckets=shuffle([...groups.values()]).map(g=>shuffle(g));
+    const chosen=[];
+    while(chosen.length<BANK.questionCount && buckets.some(b=>b.length)){
+      for(const b of shuffle(buckets)){if(b.length&&chosen.length<BANK.questionCount)chosen.push(b.pop());}
+    }
+    return shuffle(chosen);
   }
-  function initTest(){
-    const programmes=BANK.programmes.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(p.key==='SUMAR'?'Sumar':p.key)}</strong><span>Programa general 2023 ↗</span></a>`).join('');
-    el('affinityProgrammeSources').innerHTML=programmes;
-    el('affinityApp').innerHTML=`<div class="affinity-welcome"><div class="affinity-welcome-icon">25<span>Q</span></div><p class="panel-eyebrow">CUESTIONARIO DE AFINIDAD · 2023</p><h2>¿Qué propuestas encajan con tus ideas?</h2><p>Responderás a 25 afirmaciones seleccionadas de un banco de ${BANK.questions.length}. Las preguntas cambian y el orden es aleatorio. Al terminar verás los dos programas más próximos a tus respuestas, con el detalle de los cuatro.</p><div class="affinity-chips"><span>⏱ 4–6 minutos</span><span>Sin registro</span><span>Sin envío de respuestas</span></div><button type="button" class="button button-dark affinity-start" id="startAffinity">Empezar las 25 preguntas <span aria-hidden="true">↗</span></button></div>`;
-    el('startAffinity').addEventListener('click',startTest);
+  function init(){
+    // Discard any user-specific browser records created by earlier prototypes.
+    try{localStorage.removeItem("observatorio-affinity-saved");for(const k of Object.keys(localStorage)){if(k.startsWith("observatorio-affinity-published-"))localStorage.removeItem(k);}}catch(e){}
+    el("affinityProgrammeSources").innerHTML=BANK.programmes.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(p.label||p.key)}</strong><span>${esc(p.type||"Programa 2023")} · ${esc(p.territory||"España")} ↗</span></a>`).join("");
+    welcome();refreshStats();
   }
-  function startTest(){state.questions=drawQuestions();state.answers=new Map();state.index=0;state.result=null;renderQuestion();}
-  function renderQuestion(){
-    const q=state.questions[state.index];
-    const current=state.answers.get(q.id);
-    const progress=Math.round(state.index/state.questions.length*100);
-    el('affinityApp').innerHTML=`<div class="affinity-quiz-header"><span class="panel-eyebrow">${esc(q.topic.toUpperCase())} · 25 PREGUNTAS</span><strong>${state.index+1} <span>/ ${state.questions.length}</span></strong></div>
-    <div class="affinity-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${state.questions.length}" aria-valuenow="${state.index}"><span style="width:${progress}%"></span></div>
-    <h2 class="affinity-question">${esc(q.text)}</h2><p class="affinity-question-lead">¿Hasta qué punto estás de acuerdo con esta afirmación?</p>
-    <form id="affinityForm"><fieldset><legend class="sr-only">Selecciona tu respuesta</legend><div class="affinity-answer-list">${answerLabels.map(([value,label])=>`<label class="affinity-answer ${current===value?'checked':''}"><input type="radio" name="affinityAnswer" value="${value}" ${current===value?'checked':''}/><span class="affinity-answer-radio" aria-hidden="true"></span>${esc(label)}</label>`).join('')}</div></fieldset>
-    <div class="affinity-quiz-footer"><button type="button" id="affinityPrevious" class="button button-outline" ${state.index===0?'disabled':''}>← Anterior</button><a href="${esc(q.source)}" class="affinity-question-source" target="_blank" rel="noopener noreferrer">Ver propuestas de este tema ↗</a><button type="submit" id="affinityNext" class="button button-dark" ${current===undefined?'disabled':''}>${state.index===state.questions.length-1?'Ver mi afinidad →':'Siguiente →'}</button></div></form>
-    <p class="affinity-question-disclaimer">La puntuación refleja una lectura editorial de los programas electorales de 2023. Las preguntas no citan literalmente un programa.</p>`;
-    el('affinityForm').addEventListener('change',e=>{
-      const v=e.target.value==='skip'?'skip':Number(e.target.value);
-      state.answers.set(q.id,v);
-      el('affinityNext').disabled=false;
-      el('affinityApp').querySelectorAll('.affinity-answer').forEach(label=>label.classList.toggle('checked',label.querySelector('input').checked));
-      // Avance automático al seleccionar; el botón «Anterior» permite rectificar.
-      if(state.index<state.questions.length-1){state.index++;renderQuestion();}
-      else finishTest();
+  function welcome(){
+    el("affinityApp").innerHTML=`<div class="affinity-welcome"><div class="affinity-welcome-icon">${BANK.questionCount}<span>Q</span></div><p class="panel-eyebrow">EXPERIMENTO INDEPENDIENTE · NO OFICIAL</p><h2>¿Con qué propuestas coincides?</h2><p>Responde a <strong>${BANK.questionCount} preguntas aleatorias</strong> de un banco de ${BANK.questions.length} repartidas en ${new Set(BANK.questions.map(q=>q.topic)).size} temas. Se incluye una selección documentada de ${BANK.parties.length} formaciones con programas o manifiestos de 2023, también partidos territoriales. Puedes consultar las fuentes originales.</p><div class="affinity-chips"><span>Sin cuenta</span><span>Sin almacenar respuestas</span><span>Participación opcional</span></div><p class="affinity-muted">No es una encuesta oficial, una muestra representativa ni una recomendación electoral. Las coincidencias son interpretaciones orientativas y no se pueden comparar con intención real de voto.</p><button id="startAffinity" type="button" class="button button-dark affinity-start">Empezar las ${BANK.questionCount} preguntas ↗</button></div>`;
+    el("startAffinity").addEventListener("click",start);
+  }
+  function start(){s.questions=draw();s.answers=new Map();s.idx=0;s.result=null;s.shared=false;renderQ();}
+  function renderQ(){
+    const q=s.questions[s.idx],n=s.questions.length,chosen=s.answers.get(q.id),pos=s.idx+1;
+    el("affinityApp").innerHTML=`<div class="affinity-quiz-header"><span class="panel-eyebrow">${esc(q.topic.toUpperCase())} · CUESTIONARIO NO OFICIAL</span><strong>${pos} <span>/ ${n}</span></strong></div><div class="affinity-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${s.idx}" aria-label="Progreso"><span style="width:${(s.idx/n*100).toFixed(2)}%"></span></div><h2 class="affinity-question">${esc(q.text)}</h2><p class="affinity-question-lead">Elige una respuesta. Pasarás automáticamente a la siguiente pregunta.</p><form id="affinityForm"><fieldset><legend class="sr-only">Respuesta</legend><div class="affinity-answer-list">${labels.map(([v,name])=>`<label class="affinity-answer ${chosen===v?"checked":""}"><input type="radio" name="affinityAnswer" value="${v}" ${chosen===v?"checked":""}><span class="affinity-answer-radio" aria-hidden="true"></span>${esc(name)}</label>`).join("")}</div></fieldset><div class="affinity-quiz-footer"><button id="affinityPrevious" class="button button-outline" type="button" ${s.idx===0?"disabled":""}>← Anterior</button><a class="affinity-question-source" href="${esc(q.source)}" target="_blank" rel="noopener noreferrer">Fuente orientativa ↗</a><button id="affinityNext" class="button button-dark" type="submit" ${chosen===undefined?"disabled":""}>${pos===n?"Ver resultados →":"Siguiente →"}</button></div></form><p class="affinity-question-disclaimer">Afirmación elaborada para este test; las valoraciones por partido son interpretativas y pueden no cubrir todos los programas.</p>`;
+    el("affinityForm").addEventListener("change",e=>{
+      if(e.target.name!=="affinityAnswer")return;
+      s.answers.set(q.id,e.target.value==="skip"?"skip":Number(e.target.value));
+      advance();
     });
-    el('affinityForm').addEventListener('submit',e=>{
-      e.preventDefault();
-      if(!state.answers.has(q.id))return;
-      if(state.index<state.questions.length-1){state.index++;renderQuestion();}
-      else finishTest();
-    });
-    el('affinityPrevious').addEventListener('click',()=>{if(state.index>0){state.index--;renderQuestion();}});
+    el("affinityForm").addEventListener("submit",e=>{e.preventDefault();if(s.answers.has(q.id))advance();});
+    el("affinityPrevious").addEventListener("click",()=>{if(s.idx>0){s.idx--;renderQ();}});
   }
-  function affinityScores(){
-    const rows=state.questions.filter(q=>state.answers.has(q.id)&&state.answers.get(q.id)!=='skip');
-    return Object.keys(partyInfo).map(key=>{
-      // Programmatic closeness = average 1 - |answer - programme score| / 4.
-      const values=rows.map(q=>1-Math.abs(state.answers.get(q.id)-q.positions[key])/4);
-      return {key,score:Math.round((values.reduce((sum,v)=>sum+v,0)/(values.length||1))*1000)/10};
-    }).sort((a,b)=>b.score-a.score||a.key.localeCompare(b.key));
+  function advance(){if(s.idx<s.questions.length-1){s.idx++;renderQ();}else finish();}
+  function score(){
+    const rows=s.questions.filter(q=>typeof s.answers.get(q.id)==="number");
+    return BANK.parties.map(key=>{
+      const matched=rows.filter(q=>typeof q.positions[key]==="number");
+      const score=matched.length ? matched.reduce((sum,q)=>sum+1-Math.abs(s.answers.get(q.id)-q.positions[key])/4,0)/matched.length*100 : null;
+      return {key,covered:matched.length,answered:rows.length,score:score==null?null:Math.round(score*10)/10,eligible:matched.length>=6};
+    }).sort((a,b)=>Number(b.eligible)-Number(a.eligible)||(b.score??-1)-(a.score??-1)||b.covered-a.covered||a.key.localeCompare(b.key));
   }
-  function finishTest(){
-    const answered=state.questions.filter(q=>state.answers.has(q.id)&&state.answers.get(q.id)!=='skip').length;
-    if(answered<15){
-      el('affinityApp').innerHTML=`<div class="affinity-insufficient"><p class="panel-eyebrow">RESPUESTAS INSUFICIENTES</p><h2>Necesitamos algo más de información</h2><p>Has respondido ${answered} preguntas. Para evitar resultados poco estables, responde al menos 15 de las 25 antes de calcular la coincidencia.</p><button id="affinityReview" type="button" class="button button-dark">Revisar mis respuestas ↗</button></div>`;
-      el('affinityReview').addEventListener('click',()=>{const i=state.questions.findIndex(q=>state.answers.get(q.id)==='skip'||!state.answers.has(q.id));state.index=Math.max(0,i);renderQuestion();});
+  function finish(){
+    const answered=s.questions.filter(q=>typeof s.answers.get(q.id)==="number").length;
+    if(answered<18){
+      el("affinityApp").innerHTML=`<div class="affinity-insufficient"><h2>Necesitamos más respuestas</h2><p>Has respondido ${answered} de las ${s.questions.length} preguntas. Para ver una comparación mínimamente estable debes responder al menos 18.</p><button id="affinityReview" type="button" class="button button-dark">Revisar preguntas omitidas</button></div>`;
+      el("affinityReview").addEventListener("click",()=>{s.idx=Math.max(0,s.questions.findIndex(q=>typeof s.answers.get(q.id)!=="number"));renderQ();});
       return;
     }
-    const scores=affinityScores();state.result={scores,primary:scores[0].key,secondary:scores[1].key,answered};renderResult();
+    const scores=score(), eligible=scores.filter(x=>x.eligible);
+    s.result={scores,first:eligible[0]?.key||null,second:eligible[1]?.key||null,answered};
+    result();
   }
-  function resultRow(row,i){
-    const p=partyInfo[row.key];
-    return `<div class="affinity-score-row"><div class="affinity-score-head"><span class="party-name"><i class="party-dot" style="background:${p.color}"></i>${p.label}</span><strong>${row.score.toFixed(1).replace('.',',')} <small>/ 100</small></strong></div><div class="affinity-score-track"><span style="width:${row.score}%;background:${p.color}"></span></div></div>`;
+  function resultRow(r){
+    const p=parties[r.key],status=r.eligible?pct(r.score)+" / 100":"Datos insuficientes";
+    const bar=r.eligible?`<div class="affinity-score-track"><span style="width:${r.score}%;background:${p.color}"></span></div>`:"";
+    return `<div class="affinity-score-row"><div class="affinity-score-head"><span class="party-name"><i class="party-dot" style="background:${p.color}"></i>${esc(p.label)}</span><strong>${status}</strong></div>${bar}<small>${r.covered} de ${r.answered} respuestas comparables · ${esc(p.territory)}</small></div>`;
   }
-  function renderResult(){
-    const r=state.result;
-    const best=partyInfo[r.primary],second=partyInfo[r.secondary];
-    const hasTie=Math.abs(r.scores[0].score-r.scores[1].score)<2;
-    const shared=readLocal(deviceKey)==='yes';
-    el('affinityApp').innerHTML=`<div class="affinity-result"><p class="panel-eyebrow">TU COINCIDENCIA PROGRAMÁTICA · ${r.answered} RESPUESTAS</p><h2>Dos programas más próximos a tus respuestas</h2><p class="affinity-result-lead">Una comparación orientativa entre las propuestas de 2023 de los cuatro partidos incluidos.</p><div class="affinity-top-two"><div class="affinity-top-card"><small>1.ª AFINIDAD</small><strong style="color:${best.color}">${best.label}</strong><span>${r.scores[0].score.toFixed(1).replace('.',',')} / 100 puntos</span></div><div class="affinity-top-card"><small>2.ª AFINIDAD</small><strong style="color:${second.color}">${second.label}</strong><span>${r.scores[1].score.toFixed(1).replace('.',',')} / 100 puntos</span></div></div>${hasTie?'<p class="affinity-tie-notice">Los dos primeros resultados están muy próximos; se trata prácticamente de un empate en este cuestionario.</p>':''}
-    <div class="affinity-all-scores">${r.scores.map(resultRow).join('')}</div><p class="affinity-score-caption">Los puntos expresan similitud con las posiciones editoriales asignadas en este test (0–100), <strong>no</strong> porcentaje de voto, probabilidad ni respaldo político. No son posiciones oficiales avaladas por los partidos.</p>
-    <div class="affinity-actions"><button type="button" id="affinityRestart" class="button button-outline">↺ Repetir cuestionario</button><button type="button" id="affinitySave" class="button button-outline">Guardar en este dispositivo</button></div>
-    <div class="affinity-participate"><p class="panel-eyebrow">ESTADÍSTICAS VOLUNTARIAS</p><h3>¿Quieres contribuir al gráfico público?</h3><p>Solo se sumará tu primera afinidad, una única participación por cuestionario, al contador público. No se enviarán ni conservarán en la base de datos tus respuestas a las 25 preguntas ni tu segunda afinidad. El proveedor técnico puede tratar datos de conexión según su propia política.</p>
-    <label class="affinity-consent"><input type="checkbox" id="affinityConsent" ${shared?'disabled':''}/> <span>Consiento expresamente contribuir con mi primera etiqueta de afinidad al recuento agregado. Sé que, al no guardarse un registro individual, no podré retirar posteriormente mi contribución del total.</span></label>
-    <button type="button" id="affinityPublish" class="button button-dark" disabled>${shared?'Ya incorporado desde este navegador':'Compartir mi primera afinidad'}</button><p id="affinityPublishMessage" role="status">${!backendReady()?'El botón está desactivado porque todavía no está conectada la base de datos pública. No es un error de tu selección.':shared?'Este navegador ya contribuyó al recuento.':'Compartir es opcional: tu resultado sigue siendo privado si no pulsas este botón.'}</p></div></div>`;
-    el('affinityRestart').addEventListener('click',startTest);
-    el('affinitySave').addEventListener('click',()=>{
-      const ok=writeLocal('observatorio-affinity-saved',JSON.stringify({scores:r.scores,answered:r.answered,at:new Date().toISOString()}));
-      el('affinitySave').textContent=ok?'✓ Guardado en este dispositivo':'No se puede guardar en este navegador';
-      el('affinitySave').disabled=true;
-    });
-    const publish=el('affinityPublish');
-    el('affinityConsent').addEventListener('change',e=>{publish.disabled=!(e.target.checked&&backendReady()&&!shared);});
-    publish.addEventListener('click',async()=>{
-      if(!el('affinityConsent').checked||!backendReady()||readLocal(deviceKey)==='yes')return;
-      publish.disabled=true;el('affinityPublishMessage').textContent='Enviando únicamente la primera afinidad…';
+  function result(){
+    const r=s.result,one=r.scores.find(x=>x.key===r.first),two=r.scores.find(x=>x.key===r.second);
+    const top=[one,two].filter(Boolean).map((x,i)=>`<div class="affinity-top-card"><small>${i===0?"PRIMERA":"SEGUNDA"} COINCIDENCIA ORIENTATIVA</small><strong style="color:${parties[x.key].color}">${esc(parties[x.key].label)}</strong><span>${pct(x.score)} / 100 · ${x.covered} temas comparables</span></div>`).join("");
+    el("affinityApp").innerHTML=`<div class="affinity-result"><p class="panel-eyebrow">RESULTADO PRIVADO · ${r.answered} RESPUESTAS</p><h2>Coincidencias con los programas de 2023</h2><p class="affinity-result-lead">Comparación editorial, no oficial, no representativa y no indicativa de tu voto. Los partidos territoriales solo concurren en sus circunscripciones. Una puntuación basada en pocas preguntas no es comparable con otra de cobertura completa.</p><div class="affinity-top-two">${top||"<p>No hay suficientes posiciones documentadas para comparar.</p>"}</div><div class="affinity-all-scores">${r.scores.map(resultRow).join("")}</div><p class="affinity-score-caption">Las posiciones sin respaldo documental se excluyen del cálculo; no se consideran posturas neutrales. Para mostrar una puntuación se requieren al menos seis respuestas comparables. La selección de fuentes y la codificación son editoriales. Este resultado no recomienda partido ni predice decisiones electorales.</p><div class="affinity-actions"><button id="affinityRestart" type="button" class="button button-outline">↺ Repetir cuestionario</button></div><div class="affinity-participate"><p class="panel-eyebrow">PARTICIPACIÓN ANÓNIMA VOLUNTARIA</p><h3>¿Compartir solo la primera coincidencia?</h3><p>El cuestionario y las respuestas permanecen en este navegador durante la sesión; no guardamos identificadores, perfiles, direcciones IP ni respuestas individuales en nuestra base de datos. Al compartir, se envía únicamente la etiqueta de primera afinidad a Supabase, que incrementa un contador; Supabase y el alojamiento podrían procesar registros técnicos de conexión. No hay bloqueo por navegador: se admiten participaciones repetidas.</p><label class="affinity-consent"><input type="checkbox" id="affinityConsent" ${s.shared||!r.first?"disabled":""}><span>Quiero añadir voluntariamente mi primera coincidencia a los contadores públicos. Entiendo que no es una votación oficial ni representativa, que mi participación se agregará a las estadísticas y que no existe un registro individual para retirarla después.</span></label><button type="button" id="affinityPublish" class="button button-dark" disabled>${s.shared?"✓ Participación añadida":"Compartir mi primera afinidad"}</button><p id="affinityPublishMessage" role="status">${ready()?"Comprobando que la base de datos admita las formaciones del test…":"El servicio de estadísticas todavía no está configurado."}</p></div></div>`;
+    el("affinityRestart").addEventListener("click",start);
+    const publish=el("affinityPublish"), consent=el("affinityConsent");
+    const toggle=()=>{publish.disabled=!(consent.checked&&s.schemaReady&&!s.shared&&!!r.first);};
+    consent.addEventListener("change",toggle);
+    publish.addEventListener("click",async()=>{
+      if(!consent.checked||!s.schemaReady||s.shared||!r.first)return;
+      publish.disabled=true;
+      el("affinityPublishMessage").textContent="Enviando únicamente la primera coincidencia…";
       try{
-        const res=await fetch(endpoint('rpc/submit_affinity_vote'),{method:'POST',headers:reqHeaders(),body:JSON.stringify({p_first:r.primary})});
-        if(!res.ok)throw Error('HTTP '+res.status);
-        writeLocal(deviceKey,'yes');publish.textContent='✓ Gracias por participar';
-        el('affinityPublishMessage').textContent='Tu contribución se ha incorporado al recuento público.';
-        await refreshPublicStats();
-      }catch(e){el('affinityPublishMessage').textContent='No se pudo publicar ('+e.message+'). Puedes conservar tu resultado sin compartirlo.';publish.disabled=false;}
+        const response=await fetch(endpoint("rpc/submit_affinity_vote"),{method:"POST",headers:headers(),body:JSON.stringify({p_first:r.first})});
+        if(!response.ok)throw Error("HTTP "+response.status);
+        s.shared=true; consent.disabled=true;publish.textContent="✓ Participación añadida";
+        el("affinityPublishMessage").textContent="Participación agregada correctamente. Puedes repetir el test si quieres; se cuentan las participaciones, no personas distintas.";
+        await refreshStats();
+      }catch(e){el("affinityPublishMessage").textContent="No se pudo añadir ("+e.message+"). Vuelve a intentarlo más tarde.";toggle();}
     });
+    refreshStats();
   }
-  async function refreshPublicStats(){
-    const target=el('affinityPublicChart');if(!target)return;
-    if(!backendReady()){
-      target.innerHTML='<div class="affinity-chart-unavailable"><strong>Estadísticas compartidas, próximamente</strong><p>El cuestionario funciona ya; los resultados públicos se mostrarán cuando se configure una base de datos que almacene únicamente contadores agregados. No se presentan cifras inventadas.</p></div>';
+  async function refreshStats(){
+    const target=el("affinityPublicChart");
+    if(!target)return;
+    if(!ready()){
+      s.schemaReady=false;
+      target.innerHTML='<div class="affinity-chart-unavailable"><strong>Estadísticas pendientes de conectar</strong><p>El test funciona sin enviar datos. No mostramos cifras ficticias.</p></div>';
       return;
     }
     try{
-      const res=await fetch(endpoint('affinity_totals?select=party,first_count'),{headers:reqHeaders(),cache:'no-store'});
-      if(!res.ok)throw Error('HTTP '+res.status);
-      const records=await res.json();
-      if(!Array.isArray(records))throw Error('Formato de estadísticas inválido');
-      const counts=Object.fromEntries(Object.keys(partyInfo).map(key=>[key,{primary:0,secondary:0}]));
-      for(const r of records)if(counts[r.party]){
-        counts[r.party].primary=Math.max(0,Number(r.first_count)||0);
-        counts[r.party].secondary=Math.max(0,Number(r.second_count)||0);
+      const response=await fetch(endpoint("affinity_totals?select=party,first_count"),{headers:headers(),cache:"no-store"});
+      if(!response.ok)throw Error("HTTP "+response.status);
+      const records=await response.json();
+      if(!Array.isArray(records))throw Error("Respuesta inesperada");
+      const byParty=Object.fromEntries(records.map(x=>[x.party,Math.max(0,Number(x.first_count)||0)]));
+      const missing=BANK.parties.filter(k=>!Object.prototype.hasOwnProperty.call(byParty,k));
+      s.schemaReady=missing.length===0;
+      if(missing.length){
+        target.innerHTML='<div class="affinity-chart-unavailable"><strong>Actualización de la base de datos pendiente</strong><p>Se han incorporado más partidos al cuestionario. Para activar el gráfico y el envío hay que ejecutar el script SQL de actualización en Supabase. No se muestran datos incompletos.</p></div>';
+      }else{
+        const total=BANK.parties.reduce((n,k)=>n+byParty[k],0),rows=BANK.parties.map(key=>({key,count:byParty[key]})).sort((a,b)=>b.count-a.count||a.key.localeCompare(b.key));
+        target.innerHTML=`<div class="affinity-stat-head"><strong>${fmt(total)} <span>participaciones voluntarias · primera coincidencia únicamente</span></strong></div>${total===0?'<p class="affinity-muted">Todavía no hay participaciones registradas.</p>':""}<div class="affinity-stat-bars">${rows.map(x=>`<div class="affinity-stat-row"><span class="party-name"><i class="party-dot" style="background:${parties[x.key].color}"></i>${esc(parties[x.key].label)}</span><div class="affinity-stat-track"><i style="width:${total?100*x.count/total:0}%;background:${parties[x.key].color}"></i></div><b>${fmt(x.count)}</b><small>${total?pct(x.count/total*100):"0,0"} %</small></div>`).join("")}</div><p class="affinity-score-caption">No representa intención de voto ni una muestra de población. Son participaciones voluntarias, pueden repetirse y solo se cuenta la primera coincidencia de cada envío.</p>`;
       }
-      const total=Object.values(counts).reduce((s,x)=>s+x.primary,0);
-      if(!total){target.innerHTML='<div class="affinity-chart-unavailable"><strong>El contador está en cero</strong><p>Sé la primera persona en compartir voluntariamente tus coincidencias programáticas.</p></div>';return;}
-      const mode='primary';
-      const rows=Object.entries(counts).sort((a,b)=>b[1][mode]-a[1][mode]);
-      target.innerHTML=`<div class="affinity-stat-head"><strong>${formatN(total)} <span>participaciones voluntarias · solo primera afinidad</span></strong></div><div class="affinity-stat-bars">${rows.map(([key,c])=>`<div class="affinity-stat-row"><span class="party-name"><i class="party-dot" style="background:${partyInfo[key].color}"></i>${partyInfo[key].label}</span><div class="affinity-stat-track"><i style="width:${Math.min(100,c[mode]/total*100)}%;background:${partyInfo[key].color}"></i></div><b>${formatN(c[mode])}</b><small>${(c[mode]/total*100).toFixed(1).replace('.',',')} %</small></div>`).join('')}</div>`;
-    }catch(e){target.innerHTML=`<div class="affinity-chart-unavailable"><strong>Resultados no disponibles temporalmente</strong><p>No se han podido consultar los contadores de participación. Inténtalo más tarde.</p></div>`;}
+      const button=el("affinityPublish"),consent=el("affinityConsent"),message=el("affinityPublishMessage");
+      if(button&&consent&&!s.shared){button.disabled=!(s.schemaReady&&consent.checked);if(message)message.textContent=s.schemaReady?"Puedes participar si quieres; no se guardan respuestas ni identificadores en nuestra base de datos.":"La base de datos aún necesita incorporar los nuevos partidos. El botón seguirá desactivado hasta entonces.";}
+    }catch(e){
+      s.schemaReady=false;
+      target.innerHTML='<div class="affinity-chart-unavailable"><strong>Estadísticas no disponibles</strong><p>No se ha podido consultar el servicio. No se muestran cifras inventadas.</p></div>';
+      const message=el("affinityPublishMessage");if(message)message.textContent="No se pudo conectar con el servicio de estadísticas.";
+    }
   }
-  function boot(){initTest();refreshPublicStats();}
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
 })();
