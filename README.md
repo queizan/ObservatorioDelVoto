@@ -11,7 +11,7 @@ Dashboard web estático y sin dependencias para seguir y comparar encuestas de i
 3. En GitHub abre **Settings → Pages**. En **Build and deployment**, elige **Deploy from a branch**; selecciona rama **main** y carpeta **/(root)** y guarda.
 4. La página se publicará en `https://queizan.github.io/ObservatorioDelVoto/`. Si el repositorio es `TU_USUARIO.github.io`, quedará en `https://TU_USUARIO.github.io/`.
 
-El dashboard y el cuestionario funcionan sin Vite, npm, backend, base de datos, tokens ni claves. La **gráfica de participaciones agregadas** requiere configurar un backend antes de funcionar de forma compartida. También puedes abrir `index.html` directamente en el navegador para verla localmente.
+El dashboard y el cuestionario funcionan sin Vite ni npm. La **gráfica de participaciones agregadas** usa Supabase, que requiere completar una única migración SQL de los contadores. Las únicas credenciales públicas del frontend son la URL y la clave publicable de Supabase. También puedes abrir `index.html` directamente en el navegador para verla localmente.
 
 ## Estructura
 
@@ -72,29 +72,34 @@ El apartado **Última actualización** utiliza automáticamente las encuestas co
 
 Los meses del archivo, la fecha de corte visible y la escala temporal se actualizan cuando se regeneran los datos.
 
-## Nueva sección de afinidad programática (v2)
+## Explorador de afinidad programática (v3 · 15 de octubre de 2026)
 
-- Menú **Tu afinidad**: 20 preguntas seleccionadas aleatoriamente desde un banco de 34, con variedad de temas.
-- Respuestas de 5 niveles (−2 a +2) y opción de saltar; al menos 12 respuestas válidas.
-- Primera y segunda **afinidad programática** entre PP, PSOE, Vox y la coalición Sumar de 2023. La metodología no evalúa todas las candidaturas ni mide intención de voto.
-- En la portada: bloque de participación voluntaria que muestra cuántos resultados tienen cada partido como primera y segunda coincidencia. El gráfico nunca inventa conteos.
-- Fuentes: programas publicados para las generales **23J de 2023**, referenciados en la página. Los programas actuales de 2026 deben revisarse y reemplazarse en cuanto se publiquen.
-- Revisión editorial: las posiciones numéricas de cada partido (−2 a +2) son interpretaciones del proyecto, no calificaciones oficiales ni avaladas por los partidos. Se editan en `data/affinity.json`.
-- **Privacidad**: las 20 respuestas no salen del navegador. Compartir los dos resultados es opcional y requiere consentimiento específico. No se envían ni se guardan respuestas individuales en la base de datos; solo se incrementan contadores por partido.
+**Experimento didáctico, independiente y NO OFICIAL. No representa una encuesta estadística de intención de voto, ni una recomendación de partido o voto.**
 
-### Activación de resultados públicos (Supabase)
+- Cada visita recibe **30 preguntas aleatorias** de un banco de **54 preguntas** en **21 temas**. La selección estratificada cubre todos los temas al menos una vez antes de repetirlos.
+- Las respuestas avanzan automáticamente y pueden revisarse con «Anterior». Se requieren al menos 18 respuestas sustantivas.
+- Documentos de **2023** para **11 formaciones**: PP, PSOE, Vox, Sumar, ERC, Junts, EH Bildu, PNV, BNG, PACMA y Coalición Canaria (esta última representada por un manifiesto electoral de su coalición de 2023).
+- Los programas y las fuentes están enlazados. Los partidos territoriales no se presentan en todas las circunscripciones. La inclusión no supone respaldar candidaturas futuras del 29N.
+- Codificación editorial aproximada −2 a +2. Las posiciones no documentadas se guardan como `null`, **no como 0 (neutral)**. El resultado muestra cobertura: número de respuestas comparables por partido. Por debajo de seis, la puntuación se omite. Esta diversidad documental limita las comparaciones.
+- Los archivos fuente y versión del programa son `data/affinity.json`; la versión web sincronizada es `data/affinity.js`. Nuevos partidos y nuevas propuestas se incorporan editando ese JSON y ejecutando `python3 scripts/sync-affinity.py`.
+- La segunda afinidad se muestra solo localmente. El recuento colectivo **solo contabiliza la primera afinidad**, una etiqueta por envío.
+- **No almacenamos respuestas, resultados individuales, identificadores de navegador, IP o historiales de participación en nuestra base de datos.** Las respuestas viven solo en memoria del navegador mientras se realiza el test; no se escriben en `localStorage`. El código limpia entradas del prototipo anterior si las hubiera.
+- **No hay comprobación de persona única**: un participante puede realizar el test y compartirlo varias veces. Esto significa que el recuento es voluntario y puede sufrir manipulación, no es una muestra representativa. El SQL no incluye rate limiting.
+- Al publicar voluntariamente, el frontend envía **solo una etiqueta de primera afinidad** a Supabase, que incrementa un contador. Los proveedores pueden procesar metadatos técnicos de conexión; por eso **no prometemos ausencia absoluta de rastros ni que ningún tercero procese esos datos**.
 
-GitHub Pages es alojamiento estático: para que los contadores sean **compartidos por todos los visitantes** es imprescindible un backend. Esta versión ya incluye el cliente y el esquema, pero viene **desactivado** hasta configurar el servicio y las condiciones de privacidad. En modo desactivado, el cuestionario y el cálculo funcionan, pero el gráfico muestra que aún no hay estadísticas colectivas disponibles.
+### Activar el recuento público: único paso pendiente
 
-1. Crea un proyecto Supabase propio, decide quién será el responsable del tratamiento y completa un aviso de privacidad aplicable (RGPD/LSSI). No habilites la recogida hasta publicar ese aviso y gestionar el consentimiento adecuadamente.
-2. Abre **SQL Editor** y ejecuta `backend/supabase_affinity.sql` (crea únicamente una tabla de recuentos agregados y una función limitada para incrementar resultados válidos).
-3. En `config/affinity-public.js`, configura `supabaseUrl: 'https://TU-PROYECTO.supabase.co'`, `publishableKey: '...clave PUBLICABLE/ANON...'`, y `enabled: true`. **Nunca** uses una `service_role` ni una clave secreta en este fichero.
-4. Prueba el acceso público: la portada debe mostrar cero participantes hasta recibir una contribución autorizada. Una vez enviados los dos partidos más afines, se debe incrementar exactamente una vez el conteo de primeras y segundas afinidades.
-5. Antes de promoción masiva, añade mitigación de abusos / CAPTCHA / límites en servidor (la implementación SQL muestra un MVP, no evita votos automatizados). La limitación desde `localStorage` solo previene dobles clics desde un mismo navegador y **no es una garantía antifraude**.
-6. En páginas públicas, muestra la identidad y contacto de la persona u organización responsable de los datos, política del proveedor, tratamiento de la dirección IP en logs y plazo de conservación. Las contribuciones agregadas no pueden eliminarse una por una porque no existe ningún identificador personal en la tabla. Evita presentar esos datos como sondeo representativo.
+La dirección pública y la **publishable key** de Supabase están ya incorporadas en `config/affinity-public.js`; NO son claves secretas.
+
+**Hay que ejecutar una única vez** en el SQL Editor del proyecto Supabase el archivo
+[backend/supabase_affinity.sql](backend/supabase_affinity.sql).
+
+Este script es **re-ejecutable**, amplía los cuatro partidos anteriores a once sin perder sus recuentos y actualiza la función `submit_affinity_vote(text)`. Tras pulsar **Run** y ver once filas, la web detecta el esquema actualizado automáticamente y habilita el envío para quienes marquen el consentimiento. Mientras falten partidos en la base de datos, el formulario seguirá bloqueado por seguridad y la portada explicará la migración pendiente. No se crean cifras ficticias.
+
+### Privacidad y publicación responsable
+
+Consulta [la nota de privacidad pendiente](docs/PRIVACIDAD-PENDIENTE.md). La interfaz ya avisa de que es un test no oficial, no representativo, de que se envía solo la primera etiqueta y de que los proveedores pueden tratar registros técnicos. Antes de promocionar la recopilación de afinidades políticas debe completarse la evaluación jurídica y el aviso identificando al responsable del proyecto; el consentimiento por sí solo puede ser insuficiente para legitimar determinados tratamientos en España. **No se ha verificado que esta instalación cumpla por sí sola todos los requisitos de RGPD y LOPDGDD.**
 
 ### Mantenimiento
 
-Ejecuta `python3 scripts/sync-affinity.py` tras modificar `data/affinity.json` y sube **ambos** archivos a GitHub. GitHub Actions valida preguntas, los datos electorales y sintaxis JavaScript.
-
-Las gráficas de encuestas y la base de datos de resultados públicos son completamente independientes.
+Edita `data/affinity.json` y ejecuta `python3 scripts/sync-affinity.py`. La validación de GitHub Actions comprueba diversidad, estructura y archivos sincronizados. Las encuestas demoscópicas se mantienen independientes del cuestionario voluntario.
