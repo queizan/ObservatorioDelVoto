@@ -88,3 +88,9 @@
 @media(max-width:980px){.coalition-workspace{grid-template-columns:1fr;gap:25px}.coalition-choices{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:700px){.coalition-choices{grid-template-columns:1fr 1fr}.coalition-panel{padding:24px 20px}.coalition-result{align-items:flex-start;flex-direction:column;gap:6px}.coalition-result p{text-align:left}.update-entry{grid-template-columns:1fr auto;gap:7px 12px}.update-entry-date{grid-column:1 / -1}.updates-panel{padding:0 18px}.updates-footer{flex-direction:column}.updates-section{margin-top:45px}}
 @media(max-width:390px){.coalition-choices{grid-template-columns:1fr}.coalition-threshold b{font-size:8px}}
+
+/* Future section announcement in the top-right navigation (not clickable yet). */
+.topnav .nav-coming-soon{display:inline-flex;align-items:center;gap:6px;padding:10px 9px;color:#697773;font-size:11px;font-weight:720;white-space:nowrap;cursor:default}
+.topnav .nav-coming-soon small{font-size:10px;font-weight:620;color:#98a49d;white-space:nowrap}
+@media(max-width:1380px){.nav-right{display:none}}
+@media(max-width:880px){.topnav .nav-coming-soon{padding:12px 9px;white-space:normal;flex-wrap:wrap}}
