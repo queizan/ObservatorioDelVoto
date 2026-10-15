@@ -104,6 +104,30 @@
     });
     refreshStats();
   }
+  function affinityGaugeMarkup(total,counts){
+  const raw=BANK.parties.map(key=>({key,count:counts[key]||0,...parties[key]}));
+  const rows=raw.sort((a,b)=>b.count-a.count||a.key.localeCompare(b.key));
+  const max=total?rows[0]:null;
+  const polar=(cx,cy,r,angle)=>[cx+r*Math.cos(angle*Math.PI/180),cy+r*Math.sin(angle*Math.PI/180)];
+  const arc=(cx,cy,r,start,end)=>{
+    const [x1,y1]=polar(cx,cy,r,start),[x2,y2]=polar(cx,cy,r,end);
+    return `M${x1.toFixed(3)} ${y1.toFixed(3)} A${r} ${r} 0 ${end-start>180?1:0} 1 ${x2.toFixed(3)} ${y2.toFixed(3)}`;
+  };
+  let angle=180;
+  const segments=rows.map(p=>{
+    const size=total?180*p.count/total:0,start=angle,end=angle+size;angle=end;
+    if(size<=0.44)return "";
+    const value=100*p.count/total;
+    return `<path d="${arc(285,289,206,start+.22,end-.22)}" fill="none" stroke="${p.color}" stroke-width="50" stroke-linecap="butt"><title>${esc(p.label)}: ${pct(value)} % (${fmt(p.count)} participaciones)</title></path>`;
+  }).join("");
+  const center=max?`${pct(max.count/total*100)} %`:"0,0 %";
+  const name=max?max.label.toUpperCase():"SIN PARTICIPACIONES";
+  const sub=max?"PRIMERA AFINIDAD MÁS FRECUENTE":"PENDIENTE DE PARTICIPACIONES";
+  const accessible=total?`Distribución de ${fmt(total)} participaciones: ${rows.map(x=>x.label+" "+pct(100*x.count/total)+" por ciento").join(", ")}`:"Aún no hay participaciones compartidas";
+  const gauge=`<div class="gauge-wrap affinity-gauge-wrap"><svg viewBox="0 0 570 315" role="img" aria-label="${esc(accessible)}"><path d="${arc(285,289,206,180,360)}" stroke="#ecf0ed" stroke-width="50" fill="none"/>${segments}<text x="285" y="225" class="gauge-caption" text-anchor="middle">${sub}</text><text x="285" y="275" class="big-number" text-anchor="middle">${center}</text><text x="285" y="297" fill="${max?max.color:"#85938a"}" font-size="13" font-weight="780" text-anchor="middle">${esc(name)}</text></svg></div>`;
+  const legend=rows.map(p=>`<div class="legend-item affinity-legend-item"><i class="legend-swatch" style="background:${p.color}"></i><span class="affinity-legend-party">${esc(p.label)}</span><span class="affinity-legend-count">${fmt(p.count)}</span><b>${total?pct(p.count/total*100):"0,0"} %</b></div>`).join("");
+  return `<div class="affinity-stat-head"><strong>${fmt(total)} <span>participaciones voluntarias · primera coincidencia únicamente</span></strong></div>${gauge}<div class="affinity-gauge-legend" aria-label="Resultados por formación">${legend}</div>${total===0?'<p class="affinity-muted affinity-zero-note">Todavía no hay participaciones compartidas.</p>':""}<p class="affinity-score-caption">No es intención de voto ni una muestra representativa. Una misma persona puede participar más de una vez; solo se contabiliza la primera afinidad de cada envío.</p>`;
+}
   async function refreshStats(){
     const target=el("affinityPublicChart");
     if(!target)return;
@@ -123,8 +147,8 @@
       if(missing.length){
         target.innerHTML='<div class="affinity-chart-unavailable"><strong>Actualización de la base de datos pendiente</strong><p>Se han incorporado más partidos al cuestionario. Para activar el gráfico y el envío hay que ejecutar el script SQL de actualización en Supabase. No se muestran datos incompletos.</p></div>';
       }else{
-        const total=BANK.parties.reduce((n,k)=>n+byParty[k],0),rows=BANK.parties.map(key=>({key,count:byParty[key]})).sort((a,b)=>b.count-a.count||a.key.localeCompare(b.key));
-        target.innerHTML=`<div class="affinity-stat-head"><strong>${fmt(total)} <span>participaciones voluntarias · primera coincidencia únicamente</span></strong></div>${total===0?'<p class="affinity-muted">Todavía no hay participaciones registradas.</p>':""}<div class="affinity-stat-bars">${rows.map(x=>`<div class="affinity-stat-row"><span class="party-name"><i class="party-dot" style="background:${parties[x.key].color}"></i>${esc(parties[x.key].label)}</span><div class="affinity-stat-track"><i style="width:${total?100*x.count/total:0}%;background:${parties[x.key].color}"></i></div><b>${fmt(x.count)}</b><small>${total?pct(x.count/total*100):"0,0"} %</small></div>`).join("")}</div><p class="affinity-score-caption">No representa intención de voto ni una muestra de población. Son participaciones voluntarias, pueden repetirse y solo se cuenta la primera coincidencia de cada envío.</p>`;
+        const total=BANK.parties.reduce((n,key)=>n+byParty[key],0);
+        target.innerHTML=affinityGaugeMarkup(total,byParty);
       }
       const button=el("affinityPublish"),consent=el("affinityConsent"),message=el("affinityPublishMessage");
       if(button&&consent&&!s.shared){button.disabled=!(s.schemaReady&&consent.checked);if(message)message.textContent=s.schemaReady?"Puedes participar si quieres; no se guardan respuestas ni identificadores en nuestra base de datos.":"La base de datos aún necesita incorporar los nuevos partidos. El botón seguirá desactivado hasta entonces.";}
