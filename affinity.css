@@ -92,3 +92,11 @@
 @media(max-width:880px){.affinity-sources{grid-template-columns:1fr}.affinity-overview-top{align-items:start}}
 @media(max-width:560px){.affinity-overview-panel,.affinity-test-panel{padding:23px 19px}.affinity-overview-top{flex-direction:column;align-items:stretch}.affinity-heading{padding-bottom:16px}.affinity-welcome h2,.affinity-result h2{font-size:25px}.affinity-question{font-size:24px}.affinity-answer-list{grid-template-columns:1fr}.affinity-quiz-footer{justify-content:space-between}.affinity-question-source{order:3;width:100%;text-align:center}.affinity-top-two{gap:8px}.affinity-top-card{padding:16px}.affinity-top-card strong{font-size:29px}.affinity-all-scores{grid-template-columns:1fr;gap:17px}.affinity-stat-head{align-items:start;flex-direction:column;gap:10px}.affinity-stat-row{grid-template-columns:62px 1fr 32px 45px;gap:6px}.affinity-sources{padding:20px}.affinity-programme-links{grid-template-columns:1fr}.affinity-intro-note{padding:15px}}
 .affinity-test-panel fieldset{margin:0;padding:0;border:0;min-width:0}
+
+/* 30-question, 11-party non-official affinity explorer */
+.affinity-programme-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+.affinity-score-row>small{display:block;color:#84918a;font-size:10px;margin-top:6px;line-height:1.5}
+.affinity-stat-row{grid-template-columns:88px minmax(60px,1fr) 56px 65px;gap:12px}
+.affinity-all-scores{grid-template-columns:repeat(2,minmax(0,1fr))}
+.affinity-top-card strong{font-size:29px}
+@media(max-width:680px){.affinity-programme-links,.affinity-all-scores{grid-template-columns:1fr}.affinity-stat-row{grid-template-columns:65px minmax(30px,1fr) 40px 49px;gap:7px}.affinity-top-card strong{font-size:24px}}
