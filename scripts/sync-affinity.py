@@ -6,7 +6,7 @@ BASE=Path(__file__).resolve().parents[1]
 src=BASE/'data/affinity.json'
 tgt=BASE/'data/affinity.js'
 d=json.loads(src.read_text('utf8'))
-assert d['questionCount']==20
+assert d['questionCount']==25
 assert len(d['questions'])>=d['questionCount']
 assert len(set(q['id'] for q in d['questions']))==len(d['questions'])
 expected={'PP','PSOE','VOX','SUMAR'}
