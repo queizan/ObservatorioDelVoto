@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-18",
+    "lastUpdated": "2026-10-20",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-10-18",
+    "to": "2026-10-19",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 36,
+    "totalPolls": 37,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election"
   },
   "polls": [
@@ -996,6 +996,50 @@
       "sourceType": "original",
       "addedAt": "2026-10-19",
       "note": "La fuente denomina Frente Amplio a la candidatura registrada como SUMAR en la serie histórica."
+    },
+    {
+      "id": "sigma-1019",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-10-19",
+      "fieldworkStart": "2026-10-01",
+      "fieldworkEnd": "2026-10-14",
+      "sample": 3007,
+      "vote": {
+        "PP": 31.5,
+        "PSOE": 25.3,
+        "VOX": 19.5,
+        "SUMAR": 7.2
+      },
+      "seats": {
+        "PP": 134.5,
+        "PSOE": 103.5,
+        "VOX": 66.5,
+        "SUMAR": 9.5
+      },
+      "seatIntervals": {
+        "PP": [
+          132,
+          137
+        ],
+        "PSOE": [
+          101,
+          106
+        ],
+        "VOX": [
+          65,
+          68
+        ],
+        "SUMAR": [
+          9,
+          10
+        ]
+      },
+      "sourceUrl": "https://xn--eleccionesespaa-crb.com/encuestadoras/sigma-dos",
+      "sourceType": "recopilacion",
+      "addedAt": "2026-10-20",
+      "note": "Frente Amplio se agrupa bajo SUMAR por compatibilidad con el esquema actual; no implica identidad de coalición. Fuente original no consultada; datos de Sigma Dos/El Mundo en recopilaciones secundarias."
     }
   ]
 }
