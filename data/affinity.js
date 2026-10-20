@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-15-2023-programmes-v2",
+  "version": "2026-10-20-2023-programmes-with-pp-supplement",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -23,7 +23,17 @@ window.AFFINITY_BANK = {
       "url": "https://www.pp.es/categoria/elecciones-generales/",
       "territory": "España",
       "type": "Programa generales 2023",
-      "year": 2023
+      "year": 2023,
+      "supplementaryDocuments": [
+        {
+          "title": "Contrato con España",
+          "year": 2026,
+          "date": "2026-10-19",
+          "type": "Documento oficial de campaña, complemento; no sustituye el programa 2023",
+          "url": "https://www.pp.es/actualidad/documentos/",
+          "status": "complemento"
+        }
+      ]
     },
     {
       "key": "PSOE",
