@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-20",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "checks": [
+    {
+      "kind": "poll",
+      "result": "1 nuevo",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "published": "2026-10-19",
+      "fieldworkStart": "2026-10-01",
+      "fieldworkEnd": "2026-10-14",
+      "sample": 3007,
+      "source": "https://xn--eleccionesespaa-crb.com/encuestadoras/sigma-dos",
+      "note": "Original no accesible; contrastado en recopilaciones secundarias."
+    },
+    {
+      "kind": "programmes",
+      "result": "0 programas completos nuevos; 1 complemento",
+      "party": "PP",
+      "document": "Contrato con España",
+      "published": "2026-10-19",
+      "source": "https://www.pp.es/actualidad/documentos/",
+      "note": "Documento oficial complementario; conserva programa 2023 y preguntas sin cambios."
+    }
+  ],
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "data/affinity.json",
+    "data/affinity.js",
+    "reports/checks/2026-10-20.json"
+  ],
+  "privacy": "No se modificaron respuestas, contadores, IP, datos de participantes ni Supabase."
+}
