@@ -15,3 +15,5 @@ jobs:
         run: git diff --exit-code -- data/polls.js data/affinity.js
       - name: Verify JavaScript syntax
         run: node --check app.js && node --check data/polls.js && node --check affinity.js && node --check data/affinity.js
+      - name: Test separate Sumar and Frente Amplio candidacies
+        run: node scripts/test-candidacy.js

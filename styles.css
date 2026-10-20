@@ -94,3 +94,7 @@
 .topnav .nav-coming-soon small{font-size:10px;font-weight:620;color:#98a49d;white-space:nowrap}
 @media(max-width:1380px){.nav-right{display:none}}
 @media(max-width:880px){.topnav .nav-coming-soon{padding:12px 9px;white-space:normal;flex-wrap:wrap}}
+
+/* 2026 candidacy transition: a transparent, exclusive snapshot filter and chart marker. */
+.summary-controls{flex-wrap:wrap;row-gap:13px}.candidacy-context{font-size:12px;color:#657771;line-height:1.6;border-left:3px solid #9b4bca;background:#f7f4fa;padding:11px 15px;margin:0 0 16px}.transition-line{stroke:#8f64ac;stroke-width:1.8;stroke-dasharray:5 5;opacity:.8}.transition-label{fill:#81559e;font-size:10px;font-weight:780;letter-spacing:.03em}.archive-leaders-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.archive-table{min-width:1000px}.archive-table td:nth-child(7){font-weight:750;color:#25343a;font-variant-numeric:tabular-nums}.timeline-panel .chart-footnote a{text-decoration:underline;text-underline-offset:2px}
+@media(max-width:1000px){.archive-leaders-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:700px){.archive-leaders-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.candidacy-context{font-size:11px}}

@@ -6,7 +6,14 @@
     "to": "2026-10-19",
     "scope": "España · elecciones al Congreso",
     "totalPolls": 37,
-    "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election"
+    "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
+    "candidacyTransition": {
+      "date": "2026-10-16",
+      "former": "SUMAR",
+      "current": "FRENTE_AMPLIO",
+      "description": "Frente Amplio se registró como coalición para el 29N de 2026. Movimiento Sumar participa, pero las mediciones de Sumar anteriores y de Frente Amplio no son idénticas ni deben agregarse como dos candidaturas simultáneas.",
+      "sourceUrl": "https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/"
+    }
   },
   "polls": [
     {
@@ -984,18 +991,18 @@
         "PP": 31.8,
         "PSOE": 27.1,
         "VOX": 18.9,
-        "SUMAR": 4.9
+        "FRENTE_AMPLIO": 4.9
       },
       "seats": {
         "PP": 134,
         "PSOE": 111,
         "VOX": 62,
-        "SUMAR": 7
+        "FRENTE_AMPLIO": 7
       },
       "sourceUrl": "https://electomania.es/electopanel-18-oct-erc-y-frente-amplio-ceden-ante-el-psoe-podemos-en-el-limite-de-ser-extraparlamentario/",
       "sourceType": "original",
       "addedAt": "2026-10-19",
-      "note": "La fuente denomina Frente Amplio a la candidatura registrada como SUMAR en la serie histórica."
+      "note": "El estudio identifica Frente Amplio como nueva coalición electoral; se distingue de Sumar en la serie histórica. Podemos figura fuera de esta estimación."
     },
     {
       "id": "sigma-1019",
@@ -1010,13 +1017,13 @@
         "PP": 31.5,
         "PSOE": 25.3,
         "VOX": 19.5,
-        "SUMAR": 7.2
+        "FRENTE_AMPLIO": 7.2
       },
       "seats": {
         "PP": 134.5,
         "PSOE": 103.5,
         "VOX": 66.5,
-        "SUMAR": 9.5
+        "FRENTE_AMPLIO": 9.5
       },
       "seatIntervals": {
         "PP": [
@@ -1031,15 +1038,15 @@
           65,
           68
         ],
-        "SUMAR": [
+        "FRENTE_AMPLIO": [
           9,
           10
         ]
       },
-      "sourceUrl": "https://xn--eleccionesespaa-crb.com/encuestadoras/sigma-dos",
-      "sourceType": "recopilacion",
+      "sourceUrl": "https://www.sigmados.com/noticia?id=EIJOKGN2GFZmhHt",
+      "sourceType": "original",
       "addedAt": "2026-10-20",
-      "note": "Frente Amplio se agrupa bajo SUMAR por compatibilidad con el esquema actual; no implica identidad de coalición. Fuente original no consultada; datos de Sigma Dos/El Mundo en recopilaciones secundarias."
+      "note": "Sigma Dos identifica expresamente Frente Amplio como coalición electoral de 2026; no se suma a la serie histórica de Sumar. La estimación incluye cambios de candidaturas anunciados en octubre."
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-20",
+  "type": "cohort_transition",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "summary": "Separate historical Sumar and registered Frente Amplio polling entities; never sum their independent cohort percentages or seats",
+  "publishedStudiesAffected": [
+    "em-1018",
+    "sigma-1019"
+  ],
+  "totalPolls": 37,
+  "cohorts": {
+    "SUMAR": 35,
+    "FRENTE_AMPLIO": 2
+  },
+  "verifiedSources": [
+    {
+      "type": "original",
+      "url": "https://electomania.es/electopanel-18-oct-erc-y-frente-amplio-ceden-ante-el-psoe-podemos-en-el-limite-de-ser-extraparlamentario/"
+    },
+    {
+      "type": "original",
+      "url": "https://www.sigmados.com/noticia?id=EIJOKGN2GFZmhHt"
+    },
+    {
+      "type": "coalition_registry_reporting",
+      "url": "https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/"
+    }
+  ],
+  "technicalNotes": [
+    "2023 SUMAR affinity programme remains unchanged; no Supabase change",
+    "Current snapshot uses only Frente Amplio-measuring polls; historical toggle restores Sumar cohort",
+    "CSV, modal, archive, comparison, timeline and seat allocation updated",
+    "Automated regression tests added"
+  ]
+}

@@ -2,7 +2,7 @@
 
 Dashboard web estático y sin dependencias para seguir y comparar encuestas de intención de voto de las **elecciones generales españolas del 29 de noviembre de 2026**.
 
-**Estado de los datos:** corte manual del **14 de octubre de 2026**. Contiene **35 encuestas nacionales** publicadas desde el 1 de septiembre por **18 institutos**. La fecha del sondeo y la de su publicación se distinguen en la ficha individual. Incluye el CIS. La web NO busca encuestas automáticamente.
+**Estado de los datos:** corte revisado del **20 de octubre de 2026**. Contiene **37 encuestas nacionales** publicadas desde el 1 de septiembre. La fecha del sondeo y la de su publicación se distinguen en la ficha individual. Incluye el CIS. La web NO busca encuestas automáticamente.
 
 ## Publicar gratis en GitHub Pages
 
@@ -103,3 +103,11 @@ Consulta [la nota de privacidad pendiente](docs/PRIVACIDAD-PENDIENTE.md). La int
 ### Mantenimiento
 
 Edita `data/affinity.json` y ejecuta `python3 scripts/sync-affinity.py`. La validación de GitHub Actions comprueba diversidad, estructura y archivos sincronizados. Las encuestas demoscópicas se mantienen independientes del cuestionario voluntario.
+
+## Candidaturas Sumar (histórico) y Frente Amplio (2026)
+
+- Desde el registro electoral de Frente Amplio del **16 de octubre de 2026**, las encuestas que miden explícitamente esa coalición se codifican como `FRENTE_AMPLIO`, y no bajo `SUMAR`. Se conserva intacto el histórico de Sumar.
+- La fotografía conjunta, el reparto de escaños y el simulador de mayorías usan **solo encuestas de la candidatura seleccionada**. No se combinan resultados procedentes de poblaciones de sondeos con candidaturas incompatibles. Se muestran por defecto las mediciones de Frente Amplio; el selector permite consultar Sumar histórico. Al comienzo la media actual puede tener **menos institutos**.
+- La gráfica temporal muestra series independientes para Sumar y Frente Amplio, sin unirlas artificialmente. El archivo, la ficha de cada sondeo, el comparador y el CSV permiten consultar ambas columnas; «—» indica que ese sondeo no mide la candidatura.
+- Esta separación afecta únicamente a las **encuestas**. El test de afinidad sigue asociado al programa de **Sumar 2023**, sin extrapolar automáticamente posiciones a Frente Amplio ni modificar Supabase.
+- Fuentes de la nueva denominación: [Sigma Dos, 19/10](https://www.sigmados.com/noticia?id=EIJOKGN2GFZmhHt), [Electomanía, 18/10](https://electomania.es/electopanel-18-oct-erc-y-frente-amplio-ceden-ante-el-psoe-podemos-en-el-limite-de-ser-extraparlamentario/) y [registro de coalición, SER](https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/).
