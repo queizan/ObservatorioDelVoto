@@ -38,7 +38,7 @@
   function init(){
     // Discard any user-specific browser records created by earlier prototypes.
     try{localStorage.removeItem("observatorio-affinity-saved");for(const k of Object.keys(localStorage)){if(k.startsWith("observatorio-affinity-published-"))localStorage.removeItem(k);}}catch(e){}
-    el("affinityProgrammeSources").innerHTML=BANK.programmes.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(p.label||p.key)}</strong><span>${esc(p.type||"Programa 2023")} · ${esc(p.territory||"España")} ↗</span></a>`).join("");
+    el("affinityProgrammeSources").innerHTML=BANK.programmes.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(p.label||p.key)}</strong><span>${esc(p.type||"Programa 2023")} · ${esc(p.territory||"España")} ↗</span></a>${(p.supplementaryDocuments||[]).map(doc=>`<a href="${esc(doc.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(p.key)} · ${esc(doc.title)}</strong><span>Documento de campaña ${esc(doc.year)} · complemento, no programa completo ↗</span></a>`).join("")}`).join("");
     welcome();refreshStats();
   }
   function welcome(){

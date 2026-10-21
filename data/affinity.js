@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-20-2023-programmes-with-pp-supplement",
+  "version": "2026-10-21-pp-campaign-supplements",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -30,8 +30,18 @@ window.AFFINITY_BANK = {
           "year": 2026,
           "date": "2026-10-19",
           "type": "Documento oficial de campaña, complemento; no sustituye el programa 2023",
-          "url": "https://www.pp.es/actualidad/documentos/",
-          "status": "complemento"
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-19-CONTRATO-CON-ESPANA.pdf",
+          "status": "complemento",
+          "note": "Documento oficial de campaña de una página, fechado internamente el 20 de octubre; presentado el 19. No sustituye al programa de 2023."
+        },
+        {
+          "title": "Votaremos decencia",
+          "year": 2026,
+          "date": "2026-10-21",
+          "type": "Documento oficial de campaña (1 página). Complemento; no programa electoral completo.",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-20-VOTAREMOS-DECENCIA.pdf",
+          "status": "complemento",
+          "note": "La página indica 21 de octubre; el nombre del archivo incluye 20 de octubre. No sustituye el programa 2023."
         }
       ]
     },

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "review": "Diaria de encuestas y programas",
+  "newVerifiedNationalPolls": 0,
+  "pollsOnMain": 37,
+  "newCompleteOfficialProgrammes": 0,
+  "party": "PP",
+  "updatedCampaignSupplements": [
+    {
+      "title": "Contrato con España",
+      "presented": "2026-10-19",
+      "documentPrintedDate": "2026-10-20",
+      "verifiedOfficialPDF": "https://www.pp.es/wp-content/uploads/2026/10/26-10-19-CONTRATO-CON-ESPANA.pdf",
+      "action": "Corregido enlace a fuente primaria"
+    },
+    {
+      "title": "Votaremos decencia",
+      "documentPrintedDate": "2026-10-21",
+      "verifiedOfficialPDF": "https://www.pp.es/wp-content/uploads/2026/10/26-10-20-VOTAREMOS-DECENCIA.pdf",
+      "action": "Añadido como documento complementario oficial, no programa completo"
+    }
+  ],
+  "programmeBaseline2023Preserved": true,
+  "quizPositionsChanged": false,
+  "questionsDisplayed": 30,
+  "questionBank": 54,
+  "privacyOrSupabaseChanges": false,
+  "sourceIndex": "https://www.pp.es/actualidad/documentos/",
+  "checkedAtLocal": "2026-10-21T08:10:00+02:00",
+  "status": "Changes prepared and to be committed after validation"
+}
