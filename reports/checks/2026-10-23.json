@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "activity": "Reintento solicitado tras bloqueos previos",
+  "newPolls": 0,
+  "verifiedCompleteProgrammes": 0,
+  "campaignSupplementsAdded": [
+    {
+      "title": "Mi contrato con España",
+      "url": "https://www.pp.es/wp-content/uploads/2026/10/CONTRATO-CON-ESPANA-.pdf",
+      "date": "2026-10-19"
+    },
+    {
+      "title": "Una nueva generación de propietarios",
+      "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-21-UNA-NUEVA-GENERACION-DE-PROPIETARIOS.pdf",
+      "date": "2026-10-22"
+    }
+  ],
+  "baseline": "Programa PP generales 2023 conservado",
+  "totalPPsupplements": 4,
+  "questionBank": 54,
+  "questionsSelected": 30,
+  "changes": [
+    "data/affinity.json",
+    "data/affinity.js",
+    "reports/checks/2026-10-22.json",
+    "reports/checks/2026-10-23.json"
+  ],
+  "privacy": "No se modificaron respuestas, contadores, IP, identificadores, Supabase ni cuestiones del test.",
+  "validation": "Integridad JSON, 54 preguntas, selección 30 y esquema de programas comprobados. CI GitHub valida regeneración y sintaxis JS después de publicación."
+}

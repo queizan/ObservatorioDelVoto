@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-21-pp-campaign-supplements",
+  "version": "2026-10-23-pp-campaign-documents-v3",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -42,6 +42,24 @@ window.AFFINITY_BANK = {
           "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-20-VOTAREMOS-DECENCIA.pdf",
           "status": "complemento",
           "note": "La página indica 21 de octubre; el nombre del archivo incluye 20 de octubre. No sustituye el programa 2023."
+        },
+        {
+          "title": "Mi contrato con España",
+          "year": 2026,
+          "date": "2026-10-19",
+          "type": "Documento oficial con doce compromisos de campaña (4 páginas); complemento, no programa electoral completo",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/CONTRATO-CON-ESPANA-.pdf",
+          "status": "complemento",
+          "note": "Se distingue del documento de una página Contrato con España. No sustituye programa generales 2023."
+        },
+        {
+          "title": "Una nueva generación de propietarios",
+          "year": 2026,
+          "date": "2026-10-22",
+          "type": "Documento oficial de campaña sobre vivienda (1 página), complemento, no programa completo",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-21-UNA-NUEVA-GENERACION-DE-PROPIETARIOS.pdf",
+          "status": "complemento",
+          "note": "Publicado en web del PP y fechado 22 de octubre en el propio documento."
         }
       ]
     },

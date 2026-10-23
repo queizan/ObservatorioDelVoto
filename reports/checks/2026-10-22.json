@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-22",
+  "recordedAt": "2026-10-23",
+  "source": "https://www.pp.es/actualidad/documentos/",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "pollsNew": 0,
+  "programmesCompleteNew": 0,
+  "officialCampaignSupplementsPendingAtInitialReview": [
+    "Mi contrato con España",
+    "Una nueva generación de propietarios"
+  ],
+  "status": "Incorporados posteriormente en la revisión de 2026-10-23; esta auditoría reconstruye solo los hechos documentados de la revisión del día 22.",
+  "changedDataFiles": [
+    "data/affinity.json",
+    "data/affinity.js"
+  ],
+  "notes": "Sin cambios en posiciones, algoritmos, datos de votantes o Supabase."
+}
