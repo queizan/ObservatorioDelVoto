@@ -58,12 +58,14 @@
     "data/polls.json",
     "data/polls.js",
     "index.html",
-    "reports/checks/2026-10-24.json"
+    "reports/checks/2026-10-24.json",
+    "scripts/test-candidacy.js"
   ],
-  "validation": "38 sondeos, IDs únicos, fechas, coalición Sumar/Frente Amplio, JSON y sintaxis JS verificados; JS reproducido con formato del script scripts/sync-data.py. GitHub CI ejecuta validaciones de repositorio.",
+  "validation": "JSON, esquema, JS y regeneración de datos verificados. Prueba de cohortes ajustada para el crecimiento del banco; pendiente validación automática de nuevo commit.",
   "questionsDisplayed": 30,
   "questionBankUnchanged": true,
   "privacyAndParticipantDataUnchanged": true,
   "supabaseUnchanged": true,
-  "notes": "Solo encuestas nacionales; agregados de sondeos no son encuestas nuevas. Cuestionario de afinidad no representativo."
+  "notes": "Solo encuestas nacionales; agregados de sondeos no son encuestas nuevas. Cuestionario de afinidad no representativo.",
+  "ciRemediation": "Primera ejecución CI falló por expectativas fijas de 37 encuestas/2 mediciones Frente Amplio en scripts/test-candidacy.js; prueba actualizada para derivar conteos y medias dinámicamente. Se espera nueva ejecución de CI."
 }
