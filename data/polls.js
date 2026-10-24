@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-10-20",
+    "lastUpdated": "2026-10-24",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-10-19",
+    "to": "2026-10-23",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 37,
+    "totalPolls": 38,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1048,6 +1048,32 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-10-20",
       "note": "Sigma Dos identifica expresamente Frente Amplio como coalición electoral de 2026; no se suma a la serie histórica de Sumar. La estimación incluye cambios de candidaturas anunciados en octubre."
+    },
+    {
+      "id": "imop-1023",
+      "pollster": "IMOP Insights",
+      "publisher": "El Confidencial",
+      "category": "digital",
+      "published": "2026-10-23",
+      "fieldworkStart": "2026-10-13",
+      "fieldworkEnd": "2026-10-16",
+      "sample": 1000,
+      "vote": {
+        "PP": 28.5,
+        "PSOE": 27.1,
+        "VOX": 20,
+        "FRENTE_AMPLIO": 8.9
+      },
+      "seats": {
+        "PP": 123,
+        "PSOE": 113,
+        "VOX": 72,
+        "FRENTE_AMPLIO": 14
+      },
+      "sourceUrl": "https://www.elconfidencial.com/espana/2026-10-23/encuesta-imop-elecciones-29n-bloque-psoe-frente-amplio_4450302/",
+      "sourceType": "original",
+      "addedAt": "2026-10-24",
+      "note": "IMOP Insights para El Confidencial. Publicada 23/10, trabajo de campo 13-16/10, n=1000; datos y ficha corroborados por Electomanía, laSexta, Libertad Digital y eleccionesenespana.es. La fuente original enlazada restringe lectura automatizada. Frente Amplio es la candidatura medida; no se mezcla con Sumar."
     }
   ]
 };

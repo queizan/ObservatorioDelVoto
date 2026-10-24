@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-24",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Encuestas nacionales españolas y programas electorales oficiales 2026 de partidos representados",
+  "newVerifiedPolls": 1,
+  "addedPolls": [
+    {
+      "id": "imop-1023",
+      "pollster": "IMOP Insights",
+      "publisher": "El Confidencial",
+      "published": "2026-10-23",
+      "fieldworkStart": "2026-10-13",
+      "fieldworkEnd": "2026-10-16",
+      "sample": 1000,
+      "vote": {
+        "PP": 28.5,
+        "PSOE": 27.1,
+        "VOX": 20,
+        "FRENTE_AMPLIO": 8.9
+      },
+      "seats": {
+        "PP": 123,
+        "PSOE": 113,
+        "VOX": 72,
+        "FRENTE_AMPLIO": 14
+      },
+      "sourceOriginal": "https://www.elconfidencial.com/espana/2026-10-23/encuesta-imop-elecciones-29n-bloque-psoe-frente-amplio_4450302/",
+      "originalReadableByAutomation": false,
+      "corroboratingSources": [
+        "https://electomania.es/encuesta-imop-23-oct-psoe-y-fa-recortan-12-escanos-a-pp-y-vox/",
+        "https://www.lasexta.com/elecciones/generales/encuesta-sondeos-29n_202610196ad5ade4fb06971aad07fb78.html",
+        "https://www.libertaddigital.com/espana/politica/2026-10-23/una-encuesta-enciende-una-senal-de-alarma-el-pp-se-la-pega-pierde-7-diputados-y-el-psoe-gana-3-7480737/",
+        "https://eleccionesenespana.es/encuestas/imop/"
+      ],
+      "deduplication": "No coinciden instituto, fecha de publicación y trabajo de campo con encuestas existentes."
+    }
+  ],
+  "totalPollsAfter": 38,
+  "officialComplete2026ProgrammesFound": 0,
+  "newOfficialProgrammeSupplements": 0,
+  "programmesReviewed": [
+    "PP",
+    "PSOE",
+    "Vox",
+    "Sumar/Frente Amplio",
+    "otros representados"
+  ],
+  "programmeContextSources": [
+    "https://www.pp.es/actualidad/documentos/",
+    "https://www.psoe.es/",
+    "https://www.voxespana.es/",
+    "https://movimientosumar.es/"
+  ],
+  "programmeDecision": "Sin nuevo programa completo verificado ni complemento programático documental nuevo. Se conservan referencias de 2023 y complementos 2026 existentes.",
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-10-24.json"
+  ],
+  "validation": "38 sondeos, IDs únicos, fechas, coalición Sumar/Frente Amplio, JSON y sintaxis JS verificados; JS reproducido con formato del script scripts/sync-data.py. GitHub CI ejecuta validaciones de repositorio.",
+  "questionsDisplayed": 30,
+  "questionBankUnchanged": true,
+  "privacyAndParticipantDataUnchanged": true,
+  "supabaseUnchanged": true,
+  "notes": "Solo encuestas nacionales; agregados de sondeos no son encuestas nuevas. Cuestionario de afinidad no representativo."
+}
