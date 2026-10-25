@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-25",
+  "reviewedAtLocal": "2026-10-25T08:00:36+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Nuevas encuestas nacionales españolas y programas/documentos oficiales de campaña de 2026; no modificar privacidad, Supabase ni respuestas",
+  "polls": {
+    "newVerified": 0,
+    "total": 38,
+    "latestIncluded": {
+      "pollster": "IMOP Insights",
+      "published": "2026-10-23",
+      "sample": 1000,
+      "fieldwork": "2026-10-13 a 2026-10-16",
+      "original": "https://www.elconfidencial.com/espana/2026-10-23/encuesta-imop-elecciones-29n-bloque-psoe-frente-amplio_4450302/"
+    },
+    "excluded": [
+      {
+        "source": "https://electomania.es/electopanel-25-oct-adelanto-nuevo-descenso-del-pp-frente-amplio-crece/",
+        "reason": "Adelanto sin estimaciones numéricas públicas, muestra ni fechas reales de trabajo de campo (marcadores N/DD/MM); no verificable para incorporación."
+      },
+      {
+        "source": "https://www.rtve.es/noticias/20261005/encuestas-elecciones-generales-29n-pp-vox-diputados/17253873.shtml",
+        "reason": "Promedio de sondeos, no encuesta nueva."
+      }
+    ]
+  },
+  "programmes": {
+    "newCompleteOfficial2026": 0,
+    "ppBaselineYear": 2023,
+    "addedVerifiedOfficialSupplements": [
+      {
+        "title": "¿Dónde está el dinero de los españoles?",
+        "documentDate": "2026-10-24",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-23-%C2%BFDONDE-ESTA-EL-DINERO-DE-LOS-ESPANOLES.pdf",
+        "kind": "Documento oficial de campaña de una página, con propuestas fiscales sobre IRPF, IVA y exención del SMI; complemento, no programa completo.",
+        "source": "https://www.pp.es/actualidad/documentos/"
+      },
+      {
+        "title": "Menos impuestos, más prosperidad",
+        "documentDate": "2026-10-25",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-24-MENOS-IMPUESTOS-MAS-PROSPERIDAD.pdf",
+        "kind": "Documento oficial de campaña de una página, con propuestas de reducción de IRPF e IVA de bienes básicos y electricidad; complemento, no programa completo.",
+        "source": "https://www.pp.es/actualidad/documentos/"
+      }
+    ],
+    "excluded": [
+      {
+        "title": "Todo les sale mal",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-22-TODO-LES-SALE-MAL.pdf",
+        "reason": "Argumentario de campaña del 23/10, sin compromisos nuevos diferenciados respecto al documento de vivienda ya registrado."
+      },
+      {
+        "title": "Propuestas de pensiones de Frente Amplio",
+        "url": "https://www.20minutos.es/nacional/frente-amplio-propone-fijar-jubilacion-los-65-anos-garantizar-pensiones-iguales-superiores-salario-minimo_7052938_0.html",
+        "reason": "Declaraciones/nota de prensa del 24/10; no se ha localizado documento oficial de programa o anexo programático publicable en fuente primaria."
+      }
+    ],
+    "reviewedOfficialPartySources": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/",
+      "https://www.voxespana.es/",
+      "https://movimientosumar.es/",
+      "https://izquierdaunida.org/"
+    ],
+    "note": "Los dos documentos fiscales son complementos oficiales de una página, con afirmaciones políticas que se atribuyen al PP; no se adoptan como hechos verificados."
+  },
+  "integrity": {
+    "quizQuestionsShown": 30,
+    "questionBankSize": 54,
+    "distinctTopics": 21,
+    "quizQuestionsAndPositionsChanged": false,
+    "programmeYear2023Preserved": true,
+    "partyCodesChanged": false,
+    "supabaseSQLChanged": false,
+    "privacyCountersResponsesIPsIdentifiersChanged": false,
+    "generatedJSFormat": "scripts/sync-affinity.py (JSON indent=2, UTF-8, prefix/suffix verificados); GitHub Actions ejecuta el script y comprueba git diff y sintaxis JS."
+  },
+  "filesChanged": [
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-10-25.json"
+  ],
+  "publication": "pending_ci_after_commit",
+  "neutrality": "Cuestionario de afinidad orientativo, no encuesta representativa."
+}

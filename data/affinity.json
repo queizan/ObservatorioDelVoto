@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-23-pp-campaign-documents-v3",
+  "version": "2026-10-25-pp-tax-campaign-supplements",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -59,6 +59,24 @@
           "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-21-UNA-NUEVA-GENERACION-DE-PROPIETARIOS.pdf",
           "status": "complemento",
           "note": "Publicado en web del PP y fechado 22 de octubre en el propio documento."
+        },
+        {
+          "title": "¿Dónde está el dinero de los españoles?",
+          "year": 2026,
+          "date": "2026-10-24",
+          "type": "Documento oficial de campaña de una página, con propuestas fiscales sobre IRPF, IVA y exención del SMI; complemento, no programa completo.",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-23-%C2%BFDONDE-ESTA-EL-DINERO-DE-LOS-ESPANOLES.pdf",
+          "status": "complemento",
+          "note": "Fecha impresa 24/10/2026 (nombre del PDF: 23/10). Contiene también argumentario partidista; se cita como fuente de compromisos del PP, sin validar sus afirmaciones sobre terceros."
+        },
+        {
+          "title": "Menos impuestos, más prosperidad",
+          "year": 2026,
+          "date": "2026-10-25",
+          "type": "Documento oficial de campaña de una página, con propuestas de reducción de IRPF e IVA de bienes básicos y electricidad; complemento, no programa completo.",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-24-MENOS-IMPUESTOS-MAS-PROSPERIDAD.pdf",
+          "status": "complemento",
+          "note": "Fecha impresa 25/10/2026 (nombre del PDF: 24/10). Contiene también argumentario partidista; no sustituye el programa general de 2023."
         }
       ]
     },
