@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-26",
+  "reviewedAtLocal": "2026-10-26T08:07:00+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Encuestas nacionales y programas oficiales 2026; no cambios de privacidad ni datos personales",
+  "polls": {
+    "newVerified": 2,
+    "previousTotal": 38,
+    "newTotal": 40,
+    "added": [
+      {
+        "id": "em-1025",
+        "pollster": "EM-Analytics",
+        "published": "2026-10-25",
+        "fieldworkStart": "2026-10-17",
+        "fieldworkEnd": "2026-10-23",
+        "sample": 4309,
+        "vote": {
+          "PP": 30.9,
+          "PSOE": 26.7,
+          "VOX": 19,
+          "FRENTE_AMPLIO": 5.8
+        },
+        "sourceUrl": "https://electomania.es/electopanel-25-octubre-el-pp-baja-de-nuevo-frente-amplio-crece/",
+        "method": "CAWI"
+      },
+      {
+        "id": "ateneo-1025",
+        "pollster": "Ateneo del Dato",
+        "published": "2026-10-25",
+        "fieldworkStart": "2026-10-20",
+        "fieldworkEnd": "2026-10-22",
+        "sample": 2000,
+        "vote": {
+          "PP": 31.1,
+          "PSOE": 27.6,
+          "VOX": 19.8,
+          "FRENTE_AMPLIO": 6.8
+        },
+        "sourceUrl": "https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html",
+        "method": "CAWI"
+      }
+    ],
+    "pendingVerification": [
+      {
+        "pollster": "Sigma Dos",
+        "published": "2026-10-26",
+        "reportedVote": {
+          "PP": 30.6,
+          "PSOE": 26.1,
+          "VOX": 19.9,
+          "FRENTE_AMPLIO": 7.4
+        },
+        "sourceUrl": "https://electomania.es/encuesta-sigma-dos-26-oct-sanchez-recorta-distancia-a-feijoo-pero-la-derecha-sigue-muy-cerca-de-los-200-escanos/",
+        "reason": "No se ha localizado aún la ficha original con muestra y fechas de campo. La web de Sigma Dos aún lista como última encuesta el 19/10. No incorporar sin esos datos.",
+        "officialPollsterIndex": "https://www.sigmados.com/noticias"
+      }
+    ]
+  },
+  "programmes": {
+    "newCompleteOfficial2026": 0,
+    "newVerifiedSupplements": 0,
+    "reviewedOfficialSources": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/",
+      "https://www.voxespana.es/",
+      "https://movimientosumar.es/"
+    ],
+    "excluded": [
+      {
+        "title": "¡Vamos, España!",
+        "party": "PP",
+        "date": "2026-10-26",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-25-VAMOS-ESPANA.pdf",
+        "reason": "Argumentario de campaña, sin compromisos programáticos nuevos verificables; no se añade como programa ni complemento."
+      }
+    ],
+    "programmes2023Preserved": true
+  },
+  "integrity": {
+    "questionsDisplayed": 30,
+    "questionBank": 54,
+    "positionsChanged": false,
+    "supabaseOrSqlChanged": false,
+    "personalDataChanged": false,
+    "partyCodesChanged": false,
+    "pollIdsUnique": true,
+    "candidacyCohortsSeparated": true
+  },
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-10-26.json"
+  ],
+  "validation": "Esquema y rangos de 40 encuestas comprobados; data/polls.js regenerado con el formato exacto de scripts/sync-data.py. CI comprueba regeneración y JS.",
+  "publication": "To be verified against GitHub main and CI/Pages after commit."
+}

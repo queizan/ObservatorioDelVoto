@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-24",
+    "lastUpdated": "2026-10-26",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-10-23",
+    "to": "2026-10-25",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 38,
+    "totalPolls": 40,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1073,6 +1073,53 @@
       "sourceType": "original",
       "addedAt": "2026-10-24",
       "note": "IMOP Insights para El Confidencial. Publicada 23/10, trabajo de campo 13-16/10, n=1000; datos y ficha corroborados por Electomanía, laSexta, Libertad Digital y eleccionesenespana.es. La fuente original enlazada restringe lectura automatizada. Frente Amplio es la candidatura medida; no se mezcla con Sumar."
+    },
+    {
+      "id": "em-1025",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-10-25",
+      "fieldworkStart": "2026-10-17",
+      "fieldworkEnd": "2026-10-23",
+      "sample": 4309,
+      "vote": {
+        "PP": 30.9,
+        "PSOE": 26.7,
+        "VOX": 19,
+        "FRENTE_AMPLIO": 5.8
+      },
+      "seats": {
+        "PP": 132,
+        "PSOE": 111,
+        "VOX": 62,
+        "FRENTE_AMPLIO": 11
+      },
+      "sourceUrl": "https://electomania.es/electopanel-25-octubre-el-pp-baja-de-nuevo-frente-amplio-crece/",
+      "sourceType": "original",
+      "addedAt": "2026-10-26",
+      "note": "Publicación 25/10 20:09; campo 17-23/10; n=4.309 CAWI. Fuente original contiene estimación, ficha y muestra. No confundir con el adelanto incompleto del 24/10. Frente Amplio se mantiene separado de Sumar."
+    },
+    {
+      "id": "ateneo-1025",
+      "pollster": "Ateneo del Dato",
+      "publisher": "elDiario.es",
+      "category": "prensa",
+      "published": "2026-10-25",
+      "fieldworkStart": "2026-10-20",
+      "fieldworkEnd": "2026-10-22",
+      "sample": 2000,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 27.6,
+        "VOX": 19.8,
+        "FRENTE_AMPLIO": 6.8
+      },
+      "seats": {},
+      "sourceUrl": "https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html",
+      "sourceType": "original",
+      "addedAt": "2026-10-26",
+      "note": "Publicación 25/10 21:21, actualizada 26/10 05:30; n=2.000 CAWI, campo 20-22/10; PP 31,1, PSOE 27,6, Vox 19,8, Frente Amplio 6,8. No se incorporan escaños porque no están explícitos en el texto de la fuente primaria. Podemos 2,7% se registra en nota, fuera de la visualización principal."
     }
   ]
 }
