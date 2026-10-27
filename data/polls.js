@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-10-26",
+    "lastUpdated": "2026-10-27",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-10-25",
+    "to": "2026-10-26",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 40,
+    "totalPolls": 43,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -35,6 +35,54 @@ window.PULSO_DATA = {
       "seats": {},
       "sourceUrl": "https://moreincommones.substack.com/p/la-inmigracion-se-convierte-en-el",
       "sourceType": "original"
+    },
+    {
+      "id": "em-0906",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-09-06",
+      "fieldworkStart": "2026-08-15",
+      "fieldworkEnd": "2026-09-03",
+      "sample": null,
+      "vote": {
+        "PP": 32,
+        "PSOE": 25.6,
+        "VOX": 19.2,
+        "SUMAR": 6.7
+      },
+      "seats": {
+        "PP": 133,
+        "PSOE": 102,
+        "VOX": 68,
+        "SUMAR": 12
+      },
+      "sourceUrl": "https://electomania.es/electopanel-6-sep-adelanto-los-bloques-se-reconfiguran/",
+      "sourceType": "original"
+    },
+    {
+      "id": "gad3-0906",
+      "pollster": "GAD3",
+      "publisher": "ABC",
+      "category": "prensa",
+      "published": "2026-09-06",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-09-03",
+      "sample": null,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 26.1,
+        "VOX": 19.2,
+        "SUMAR": 7
+      },
+      "seats": {
+        "PP": 133,
+        "PSOE": 105,
+        "VOX": 69,
+        "SUMAR": 9
+      },
+      "sourceUrl": "https://www.gad3.com/politica/",
+      "sourceType": "recopilacion"
     },
     {
       "id": "40db-0907",
@@ -99,72 +147,28 @@ window.PULSO_DATA = {
       }
     },
     {
-      "id": "gad3-0906",
-      "pollster": "GAD3",
-      "publisher": "ABC",
-      "category": "prensa",
-      "published": "2026-09-06",
-      "fieldworkStart": "2026-09-01",
-      "fieldworkEnd": "2026-09-03",
-      "sample": null,
-      "vote": {
-        "PP": 31.1,
-        "PSOE": 26.1,
-        "VOX": 19.2,
-        "SUMAR": 7
-      },
-      "seats": {
-        "PP": 133,
-        "PSOE": 105,
-        "VOX": 69,
-        "SUMAR": 9
-      },
-      "sourceUrl": "https://www.gad3.com/politica/",
-      "sourceType": "recopilacion"
-    },
-    {
-      "id": "em-0906",
+      "id": "em-0913",
       "pollster": "EM-Analytics",
       "publisher": "Electomanía",
       "category": "digital",
-      "published": "2026-09-06",
-      "fieldworkStart": "2026-08-15",
-      "fieldworkEnd": "2026-09-03",
-      "sample": null,
+      "published": "2026-09-13",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-09-10",
+      "sample": 1190,
       "vote": {
-        "PP": 32,
-        "PSOE": 25.6,
+        "PP": 32.2,
+        "PSOE": 25.4,
         "VOX": 19.2,
-        "SUMAR": 6.7
+        "SUMAR": 6.9
       },
       "seats": {
-        "PP": 133,
+        "PP": 132,
         "PSOE": 102,
         "VOX": 68,
-        "SUMAR": 12
+        "SUMAR": 13
       },
-      "sourceUrl": "https://electomania.es/electopanel-6-sep-adelanto-los-bloques-se-reconfiguran/",
+      "sourceUrl": "https://electomania.es/electopanel-13-sep-adelanto-pp-y-vox-alcanzarian-los-200-diputados/",
       "sourceType": "original"
-    },
-    {
-      "id": "cis-0914",
-      "pollster": "CIS",
-      "publisher": "CIS · Barómetro de septiembre",
-      "category": "organismo",
-      "published": "2026-09-14",
-      "fieldworkStart": "2026-09-01",
-      "fieldworkEnd": "2026-09-04",
-      "sample": 4042,
-      "vote": {
-        "PP": 25.5,
-        "PSOE": 31,
-        "VOX": 16.6,
-        "SUMAR": 5.7
-      },
-      "seats": {},
-      "sourceUrl": "https://www.cis.es/es/estudios/catalogo",
-      "sourceType": "recopilacion",
-      "note": "Referencia al catálogo oficial del CIS; la publicación del barómetro es del 14 de septiembre."
     },
     {
       "id": "ham-0913",
@@ -191,27 +195,22 @@ window.PULSO_DATA = {
       "sourceType": "original"
     },
     {
-      "id": "em-0913",
-      "pollster": "EM-Analytics",
-      "publisher": "Electomanía",
-      "category": "digital",
+      "id": "invy-0913",
+      "pollster": "InvyMark",
+      "publisher": "laSexta",
+      "category": "tv_radio",
       "published": "2026-09-13",
-      "fieldworkStart": "2026-09-01",
-      "fieldworkEnd": "2026-09-10",
-      "sample": 1190,
+      "fieldworkStart": "2026-09-07",
+      "fieldworkEnd": "2026-09-11",
+      "sample": 1200,
       "vote": {
-        "PP": 32.2,
-        "PSOE": 25.4,
-        "VOX": 19.2,
-        "SUMAR": 6.9
+        "PP": 33.7,
+        "PSOE": 26.8,
+        "VOX": 18.6,
+        "SUMAR": 6.1
       },
-      "seats": {
-        "PP": 132,
-        "PSOE": 102,
-        "VOX": 68,
-        "SUMAR": 13
-      },
-      "sourceUrl": "https://electomania.es/electopanel-13-sep-adelanto-pp-y-vox-alcanzarian-los-200-diputados/",
+      "seats": {},
+      "sourceUrl": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-intencion-voto-situa-como-primera-fuerza-feijoo-como-politico-mejor-valorado_202609136aa6943d7486a40f2c9c4e90.html",
       "sourceType": "original"
     },
     {
@@ -253,23 +252,24 @@ window.PULSO_DATA = {
       }
     },
     {
-      "id": "invy-0913",
-      "pollster": "InvyMark",
-      "publisher": "laSexta",
-      "category": "tv_radio",
-      "published": "2026-09-13",
-      "fieldworkStart": "2026-09-07",
-      "fieldworkEnd": "2026-09-11",
-      "sample": 1200,
+      "id": "cis-0914",
+      "pollster": "CIS",
+      "publisher": "CIS · Barómetro de septiembre",
+      "category": "organismo",
+      "published": "2026-09-14",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-09-04",
+      "sample": 4042,
       "vote": {
-        "PP": 33.7,
-        "PSOE": 26.8,
-        "VOX": 18.6,
-        "SUMAR": 6.1
+        "PP": 25.5,
+        "PSOE": 31,
+        "VOX": 16.6,
+        "SUMAR": 5.7
       },
       "seats": {},
-      "sourceUrl": "https://www.lasexta.com/noticias/nacional/barometro-lasexta-intencion-voto-situa-como-primera-fuerza-feijoo-como-politico-mejor-valorado_202609136aa6943d7486a40f2c9c4e90.html",
-      "sourceType": "original"
+      "sourceUrl": "https://www.cis.es/es/estudios/catalogo",
+      "sourceType": "recopilacion",
+      "note": "Referencia al catálogo oficial del CIS; la publicación del barómetro es del 14 de septiembre."
     },
     {
       "id": "em-0920",
@@ -410,49 +410,6 @@ window.PULSO_DATA = {
       "sourceType": "original"
     },
     {
-      "id": "40db-1005",
-      "pollster": "40dB",
-      "publisher": "El País · Cadena SER",
-      "category": "prensa",
-      "published": "2026-10-05",
-      "fieldworkStart": "2026-09-25",
-      "fieldworkEnd": "2026-09-28",
-      "sample": 2000,
-      "vote": {
-        "PP": 31.6,
-        "PSOE": 27.4,
-        "VOX": 18.4,
-        "SUMAR": 5.6
-      },
-      "seats": {},
-      "sourceUrl": "https://elpais.com/espana/2026-10-05/el-tiron-de-vox-mantiene-al-bloque-de-la-derecha-en-el-50-en-plena-conmocion-por-maricarmen.html",
-      "sourceType": "original"
-    },
-    {
-      "id": "sigma-1004",
-      "pollster": "Sigma Dos",
-      "publisher": "El Mundo",
-      "category": "prensa",
-      "published": "2026-10-04",
-      "fieldworkStart": "2026-09-22",
-      "fieldworkEnd": "2026-10-01",
-      "sample": 2116,
-      "vote": {
-        "PP": 32.6,
-        "PSOE": 25.6,
-        "VOX": 18.3,
-        "SUMAR": 6.6
-      },
-      "seats": {
-        "PP": 140,
-        "PSOE": 103,
-        "VOX": 63,
-        "SUMAR": 9
-      },
-      "sourceUrl": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
-      "sourceType": "recopilacion"
-    },
-    {
       "id": "ateneo-1003",
       "pollster": "Ateneo del Dato",
       "publisher": "elDiario.es",
@@ -495,6 +452,78 @@ window.PULSO_DATA = {
       }
     },
     {
+      "id": "em-1004",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-10-04",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-03",
+      "sample": 8171,
+      "vote": {
+        "PP": 31.3,
+        "PSOE": 26.9,
+        "VOX": 19.4,
+        "SUMAR": 6.3
+      },
+      "seats": {
+        "PP": 129,
+        "PSOE": 106,
+        "VOX": 69,
+        "SUMAR": 12
+      },
+      "sourceUrl": "https://electomania.es/electopanel-4-oct-adelanto-la-vivienda-agita-el-panorama-politico/",
+      "sourceType": "original"
+    },
+    {
+      "id": "sigma-1004",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-10-04",
+      "fieldworkStart": "2026-09-22",
+      "fieldworkEnd": "2026-10-01",
+      "sample": 2116,
+      "vote": {
+        "PP": 32.6,
+        "PSOE": 25.6,
+        "VOX": 18.3,
+        "SUMAR": 6.6
+      },
+      "seats": {
+        "PP": 140,
+        "PSOE": 103,
+        "VOX": 63,
+        "SUMAR": 9
+      },
+      "sourceUrl": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
+      "sourceType": "recopilacion"
+    },
+    {
+      "id": "socio-1004",
+      "pollster": "SocioMétrica",
+      "publisher": "El Español",
+      "category": "digital",
+      "published": "2026-10-04",
+      "fieldworkStart": "2026-10-01",
+      "fieldworkEnd": "2026-10-03",
+      "sample": 1000,
+      "vote": {
+        "PP": 33.4,
+        "PSOE": 26.5,
+        "VOX": 18.1,
+        "SUMAR": 5.3
+      },
+      "seats": {
+        "PP": 143,
+        "PSOE": 106,
+        "VOX": 62,
+        "SUMAR": 6
+      },
+      "sourceUrl": "https://www.elespanol.com/espana/politica/20261004/sondeo-expres-sanchez-disuelve-congreso-pp-hoy-diputados-psoe-vox-sumar/1003744408026_0.html",
+      "sourceType": "original"
+    },
+    {
       "id": "winston-1004",
       "pollster": "Winston",
       "publisher": "Artículo14",
@@ -519,27 +548,46 @@ window.PULSO_DATA = {
       "sourceType": "original"
     },
     {
-      "id": "socio-1004",
-      "pollster": "SocioMétrica",
-      "publisher": "El Español",
+      "id": "40db-1005",
+      "pollster": "40dB",
+      "publisher": "El País · Cadena SER",
+      "category": "prensa",
+      "published": "2026-10-05",
+      "fieldworkStart": "2026-09-25",
+      "fieldworkEnd": "2026-09-28",
+      "sample": 2000,
+      "vote": {
+        "PP": 31.6,
+        "PSOE": 27.4,
+        "VOX": 18.4,
+        "SUMAR": 5.6
+      },
+      "seats": {},
+      "sourceUrl": "https://elpais.com/espana/2026-10-05/el-tiron-de-vox-mantiene-al-bloque-de-la-derecha-en-el-50-en-plena-conmocion-por-maricarmen.html",
+      "sourceType": "original"
+    },
+    {
+      "id": "data-1005",
+      "pollster": "Data10",
+      "publisher": "Okdiario",
       "category": "digital",
-      "published": "2026-10-04",
-      "fieldworkStart": "2026-10-01",
-      "fieldworkEnd": "2026-10-03",
+      "published": "2026-10-05",
+      "fieldworkStart": "2026-10-02",
+      "fieldworkEnd": "2026-10-02",
       "sample": 1000,
       "vote": {
-        "PP": 33.4,
-        "PSOE": 26.5,
-        "VOX": 18.1,
-        "SUMAR": 5.3
+        "PP": 34,
+        "PSOE": 26.1,
+        "VOX": 18.6,
+        "SUMAR": 5.2
       },
       "seats": {
-        "PP": 143,
-        "PSOE": 106,
-        "VOX": 62,
-        "SUMAR": 6
+        "PP": 139,
+        "PSOE": 110,
+        "VOX": 64,
+        "SUMAR": 5
       },
-      "sourceUrl": "https://www.elespanol.com/espana/politica/20261004/sondeo-expres-sanchez-disuelve-congreso-pp-hoy-diputados-psoe-vox-sumar/1003744408026_0.html",
+      "sourceUrl": "https://okdiario.com/espana/efecto-maricarmen-resucita-sanchez-hasta-110-escanos-pero-ni-todos-sus-socios-alcanzan-pp-vox-que-suman-203-20469916",
       "sourceType": "original"
     },
     {
@@ -585,72 +633,46 @@ window.PULSO_DATA = {
       }
     },
     {
-      "id": "cis-1014",
-      "pollster": "CIS",
-      "publisher": "CIS · Barómetro de octubre",
-      "category": "organismo",
-      "published": "2026-10-14",
-      "fieldworkStart": "2026-10-01",
-      "fieldworkEnd": "2026-10-06",
-      "sample": 5025,
+      "id": "40db-1009",
+      "pollster": "40dB",
+      "publisher": "El País · Cadena SER",
+      "category": "prensa",
+      "published": "2026-10-09",
+      "fieldworkStart": "2026-10-07",
+      "fieldworkEnd": "2026-10-08",
+      "sample": 800,
       "vote": {
-        "PP": 22.2,
-        "PSOE": 34,
-        "VOX": 17.1,
-        "SUMAR": 6.1
-      },
-      "seats": {},
-      "sourceUrl": "https://efe.com/espana/2026-10-14/barometro-cis-psoe-vencedor-tras-desahucio-maricarmen/",
-      "sourceType": "cobertura",
-      "note": "Informe primario del CIS aún no localizado en enlace profundo; enlace a cobertura de EFE con cifras y ficha."
-    },
-    {
-      "id": "data-1005",
-      "pollster": "Data10",
-      "publisher": "Okdiario",
-      "category": "digital",
-      "published": "2026-10-05",
-      "fieldworkStart": "2026-10-02",
-      "fieldworkEnd": "2026-10-02",
-      "sample": 1000,
-      "vote": {
-        "PP": 34,
-        "PSOE": 26.1,
-        "VOX": 18.6,
-        "SUMAR": 5.2
+        "PP": 31.9,
+        "PSOE": 28.1,
+        "VOX": 18.9,
+        "SUMAR": 5.3
       },
       "seats": {
-        "PP": 139,
-        "PSOE": 110,
-        "VOX": 64,
-        "SUMAR": 5
+        "PP": 131.5,
+        "PSOE": 111,
+        "VOX": 68.5,
+        "SUMAR": 6
       },
-      "sourceUrl": "https://okdiario.com/espana/efecto-maricarmen-resucita-sanchez-hasta-110-escanos-pero-ni-todos-sus-socios-alcanzan-pp-vox-que-suman-203-20469916",
-      "sourceType": "original"
-    },
-    {
-      "id": "em-1004",
-      "pollster": "EM-Analytics",
-      "publisher": "Electomanía",
-      "category": "digital",
-      "published": "2026-10-04",
-      "fieldworkStart": "2026-10-02",
-      "fieldworkEnd": "2026-10-03",
-      "sample": 8171,
-      "vote": {
-        "PP": 31.3,
-        "PSOE": 26.9,
-        "VOX": 19.4,
-        "SUMAR": 6.3
-      },
-      "seats": {
-        "PP": 129,
-        "PSOE": 106,
-        "VOX": 69,
-        "SUMAR": 12
-      },
-      "sourceUrl": "https://electomania.es/electopanel-4-oct-adelanto-la-vivienda-agita-el-panorama-politico/",
-      "sourceType": "original"
+      "sourceUrl": "https://elpais.com/espana/2026-10-09/el-pp-y-vox-mantienen-la-mayoria-absoluta-tras-el-adelanto-electoral.html",
+      "sourceType": "original",
+      "seatIntervals": {
+        "PP": [
+          123,
+          140
+        ],
+        "PSOE": [
+          105,
+          117
+        ],
+        "VOX": [
+          63,
+          74
+        ],
+        "SUMAR": [
+          5,
+          7
+        ]
+      }
     },
     {
       "id": "dym-1009",
@@ -719,30 +741,6 @@ window.PULSO_DATA = {
       "sourceType": "recopilacion"
     },
     {
-      "id": "sigma-1011",
-      "pollster": "Sigma Dos",
-      "publisher": "El Mundo",
-      "category": "prensa",
-      "published": "2026-10-11",
-      "fieldworkStart": "2026-10-01",
-      "fieldworkEnd": "2026-10-08",
-      "sample": 2017,
-      "vote": {
-        "PP": 31.9,
-        "PSOE": 25.3,
-        "VOX": 19.1,
-        "SUMAR": 7.6
-      },
-      "seats": {
-        "PP": 135,
-        "PSOE": 103,
-        "VOX": 68,
-        "SUMAR": 9
-      },
-      "sourceUrl": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
-      "sourceType": "recopilacion"
-    },
-    {
       "id": "invy-1009",
       "pollster": "InvyMark",
       "publisher": "laSexta",
@@ -759,6 +757,30 @@ window.PULSO_DATA = {
       },
       "seats": {},
       "sourceUrl": "https://www.lasexta.com/elecciones/generales/barometro-lasexta-protestas-vivienda-impactan-encuestas-que-hunden-bloque-izquierda-disparan-vox_202610096ac8ae9bb79b18452fc08907.html",
+      "sourceType": "original"
+    },
+    {
+      "id": "em-1011",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-10-11",
+      "fieldworkStart": "2026-10-05",
+      "fieldworkEnd": "2026-10-09",
+      "sample": 4125,
+      "vote": {
+        "PP": 31.5,
+        "PSOE": 26.9,
+        "VOX": 19.1,
+        "SUMAR": 6
+      },
+      "seats": {
+        "PP": 131,
+        "PSOE": 107,
+        "VOX": 67,
+        "SUMAR": 11
+      },
+      "sourceUrl": "https://electomania.es/electopanel-11-oct-sumar-se-descalabra-a-la-espera-del-frente-amplio/",
       "sourceType": "original"
     },
     {
@@ -784,6 +806,92 @@ window.PULSO_DATA = {
       },
       "sourceUrl": "https://www.vozpopuli.com/espana/politica/debacle-de-la-izquierda-pp-y-vox-suman-ya-212-escanos-y-el-53-de-los-votos.html",
       "sourceType": "original"
+    },
+    {
+      "id": "sigma-1011",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-10-11",
+      "fieldworkStart": "2026-10-01",
+      "fieldworkEnd": "2026-10-08",
+      "sample": 2017,
+      "vote": {
+        "PP": 31.9,
+        "PSOE": 25.3,
+        "VOX": 19.1,
+        "SUMAR": 7.6
+      },
+      "seats": {
+        "PP": 135,
+        "PSOE": 103,
+        "VOX": 68,
+        "SUMAR": 9
+      },
+      "sourceUrl": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
+      "sourceType": "recopilacion"
+    },
+    {
+      "id": "socio-1011",
+      "pollster": "SocioMétrica",
+      "publisher": "El Español",
+      "category": "digital",
+      "published": "2026-10-11",
+      "fieldworkStart": "2026-10-10",
+      "fieldworkEnd": "2026-10-11",
+      "sample": 1000,
+      "vote": {
+        "PP": 32.6,
+        "PSOE": 26.2,
+        "VOX": 18.8,
+        "SUMAR": 5.8
+      },
+      "seats": {
+        "PP": 141,
+        "PSOE": 104,
+        "VOX": 64,
+        "SUMAR": 8
+      },
+      "sourceUrl": "https://www.elespanol.com/espana/politica/20261011/sanchez-no-funciona-apropiarse-maricarmen-huelga-oposicion-cae-sondeo-noche/1003744416762_0.html",
+      "sourceType": "original"
+    },
+    {
+      "id": "target-1011",
+      "pollster": "Target Point",
+      "publisher": "El Debate",
+      "category": "digital",
+      "published": "2026-10-11",
+      "fieldworkStart": "2026-10-06",
+      "fieldworkEnd": "2026-10-09",
+      "sample": 1002,
+      "vote": {
+        "PP": 32,
+        "PSOE": 25.9,
+        "VOX": 18.7,
+        "SUMAR": 6.9
+      },
+      "seats": {
+        "PP": 136,
+        "PSOE": 104,
+        "VOX": 65,
+        "SUMAR": 10
+      },
+      "sourceUrl": "https://www.eldebate.com/espana/20261011/izquierda-apenas-reacciona-adelanto-frente-derecha-le-saca-casi-15-puntos_468080.html",
+      "sourceType": "original",
+      "seatIntervals": {
+        "PP": [
+          135,
+          137
+        ],
+        "PSOE": [
+          103,
+          105
+        ],
+        "VOX": [
+          64,
+          66
+        ]
+      }
     },
     {
       "id": "gad3-1012",
@@ -852,132 +960,24 @@ window.PULSO_DATA = {
       }
     },
     {
-      "id": "40db-1009",
-      "pollster": "40dB",
-      "publisher": "El País · Cadena SER",
-      "category": "prensa",
-      "published": "2026-10-09",
-      "fieldworkStart": "2026-10-07",
-      "fieldworkEnd": "2026-10-08",
-      "sample": 800,
+      "id": "cis-1014",
+      "pollster": "CIS",
+      "publisher": "CIS · Barómetro de octubre",
+      "category": "organismo",
+      "published": "2026-10-14",
+      "fieldworkStart": "2026-10-01",
+      "fieldworkEnd": "2026-10-06",
+      "sample": 5025,
       "vote": {
-        "PP": 31.9,
-        "PSOE": 28.1,
-        "VOX": 18.9,
-        "SUMAR": 5.3
+        "PP": 22.2,
+        "PSOE": 34,
+        "VOX": 17.1,
+        "SUMAR": 6.1
       },
-      "seats": {
-        "PP": 131.5,
-        "PSOE": 111,
-        "VOX": 68.5,
-        "SUMAR": 6
-      },
-      "sourceUrl": "https://elpais.com/espana/2026-10-09/el-pp-y-vox-mantienen-la-mayoria-absoluta-tras-el-adelanto-electoral.html",
-      "sourceType": "original",
-      "seatIntervals": {
-        "PP": [
-          123,
-          140
-        ],
-        "PSOE": [
-          105,
-          117
-        ],
-        "VOX": [
-          63,
-          74
-        ],
-        "SUMAR": [
-          5,
-          7
-        ]
-      }
-    },
-    {
-      "id": "em-1011",
-      "pollster": "EM-Analytics",
-      "publisher": "Electomanía",
-      "category": "digital",
-      "published": "2026-10-11",
-      "fieldworkStart": "2026-10-05",
-      "fieldworkEnd": "2026-10-09",
-      "sample": 4125,
-      "vote": {
-        "PP": 31.5,
-        "PSOE": 26.9,
-        "VOX": 19.1,
-        "SUMAR": 6
-      },
-      "seats": {
-        "PP": 131,
-        "PSOE": 107,
-        "VOX": 67,
-        "SUMAR": 11
-      },
-      "sourceUrl": "https://electomania.es/electopanel-11-oct-sumar-se-descalabra-a-la-espera-del-frente-amplio/",
-      "sourceType": "original"
-    },
-    {
-      "id": "target-1011",
-      "pollster": "Target Point",
-      "publisher": "El Debate",
-      "category": "digital",
-      "published": "2026-10-11",
-      "fieldworkStart": "2026-10-06",
-      "fieldworkEnd": "2026-10-09",
-      "sample": 1002,
-      "vote": {
-        "PP": 32,
-        "PSOE": 25.9,
-        "VOX": 18.7,
-        "SUMAR": 6.9
-      },
-      "seats": {
-        "PP": 136,
-        "PSOE": 104,
-        "VOX": 65,
-        "SUMAR": 10
-      },
-      "sourceUrl": "https://www.eldebate.com/espana/20261011/izquierda-apenas-reacciona-adelanto-frente-derecha-le-saca-casi-15-puntos_468080.html",
-      "sourceType": "original",
-      "seatIntervals": {
-        "PP": [
-          135,
-          137
-        ],
-        "PSOE": [
-          103,
-          105
-        ],
-        "VOX": [
-          64,
-          66
-        ]
-      }
-    },
-    {
-      "id": "socio-1011",
-      "pollster": "SocioMétrica",
-      "publisher": "El Español",
-      "category": "digital",
-      "published": "2026-10-11",
-      "fieldworkStart": "2026-10-10",
-      "fieldworkEnd": "2026-10-11",
-      "sample": 1000,
-      "vote": {
-        "PP": 32.6,
-        "PSOE": 26.2,
-        "VOX": 18.8,
-        "SUMAR": 5.8
-      },
-      "seats": {
-        "PP": 141,
-        "PSOE": 104,
-        "VOX": 64,
-        "SUMAR": 8
-      },
-      "sourceUrl": "https://www.elespanol.com/espana/politica/20261011/sanchez-no-funciona-apropiarse-maricarmen-huelga-oposicion-cae-sondeo-noche/1003744416762_0.html",
-      "sourceType": "original"
+      "seats": {},
+      "sourceUrl": "https://efe.com/espana/2026-10-14/barometro-cis-psoe-vencedor-tras-desahucio-maricarmen/",
+      "sourceType": "cobertura",
+      "note": "Informe primario del CIS aún no localizado en enlace profundo; enlace a cobertura de EFE con cifras y ficha."
     },
     {
       "id": "em-1018",
@@ -1076,6 +1076,27 @@ window.PULSO_DATA = {
       "note": "IMOP Insights para El Confidencial. Publicada 23/10, trabajo de campo 13-16/10, n=1000; datos y ficha corroborados por Electomanía, laSexta, Libertad Digital y eleccionesenespana.es. La fuente original enlazada restringe lectura automatizada. Frente Amplio es la candidatura medida; no se mezcla con Sumar."
     },
     {
+      "id": "ateneo-1025",
+      "pollster": "Ateneo del Dato",
+      "publisher": "elDiario.es",
+      "category": "prensa",
+      "published": "2026-10-25",
+      "fieldworkStart": "2026-10-20",
+      "fieldworkEnd": "2026-10-22",
+      "sample": 2000,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 27.6,
+        "VOX": 19.8,
+        "FRENTE_AMPLIO": 6.8
+      },
+      "seats": {},
+      "sourceUrl": "https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html",
+      "sourceType": "original",
+      "addedAt": "2026-10-26",
+      "note": "Publicación 25/10 21:21, actualizada 26/10 05:30; n=2.000 CAWI, campo 20-22/10; PP 31,1, PSOE 27,6, Vox 19,8, Frente Amplio 6,8. No se incorporan escaños porque no están explícitos en el texto de la fuente primaria. Podemos 2,7% se registra en nota, fuera de la visualización principal."
+    },
+    {
       "id": "em-1025",
       "pollster": "EM-Analytics",
       "publisher": "Electomanía",
@@ -1102,25 +1123,118 @@ window.PULSO_DATA = {
       "note": "Publicación 25/10 20:09; campo 17-23/10; n=4.309 CAWI. Fuente original contiene estimación, ficha y muestra. No confundir con el adelanto incompleto del 24/10. Frente Amplio se mantiene separado de Sumar."
     },
     {
-      "id": "ateneo-1025",
-      "pollster": "Ateneo del Dato",
-      "publisher": "elDiario.es",
+      "id": "socio-1025",
+      "pollster": "SocioMétrica",
+      "publisher": "El Español",
       "category": "prensa",
       "published": "2026-10-25",
-      "fieldworkStart": "2026-10-20",
-      "fieldworkEnd": "2026-10-22",
-      "sample": 2000,
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-10-25",
+      "sample": 3223,
       "vote": {
-        "PP": 31.1,
-        "PSOE": 27.6,
-        "VOX": 19.8,
-        "FRENTE_AMPLIO": 6.8
+        "PP": 32,
+        "PSOE": 27,
+        "VOX": 18.6,
+        "FRENTE_AMPLIO": 4.5
       },
-      "seats": {},
-      "sourceUrl": "https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html",
+      "seats": {
+        "PP": 135,
+        "PSOE": 108,
+        "VOX": 63,
+        "FRENTE_AMPLIO": 6
+      },
+      "sourceUrl": "https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html",
       "sourceType": "original",
-      "addedAt": "2026-10-26",
-      "note": "Publicación 25/10 21:21, actualizada 26/10 05:30; n=2.000 CAWI, campo 20-22/10; PP 31,1, PSOE 27,6, Vox 19,8, Frente Amplio 6,8. No se incorporan escaños porque no están explícitos en el texto de la fuente primaria. Podemos 2,7% se registra en nota, fuera de la visualización principal."
+      "addedAt": "2026-10-27",
+      "note": "Tracking CAWI acumulado n=3.223 desde 01/09 hasta 25/10. Fuente primaria da Frente Amplio 4,5% y 6 escaños; algunos agregadores informan 5,8% y se prioriza el dato explícito del medio original. La serie continua no se confunde con una nueva encuesta semanal independiente."
+    },
+    {
+      "id": "nc-1026",
+      "pollster": "NC Report",
+      "publisher": "La Razón",
+      "category": "prensa",
+      "published": "2026-10-26",
+      "fieldworkStart": "2026-10-22",
+      "fieldworkEnd": "2026-10-24",
+      "sample": null,
+      "vote": {
+        "PP": 32.9,
+        "PSOE": 25.8,
+        "VOX": 19,
+        "FRENTE_AMPLIO": 6.6
+      },
+      "seats": {
+        "PP": 142,
+        "PSOE": 101,
+        "VOX": 65,
+        "FRENTE_AMPLIO": 8.5
+      },
+      "seatIntervals": {
+        "PP": [
+          141,
+          143
+        ],
+        "PSOE": [
+          100,
+          102
+        ],
+        "VOX": [
+          64,
+          66
+        ],
+        "FRENTE_AMPLIO": [
+          8,
+          9
+        ]
+      },
+      "sourceUrl": "https://www.larazon.es/espana/18-votantes-socialistas-apoyan-hoy-vox_202610266adea62a3eef771e1ac8d43d.html",
+      "sourceType": "original",
+      "addedAt": "2026-10-27",
+      "note": "Publicación primaria 26/10 a las 02:00; campo 22-24/10. Muestra no especificada en texto accesible: null, no se inventa. Frente Amplio 6,6% separado de Podemos 2,6% y Adelante Andalucía 1,3%. Intervalos de escaños originales; valor central sólo para visualización."
+    },
+    {
+      "id": "sigma-1026",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-10-26",
+      "fieldworkStart": "2026-10-08",
+      "fieldworkEnd": "2026-10-22",
+      "sample": 3122,
+      "vote": {
+        "PP": 30.6,
+        "PSOE": 26.1,
+        "VOX": 19.9,
+        "FRENTE_AMPLIO": 7.4
+      },
+      "seats": {
+        "PP": 128,
+        "PSOE": 106,
+        "VOX": 67.5,
+        "FRENTE_AMPLIO": 11
+      },
+      "seatIntervals": {
+        "PP": [
+          125,
+          131
+        ],
+        "PSOE": [
+          103,
+          109
+        ],
+        "VOX": [
+          66,
+          69
+        ],
+        "FRENTE_AMPLIO": [
+          10,
+          12
+        ]
+      },
+      "sourceUrl": "https://www.sigmados.com/noticia?id=OUze2FxEIVfARtu3",
+      "sourceType": "original",
+      "addedAt": "2026-10-27",
+      "note": "Ficha técnica oficial Sigma Dos 26/10, n=3.122, CATI+CAWI, campo 08-22/10. Frente Amplio 7,4% en la fuente original; 8,2% en algunos agregadores incluye el 0,8% separado de Compromís-Front Valencià. No se suman ambas candidaturas ni se mezcla con Sumar."
     }
   ]
 };
