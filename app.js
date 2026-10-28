@@ -264,7 +264,7 @@
     const a=document.createElement('a');a.href=url;a.download='29N_encuestas_'+dataset.metadata.lastUpdated+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
   }
   function navigate(){
-    let view=(location.hash||'#panorama').slice(1); if(!['panorama','afinidad','comparador','archivo','metodologia'].includes(view))view='panorama';
+    let view=(location.hash||'#panorama').slice(1); if(!['panorama','afinidad','documentos','comparador','archivo','metodologia'].includes(view))view='panorama';
     document.querySelectorAll('.page').forEach(el=>{el.classList.toggle('page-active',el.id===view);el.hidden=el.id!==view;});
     document.querySelectorAll('[data-nav]').forEach(a=>{const yes=a.dataset.nav===view;a.classList.toggle('active',yes);if(yes)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
     document.querySelector('.topnav').classList.remove('menu-open');$('menuButton').setAttribute('aria-expanded','false');

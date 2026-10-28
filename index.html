@@ -21,13 +21,14 @@
   <meta name="twitter:description" content="Encuestas nacionales, comparador y cuestionario independiente de afinidad programática.">
   <meta name="twitter:image" content="https://queizan.github.io/ObservatorioDelVoto/assets/observatorio-del-voto-og.jpg?v=20261015">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261020-frente-amplio">
+  <link rel="stylesheet" href="styles.css?v=20261028-programas">
   <link rel="stylesheet" href="affinity.css">
   <script defer src="data/polls.js?v=20261028-44-polls"></script>
   <script defer src="app.js?v=20261020-frente-amplio"></script>
   <script defer src="data/affinity.js?v=20261028-pp"></script>
   <script defer src="config/affinity-public.js"></script>
   <script defer src="affinity.js?v=20261021-pp"></script>
+  <script defer src="program-documents.js?v=20261028"></script>
   <title>Observatorio del voto · 29N</title>
 </head>
 <body>
@@ -43,6 +44,7 @@
           <a data-nav="panorama" href="#panorama" class="active">Panorama</a>
           <a data-nav="comparador" href="#comparador">Comparador</a>
           <a data-nav="afinidad" href="#afinidad">Tu afinidad <span class="nav-feature">30</span></a>
+          <a data-nav="documentos" href="#documentos">Programas</a>
           <a data-nav="archivo" href="#archivo">Encuestas <span id="navCount" class="nav-count">35</span></a>
           <a data-nav="metodologia" href="#metodologia">Metodología</a>
           <span class="nav-coming-soon" aria-label="Gobiernos a examen, próximamente">Gobiernos a examen <small>(Próximamente)</small></span>
@@ -172,8 +174,25 @@
         <div class="inner-heading affinity-heading"><p class="eyebrow"><span class="eyebrow-line"></span> EXPLORA TUS PRIORIDADES</p><h1 id="affinity-title">¿Y tú, con quién <span class="serif-word">coincides?</span></h1><p>30 preguntas aleatorias de un banco de 54, repartidas en 21 temas para ampliar la diversidad. Compara programas y manifiestos de <strong>2023</strong> de 11 formaciones, incluidas candidaturas territoriales.</p></div>
         <div class="affinity-intro-note"><strong>Un test de programas, no una recomendación de voto.</strong><p>Este experimento no es oficial ni representativo, no está avalado por ninguna formación y no recomienda el voto. Utiliza documentos electorales de 2023 como referencia provisional, incluida una coalición con manifiesto. Las puntuaciones son interpretaciones editoriales; no implican intención real de voto. Cada partido territorial concurre solamente donde corresponde. Cuando aparezcan programas posteriores verificados, se podrán incorporar.</p></div>
         <article class="panel affinity-test-panel" id="affinityTestPanel"><div id="affinityApp" aria-live="polite"><p class="affinity-muted">Preparando cuestionario…</p></div></article>
-        <div class="affinity-sources panel"><div><p class="panel-eyebrow">FUENTES Y TRANSPARENCIA</p><h3>Comprueba los programas</h3><p>Selección de programas de las generales del 23 de julio de 2023, documentos originales o copias identificadas. Coalición Canaria dispone de un manifiesto electoral conjunto, no de un programa completo equiparable a los demás. Las afirmaciones son editoriales y no citas literales; las posturas que no puedan documentarse no puntúan.</p></div><div id="affinityProgrammeSources" class="affinity-programme-links"></div></div>
+        <div class="affinity-sources panel"><div><p class="panel-eyebrow">FUENTES Y TRANSPARENCIA</p><h3>Comprueba los programas</h3><p>Selección de programas de las generales del 23 de julio de 2023, documentos originales o copias identificadas. Coalición Canaria dispone de un manifiesto electoral conjunto, no de un programa completo equiparable a los demás. Las afirmaciones son editoriales y no citas literales; las posturas que no puedan documentarse no puntúan.</p></div><div id="affinityProgrammeSources" class="affinity-programme-links"></div><a class="button button-outline" href="#documentos">Ver biblioteca completa de documentos ↗</a></div>
         <div class="affinity-privacy"><strong>Privacidad de las respuestas</strong><p>El cuestionario se procesa en tu navegador y las 30 respuestas no se envían ni se almacenan en nuestra base de datos. No creamos cuentas, identificadores ni un registro de personas; la repetición es posible. Solo si aceptas compartir, enviamos tu primera coincidencia a Supabase para sumar un contador agregado público. No se publican ni guardan resultados individuales, pero GitHub Pages, Supabase y otros proveedores pueden tratar datos técnicos de conexión. No podemos prometer ausencia absoluta de rastros. <a href="https://github.com/queizan/ObservatorioDelVoto/blob/main/docs/PRIVACIDAD-PENDIENTE.md" target="_blank" rel="noopener noreferrer">Consulta nuestra nota de privacidad y sus limitaciones ↗</a>. Este gráfico es un experimento voluntario y no una encuesta electoral.</p></div>
+      </section>
+
+      <section id="documentos" class="page" aria-labelledby="documents-title" hidden>
+        <div class="inner-heading documents-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> ARCHIVO DOCUMENTAL · ELECCIONES GENERALES</p>
+          <h1 id="documents-title">Programas y <span class="serif-word">documentos.</span></h1>
+          <p>Consulta los programas electorales y los documentos de campaña disponibles por formación, con enlaces a su publicación original o a la referencia documentada.</p>
+        </div>
+        <div class="documents-intro"><strong>Documentación, no recomendaciones.</strong><p>Los programas de 2023 se conservan como referencias históricas hasta que se verifiquen programas completos posteriores. Los documentos parciales de 2026 se muestran como complementos y nunca sustituyen automáticamente a un programa. Algunas fuentes enlazan a catálogos, noticias o copias, no a un PDF directo.</p></div>
+        <div class="documents-toolbar panel" aria-label="Filtrar documentos electorales">
+          <div class="documents-filter"><label for="documentsParty">PARTIDO / CANDIDATURA</label><select id="documentsParty"><option value="all">Todas las formaciones</option></select></div>
+          <div class="documents-filter"><label for="documentsKind">TIPO DE DOCUMENTO</label><select id="documentsKind"><option value="all">Todos los documentos</option><option value="programme">Programas / manifiestos</option><option value="supplement">Documentos complementarios</option></select></div>
+          <div class="documents-filter documents-search"><label for="documentsSearch">BUSCAR</label><input id="documentsSearch" type="search" placeholder="Título, propuesta, territorio…" autocomplete="off"></div>
+        </div>
+        <div class="documents-results" aria-live="polite"><span id="documentsCount"></span><span>Se actualiza al incorporar nuevos documentos verificados al archivo.</span></div>
+        <div id="documentsLibrary" class="documents-library"></div>
+        <p class="documents-disclaimer">Los enlaces llevan a sitios externos, donde el contenido puede cambiar o dejar de estar disponible. Los documentos representan las posiciones publicadas por cada formación, no hechos contrastados ni posiciones atribuidas por esta web. El test «Tu afinidad» sigue usando únicamente sus fuentes programáticas acreditadas.</p>
       </section>
 
       <section id="comparador" class="page" aria-labelledby="comparator-title" hidden>
