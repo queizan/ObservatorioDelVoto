@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-27",
+    "lastUpdated": "2026-10-28",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
     "to": "2026-10-26",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 43,
+    "totalPolls": 44,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1234,6 +1234,32 @@
       "sourceType": "original",
       "addedAt": "2026-10-27",
       "note": "Ficha técnica oficial Sigma Dos 26/10, n=3.122, CATI+CAWI, campo 08-22/10. Frente Amplio 7,4% en la fuente original; 8,2% en algunos agregadores incluye el 0,8% separado de Compromís-Front Valencià. No se suman ambas candidaturas ni se mezcla con Sumar."
+    },
+    {
+      "id": "winston-1026",
+      "pollster": "Winston",
+      "publisher": "Artículo14",
+      "category": "prensa",
+      "published": "2026-10-26",
+      "fieldworkStart": "2026-10-21",
+      "fieldworkEnd": "2026-10-23",
+      "sample": 1200,
+      "vote": {
+        "PP": 29.4,
+        "PSOE": 27.1,
+        "VOX": 19.2,
+        "FRENTE_AMPLIO": 5.6
+      },
+      "seats": {
+        "PP": 121,
+        "PSOE": 115,
+        "VOX": 69,
+        "FRENTE_AMPLIO": 9
+      },
+      "sourceUrl": "https://www.articulo14.es/politica/encuesta-articulo14-el-psoe-se-coloca-6-escanos-del-pp-que-mantiene-una-mayoria-de-190-escanos-con-vox-20261026.html",
+      "sourceType": "original",
+      "addedAt": "2026-10-28",
+      "note": "Segundo barómetro Winston para Artículo14, publicado 26/10/2026; 1.200 entrevistas del 21 al 23 de octubre. Porcentajes y escaños comprobados en publicación original. Frente Amplio (5,6%, 9 escaños) separado de Sumar y de Podemos; no duplicar primera ola del 2/10."
     }
   ]
 }

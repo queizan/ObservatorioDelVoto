@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-28",
+  "reviewedAtLocal": "2026-10-28T07:56:13+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Encuestas nacionales españolas y programas oficiales 2026; sin datos personales",
+  "polls": {
+    "newVerified": 1,
+    "previousTotal": 43,
+    "newTotal": 44,
+    "added": [
+      {
+        "id": "winston-1026",
+        "pollster": "Winston",
+        "publisher": "Artículo14",
+        "category": "prensa",
+        "published": "2026-10-26",
+        "fieldworkStart": "2026-10-21",
+        "fieldworkEnd": "2026-10-23",
+        "sample": 1200,
+        "vote": {
+          "PP": 29.4,
+          "PSOE": 27.1,
+          "VOX": 19.2,
+          "FRENTE_AMPLIO": 5.6
+        },
+        "seats": {
+          "PP": 121,
+          "PSOE": 115,
+          "VOX": 69,
+          "FRENTE_AMPLIO": 9
+        },
+        "sourceUrl": "https://www.articulo14.es/politica/encuesta-articulo14-el-psoe-se-coloca-6-escanos-del-pp-que-mantiene-una-mayoria-de-190-escanos-con-vox-20261026.html",
+        "sourceType": "original",
+        "addedAt": "2026-10-28",
+        "note": "Segundo barómetro Winston para Artículo14, publicado 26/10/2026; 1.200 entrevistas del 21 al 23 de octubre. Porcentajes y escaños comprobados en publicación original. Frente Amplio (5,6%, 9 escaños) separado de Sumar y de Podemos; no duplicar primera ola del 2/10."
+      }
+    ],
+    "reviewedSources": [
+      "https://www.articulo14.es/politica/encuesta-articulo14-el-psoe-se-coloca-6-escanos-del-pp-que-mantiene-una-mayoria-de-190-escanos-con-vox-20261026.html",
+      "https://eleccionesenespana.es/encuestas/",
+      "https://capitolab.es/agregador-de-encuestas/"
+    ],
+    "duplicateChecks": "Winston segunda ola 21-23/10 distinta de primera ola 29/09-01/10; 44 IDs únicos; sondeos ya publicados 25-26/10 no duplicados.",
+    "notes": "No se añaden agregados, probabilidades electorales ni estimaciones no originales."
+  },
+  "programmes": {
+    "newCompleteOfficial2026": 0,
+    "newVerifiedSupplements": 2,
+    "party": "PP",
+    "added": [
+      {
+        "title": "¡Les vamos a echar!",
+        "year": 2026,
+        "date": "2026-10-27",
+        "type": "Documento oficial de campaña (1 página), con compromisos de auditoría de cuentas, reducción de ministerios y regeneración institucional; complemento, no programa completo",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/%C2%A1LES-VAMOS-A-ECHAR.pdf",
+        "status": "complemento",
+        "note": "Fecha impresa 27/10/2026. Incluye argumentario partidista y compromisos programáticos parciales. Se recoge únicamente como fuente del PP, sin asumir como hechos sus acusaciones a otros partidos ni alterar posiciones del test."
+      },
+      {
+        "title": "La revolución de la decencia",
+        "year": 2026,
+        "date": "2026-10-28",
+        "type": "Documento oficial de campaña (1 página), con compromisos sobre seguridad, fiscalidad y cuentas públicas; complemento, no programa completo",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-27-HC-LA-REVOLUCION-DE-LA-DECENCIA.pdf",
+        "status": "complemento",
+        "note": "Fecha impresa 28/10/2026. Incluye propuestas de agravante para acciones con rostro cubierto y penas por violencia convocada por redes; argumentario político no verificado por terceros. No altera posiciones ni reemplaza programa 2023."
+      }
+    ],
+    "reviewedOfficialSources": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/",
+      "https://www.voxespana.es/",
+      "https://movimientosumar.es/",
+      "https://izquierdaunida.org/"
+    ],
+    "excluded": [
+      {
+        "title": "Listas PP Congreso y Senado 2026",
+        "reason": "Lista de candidaturas, no programa electoral"
+      },
+      {
+        "title": "Artículos de prensa y actos de otros partidos",
+        "reason": "No constituyen programa completo ni documento programático autónomo suficientemente verificado"
+      }
+    ],
+    "programmes2023Preserved": true,
+    "positionsChanged": false
+  },
+  "integrity": {
+    "questionsDisplayed": 30,
+    "questionsBank": 54,
+    "positionsChanged": false,
+    "supabaseOrSqlChanged": false,
+    "personalDataChanged": false,
+    "partyCodesChanged": false,
+    "pollIdsUnique": true,
+    "candidacyCohortsSeparated": true
+  },
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-10-28.json"
+  ],
+  "validation": "Validación de datos y formato generado según scripts/sync-data.py y scripts/sync-affinity.py; CI GitHub comprueba scripts originales y sintaxis JS después del push.",
+  "publication": "Pending verification after commit; final state must be confirmed via main, CI and GitHub Pages."
+}
