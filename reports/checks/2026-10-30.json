@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-30",
+  "reviewedAtLocal": "2026-10-30T07:58:31+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Encuestas nacionales y programas/documentos oficiales de 2026, sin datos personales",
+  "polls": {
+    "newVerified": 0,
+    "previousTotal": 44,
+    "newTotal": 44,
+    "added": [],
+    "reviewedSources": [
+      "https://mapaelectoral.es/encuestas/",
+      "https://electomania.es/",
+      "https://www.rtve.es/noticias/20261005/encuestas-elecciones-generales-29n-pp-vox-diputados/17253873.shtml",
+      "https://encuestometro.com/espana/encuestas/"
+    ],
+    "exclusions": [
+      "ElectoPanel del jueves 29/10 aplazado según Electomanía; no se inventan resultados ni muestra",
+      "Agregados y noticias de sondeos 25-26/10 ya presentes no se duplican"
+    ],
+    "duplicateChecks": "44 encuestas con 44 IDs distintos; último sondeo en archivo Winston/Artículo14 26/10."
+  },
+  "programmes": {
+    "newCompleteOfficial2026": 0,
+    "newVerifiedSupplements": 1,
+    "party": "VOX",
+    "added": [
+      {
+        "title": "¡Al grano! Una vida más fácil — Programa de desregulación",
+        "year": 2026,
+        "date": "2026-06-27",
+        "type": "Programa temático oficial de desregulación y simplificación administrativa (más de 200 páginas). Complemento, no programa completo de las elecciones generales del 29N.",
+        "url": "https://www.voxespana.es/wp-content/uploads/2026/06/Programa-2026-envio.pdf",
+        "status": "complemento",
+        "note": "Presentado oficialmente el 27/06/2026; localizado y verificado en revisión del 30/10/2026. Documento sectorial, no sustituye al programa de generales de 2023 ni acredita por sí solo posiciones del cuestionario. Fuente: voxespana.es/vox-contra-la-hiperregulacion y noticia oficial del 27/06."
+      }
+    ],
+    "officialPrimarySources": [
+      "https://www.voxespana.es/vox-contra-la-hiperregulacion",
+      "https://www.voxespana.es/actualidad/abascal-en-la-presentacion-del-programa-de-desregulacion-de-vox-entre-el-poder-para-nada-y-respetar-nuestros-principios-estamos-con-los-principios-20260627",
+      "https://www.voxespana.es/wp-content/uploads/2026/06/Programa-2026-envio.pdf"
+    ],
+    "reviewedOfficialSources": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/",
+      "https://www.voxespana.es/",
+      "https://movimientosumar.es/",
+      "https://www.izquierdaunida.org/"
+    ],
+    "excluded": [
+      {
+        "title": "España vuelve a estar de luto (PP, 29/10)",
+        "reason": "Documento de reacción política al accidente ferroviario, no programa electoral completo ni propuesta programática autónoma"
+      },
+      {
+        "title": "Solicitud de comparecencia urgente PP (29/10)",
+        "reason": "Solicitud parlamentaria, no programa electoral"
+      },
+      {
+        "title": "Programas autonómicos Vox 2026",
+        "reason": "Ámbito regional, no programa de generales 29N"
+      }
+    ],
+    "programmes2023Preserved": true,
+    "positionsChanged": false,
+    "limitations": [
+      "La portada oficial del PSOE no respondió por tiempo de espera; búsqueda indexada alternativa sin confirmación exhaustiva",
+      "PDF de Vox accesible desde página oficial; extracción automatizada completa limitada por tamaño, clasificación apoyada en noticia oficial y vínculo directo"
+    ]
+  },
+  "integrity": {
+    "questionsDisplayed": 30,
+    "questionsBank": 54,
+    "positionsChanged": false,
+    "supabaseOrSqlChanged": false,
+    "personalDataChanged": false,
+    "partyCodesChanged": false,
+    "pollIdsUnique": true,
+    "candidacyCohortsSeparated": true,
+    "programmesCount": 11,
+    "ppSupplements": 8,
+    "voxSupplements": 1
+  },
+  "filesChanged": [
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-10-30.json"
+  ],
+  "publication": {
+    "status": "pending verification",
+    "note": "CI y GitHub Pages deben comprobarse tras commit; no se afirma éxito antes de verificar"
+  },
+  "neutrality": "Documentos de los partidos como fuentes primarias de sus propuestas, sin aval de sus afirmaciones; test de afinidad no es encuesta representativa."
+}

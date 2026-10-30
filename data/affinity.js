@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-28-pp-campaign-supplements",
+  "version": "2026-10-30-vox-desregulation-supplement",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -113,7 +113,18 @@ window.AFFINITY_BANK = {
       "url": "https://www.voxespana.es/programa/programa-electoral-Vox",
       "territory": "España",
       "type": "Programa generales 2023",
-      "year": 2023
+      "year": 2023,
+      "supplementaryDocuments": [
+        {
+          "title": "¡Al grano! Una vida más fácil — Programa de desregulación",
+          "year": 2026,
+          "date": "2026-06-27",
+          "type": "Programa temático oficial de desregulación y simplificación administrativa (más de 200 páginas). Complemento, no programa completo de las elecciones generales del 29N.",
+          "url": "https://www.voxespana.es/wp-content/uploads/2026/06/Programa-2026-envio.pdf",
+          "status": "complemento",
+          "note": "Presentado oficialmente el 27/06/2026; localizado y verificado en revisión del 30/10/2026. Documento sectorial, no sustituye al programa de generales de 2023 ni acredita por sí solo posiciones del cuestionario. Fuente: voxespana.es/vox-contra-la-hiperregulacion y noticia oficial del 27/06."
+        }
+      ]
     },
     {
       "key": "SUMAR",
