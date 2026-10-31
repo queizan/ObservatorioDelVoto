@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-10-30-vox-desregulation-supplement",
+  "version": "2026-10-31-pp-rail-safety-supplement",
   "programYear": 2023,
   "questionCount": 30,
   "parties": [
@@ -96,6 +96,15 @@ window.AFFINITY_BANK = {
           "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-27-HC-LA-REVOLUCION-DE-LA-DECENCIA.pdf",
           "status": "complemento",
           "note": "Fecha impresa 28/10/2026. Incluye propuestas de agravante para acciones con rostro cubierto y penas por violencia convocada por redes; argumentario político no verificado por terceros. No altera posiciones ni reemplaza programa 2023."
+        },
+        {
+          "title": "Gestión, gestión, gestión",
+          "year": 2026,
+          "date": "2026-10-30",
+          "type": "Documento oficial de campaña sobre seguridad y mantenimiento ferroviario (1 página). Complemento parcial, no programa electoral completo.",
+          "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-30-HC-GESTION-GESTION-GESTION.pdf",
+          "status": "complemento",
+          "note": "Publicación oficial del PP del 30/10/2026. Incluye el compromiso de revisar integralmente el sistema ferroviario y priorizar seguridad y mantenimiento. Contiene argumentario partidista y afirmaciones sobre accidentes que no se asumen como hechos verificados. No sustituye el programa 2023 ni modifica posiciones del test."
         }
       ]
     },

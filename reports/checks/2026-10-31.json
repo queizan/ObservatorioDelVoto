@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-31",
+  "reviewedAtLocal": "2026-10-31T07:57:31+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "scope": "Encuestas nacionales españolas y programas/documentos electorales oficiales; revisión de fuentes hasta el 31/10/2026",
+  "polls": {
+    "newVerified": 0,
+    "previousTotal": 44,
+    "newTotal": 44,
+    "added": [],
+    "sourcesReviewed": [
+      "https://mapaelectoral.es/encuestas/",
+      "https://electomania.es/",
+      "https://www.rtve.es/noticias/20261005/encuestas-elecciones-generales-29n-pp-vox-diputados/17253873.shtml",
+      "https://www.politicaelectoral.com/en/espana/generales-2026/nacional"
+    ],
+    "excluded": [
+      "Sociómetro Euskadi para generales (30/10): muestra territorial, no encuesta nacional",
+      "SyM Comunitat Valenciana para generales (30/10): muestra territorial, no encuesta nacional",
+      "Promedios y modelos del 30/10: no son sondeos originales",
+      "ElectoPanel del 25/10 y encuestas del 26/10: ya registradas"
+    ],
+    "uniqueIds": 44
+  },
+  "programmes": {
+    "newCompleteOfficial2026": 0,
+    "newVerifiedSupplements": 1,
+    "added": [
+      {
+        "party": "PP",
+        "title": "Gestión, gestión, gestión",
+        "year": 2026,
+        "date": "2026-10-30",
+        "type": "Documento oficial de campaña sobre seguridad y mantenimiento ferroviario (1 página). Complemento parcial, no programa electoral completo.",
+        "url": "https://www.pp.es/wp-content/uploads/2026/10/26-10-30-HC-GESTION-GESTION-GESTION.pdf",
+        "status": "complemento",
+        "note": "Publicación oficial del PP del 30/10/2026. Incluye el compromiso de revisar integralmente el sistema ferroviario y priorizar seguridad y mantenimiento. Contiene argumentario partidista y afirmaciones sobre accidentes que no se asumen como hechos verificados. No sustituye el programa 2023 ni modifica posiciones del test."
+      }
+    ],
+    "primarySource": "https://www.pp.es/actualidad/documentos/",
+    "reviewedOfficialSources": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/actualidad/documentos-de-interes/",
+      "https://www.voxespana.es/actualidad",
+      "https://movimientosumar.es/"
+    ],
+    "excluded": [
+      "Publicaciones de actualidad de Vox de 29 y 30/10: discursos/noticias, no programa completo",
+      "Manifiestos del PSOE sobre días conmemorativos: no son programa electoral 29N",
+      "PP documentos sobre accidente de Urda: declaración y solicitud parlamentaria no son programas electorales",
+      "Sin documentos completos oficiales nuevos verificados de otras formaciones"
+    ],
+    "historicalProgramme2023Preserved": true
+  },
+  "integrity": {
+    "questionBank": 54,
+    "randomQuestions": 30,
+    "programmeCount": 11,
+    "uniqueQuestionIds": true,
+    "positionsUnchanged": true,
+    "supabaseUntouched": true,
+    "privacyUntouched": true,
+    "countsAndIndividualResponsesUntouched": true
+  },
+  "filesChanged": [
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-10-31.json"
+  ],
+  "publication": {
+    "status": "Commit/push and CI/Pages to be verified externally after write",
+    "note": "La auditoría describe la revisión y los archivos previstos; consultar GitHub Actions para resultado final."
+  },
+  "neutrality": "Los textos de partidos se citan como declaraciones propias; no se presenta el test como encuesta representativa."
+}
