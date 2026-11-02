@@ -6,7 +6,7 @@ window.PULSO_DATA = {
     "from": "2026-09-01",
     "to": "2026-11-01",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 47,
+    "totalPolls": 48,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1334,6 +1334,27 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-02",
       "note": "Tracking acumulado n=4.893 CAWI desde 01/09; la fuente primaria no precisa el día de la última entrevista, por lo que fieldworkEnd=01/11 representa la fecha de corte/publicación, NO un fin de campo confirmado. Datos primarios: PP 32,2% y 137 escaños (139 incluyendo 2 de UPN), PSOE 26,6%/106, Vox 19,1%/64, Frente Amplio 4,4%/5. Agregadores atribuyen erróneamente al PP 32,7% y a FA 5,8% por coaliciones; no se mezclan."
+    },
+    {
+      "id": "sigma-1101",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-10-29",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 2505,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 24.6,
+        "VOX": 19.3,
+        "FRENTE_AMPLIO": 7.1
+      },
+      "seats": {},
+      "sourceUrl": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-02",
+      "note": "Encuesta nacional Sigma Dos para El Mundo, n=2.505, metodología CATI+CAWI, campo 29–30/10. La publicación original está restringida a lectura automatizada; cifras y ficha contrastadas en Electográfica, PollingForecast y otros archivos que enlazan a El Mundo. Frente Amplio 7,1 % EXCLUYE Compromís–Front Valencià 0,9 %, reportado por separado; el 8,0 % mostrado por agregadores es la suma de ambas formaciones. Proyección de escaños difundida en intervalos: PP 133–139; PSOE 97–103; Vox 63–69; Frente Amplio 9–11. No se inventa un escaño puntual."
     }
   ]
 };

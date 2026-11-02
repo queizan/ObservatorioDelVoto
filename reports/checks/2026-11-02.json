@@ -10,8 +10,8 @@
     "head": "3bf42096e857c70506975663bbe449510fb97043"
   },
   "result": {
-    "pollsAdded": 3,
-    "pollsTotal": 47,
+    "pollsAdded": 4,
+    "pollsTotal": 48,
     "programmesAdded": 0,
     "supplementaryDocumentsAdded": 0
   },
@@ -42,17 +42,23 @@
       "sample": 4893,
       "sourceUrl": "https://www.elespanol.com/espana/politica/20261101/primer-sondeo-tragedia-pp-vox-amplian-ventaja-sanchez-sigue-cayendo-pese-vaciar-frente-amplio/1003744442810_0.html",
       "notes": "Tracking acumulado n=4.893 CAWI desde 01/09; la fuente primaria no precisa el día de la última entrevista, por lo que fieldworkEnd=01/11 representa la fecha de corte/publicación, NO un fin de campo confirmado. Datos primarios: PP 32,2% y 137 escaños (139 incluyendo 2 de UPN), PSOE 26,6%/106, Vox 19,1%/64, Frente Amplio 4,4%/5. Agregadores atribuyen erróneamente al PP 32,7% y a FA 5,8% por coaliciones; no se mezclan."
+    },
+    {
+      "id": "sigma-1101",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-10-29",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 2505,
+      "sourceUrl": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+      "verifiedVia": [
+        "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+        "https://www.pollingforecast.com/es/polls/1001227?lang=es",
+        "https://mapaelectoral.es/encuestas/sigma-dos/"
+      ],
+      "notes": "Encuesta nacional Sigma Dos para El Mundo, n=2.505, metodología CATI+CAWI, campo 29–30/10. La publicación original está restringida a lectura automatizada; cifras y ficha contrastadas en Electográfica, PollingForecast y otros archivos que enlazan a El Mundo. Frente Amplio 7,1 % EXCLUYE Compromís–Front Valencià 0,9 %, reportado por separado; el 8,0 % mostrado por agregadores es la suma de ambas formaciones. Proyección de escaños difundida en intervalos: PP 133–139; PSOE 97–103; Vox 63–69; Frente Amplio 9–11. No se inventa un escaño puntual."
     }
   ],
   "reviewedNotAdded": [
-    {
-      "pollster": "Sigma Dos",
-      "publisher": "El Mundo",
-      "published": "2026-11-01",
-      "sourceUrl": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
-      "reason": "Fuente primaria inaccesible durante la revisión; los agregadores mezclan Frente Amplio con Compromís-Front Valencià (8,0%) mientras una recopilación separa 7,1%. Pendiente contraste primario antes de incorporarlo.",
-      "sampleReportedBySecondary": 2505
-    },
     {
       "pollster": "Sondeo atribuido a Vox",
       "publisher": "The Objective",
@@ -104,11 +110,9 @@
     "index.html",
     "reports/checks/2026-11-02.json"
   ],
-  "verification": {
-    "validatedLocalSchema": true,
-    "regeneratedByEquivalentRepositoryScript": true,
-    "githubActions": "pending",
-    "pages": "pending",
-    "mainHead": "pending"
+  "followup": {
+    "date": "2026-11-02",
+    "reason": "Usuario aportó enlace original de El Mundo; verificado el desglose 7,1 % Frente Amplio y 0,9 % Compromís en Electográfica y contrastado con PollingForecast. No se ha podido acceder automáticamente a El Mundo.",
+    "classification": "Sondeo añadido con fuente primaria enlazada y contraste documental independiente."
   }
 }
