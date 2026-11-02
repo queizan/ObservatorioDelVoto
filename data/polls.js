@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-10-28",
+    "lastUpdated": "2026-11-02",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-10-26",
+    "to": "2026-11-01",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 44,
+    "totalPolls": 47,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1261,6 +1261,79 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-10-28",
       "note": "Segundo barómetro Winston para Artículo14, publicado 26/10/2026; 1.200 entrevistas del 21 al 23 de octubre. Porcentajes y escaños comprobados en publicación original. Frente Amplio (5,6%, 9 escaños) separado de Sumar y de Podemos; no duplicar primera ola del 2/10."
+    },
+    {
+      "id": "sondaxe-1101",
+      "pollster": "Sondaxe",
+      "publisher": "La Voz de Galicia",
+      "category": "prensa",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-28",
+      "sample": 1200,
+      "vote": {
+        "PP": 29.2,
+        "PSOE": 26.9,
+        "VOX": 19.2,
+        "FRENTE_AMPLIO": 7.2
+      },
+      "seats": {},
+      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm",
+      "sourceType": "original",
+      "addedAt": "2026-11-02",
+      "note": "Fuente primaria La Voz de Galicia, ficha técnica: ámbito nacional, n=1.200, CATI+CAWI, campo 26–28/10. Frente Amplio 7,2% separado de Podemos 2%. No hay proyección de escaños verificable en el texto consultado."
+    },
+    {
+      "id": "em-1101",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-10-28",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 1527,
+      "vote": {
+        "PP": 31.5,
+        "PSOE": 25.8,
+        "VOX": 19.2,
+        "FRENTE_AMPLIO": 6.2
+      },
+      "seats": {
+        "PP": 133,
+        "PSOE": 108,
+        "VOX": 64,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/electopanel-1-nov-el-psoe-baja-y-vuelve-a-minimos/",
+      "sourceType": "original",
+      "addedAt": "2026-11-02",
+      "note": "ElectoPanel original del 01/11 12:52; campo 28–30/10, n=1.527 CAWI, tracking con 60% panel fijo. Frente Amplio 6,2% excluye Compromís-Front Valencià 1,4% y se mantiene separado de Podemos 1,7%. Es una ola distinta de 25/10."
+    },
+    {
+      "id": "socio-1101",
+      "pollster": "SocioMétrica",
+      "publisher": "El Español",
+      "category": "prensa",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-09-01",
+      "fieldworkEnd": "2026-11-01",
+      "sample": 4893,
+      "vote": {
+        "PP": 32.2,
+        "PSOE": 26.6,
+        "VOX": 19.1,
+        "FRENTE_AMPLIO": 4.4
+      },
+      "seats": {
+        "PP": 137,
+        "PSOE": 106,
+        "VOX": 64,
+        "FRENTE_AMPLIO": 5
+      },
+      "sourceUrl": "https://www.elespanol.com/espana/politica/20261101/primer-sondeo-tragedia-pp-vox-amplian-ventaja-sanchez-sigue-cayendo-pese-vaciar-frente-amplio/1003744442810_0.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-02",
+      "note": "Tracking acumulado n=4.893 CAWI desde 01/09; la fuente primaria no precisa el día de la última entrevista, por lo que fieldworkEnd=01/11 representa la fecha de corte/publicación, NO un fin de campo confirmado. Datos primarios: PP 32,2% y 137 escaños (139 incluyendo 2 de UPN), PSOE 26,6%/106, Vox 19,1%/64, Frente Amplio 4,4%/5. Agregadores atribuyen erróneamente al PP 32,7% y a FA 5,8% por coaliciones; no se mezclan."
     }
   ]
 };
