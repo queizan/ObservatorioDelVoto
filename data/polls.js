@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-02",
+    "lastUpdated": "2026-11-03",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-01",
+    "to": "2026-11-02",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 48,
+    "totalPolls": 51,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1355,6 +1355,75 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-02",
       "note": "Encuesta nacional Sigma Dos para El Mundo, n=2.505, metodología CATI+CAWI, campo 29–30/10. La publicación original está restringida a lectura automatizada; cifras y ficha contrastadas en Electográfica, PollingForecast y otros archivos que enlazan a El Mundo. Frente Amplio 7,1 % EXCLUYE Compromís–Front Valencià 0,9 %, reportado por separado; el 8,0 % mostrado por agregadores es la suma de ambas formaciones. Proyección de escaños difundida en intervalos: PP 133–139; PSOE 97–103; Vox 63–69; Frente Amplio 9–11. No se inventa un escaño puntual."
+    },
+    {
+      "id": "nc-1102",
+      "pollster": "NC Report",
+      "publisher": "La Razón",
+      "category": "prensa",
+      "published": "2026-11-02",
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-29",
+      "sample": null,
+      "vote": {
+        "PP": 32.6,
+        "PSOE": 25.6,
+        "VOX": 19.3,
+        "FRENTE_AMPLIO": 6.9
+      },
+      "seats": {},
+      "seatIntervals": {},
+      "sourceUrl": "https://www.larazon.es/espana/psoe-frena-efecto-remontada-derecha-consolida-mayoria-absoluta_202611026ae783220250123215703bb1.html?outputType=amp",
+      "sourceType": "original",
+      "addedAt": "2026-11-03",
+      "note": "Fuente primaria La Razón 02/11 03:00, campo 26–29/10; muestra no indicada en el texto consultado, conservada como null. Proyecciones por intervalos PP 138–140, PSOE 100–102, Vox 66–68 y Frente Amplio 9–10; no se inventa punto central. Frente Amplio 6,9% separado de Podemos 2,4%."
+    },
+    {
+      "id": "target-1102",
+      "pollster": "Target Point",
+      "publisher": "El Debate",
+      "category": "prensa",
+      "published": "2026-11-02",
+      "fieldworkStart": "2026-10-28",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 1024,
+      "vote": {
+        "PP": 31.8,
+        "PSOE": 25.5,
+        "VOX": 19.9,
+        "FRENTE_AMPLIO": 6.6
+      },
+      "seats": {},
+      "sourceUrl": "https://www.eldebate.com/espana/20261102/accidente-frena-psoe-amplia-apoyo-pp-mayoria-absolutisima-derecha_475640.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-03",
+      "note": "Fuente original El Debate 02/11 04:30; n=1.024 CAWI, campo 28/10 18:00–30/10 mañana. Intervalos publicados PP 131–135, PSOE 99–103, Vox 68–72, Frente Amplio 9–11; no se atribuye cifra puntual de escaños. Frente Amplio 6,6% separado de Podemos."
+    },
+    {
+      "id": "hamalgama-1102",
+      "pollster": "Hamalgama Métrica",
+      "publisher": "Vozpópuli",
+      "category": "prensa",
+      "published": "2026-11-02",
+      "fieldworkStart": "2026-10-22",
+      "fieldworkEnd": "2026-10-28",
+      "sample": 1000,
+      "vote": {
+        "PP": 32,
+        "PSOE": 26.4,
+        "VOX": 19.9,
+        "FRENTE_AMPLIO": 5.4
+      },
+      "seats": {
+        "PP": 135,
+        "PSOE": 106,
+        "VOX": 70,
+        "FRENTE_AMPLIO": 7
+      },
+      "sourceUrl": "https://www.vozpopuli.com/espana/politica/el-psoe-pierde-13-millones-de-votos-arrastrado-por-las-crisis-de-vivienda-ceuta-y-la-alta-velocidad.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-03",
+      "note": "Fuente original Vozpópuli 02/11 04:44; 1.000 entrevistas CATI 22–28/10, margen 3,16%. PSOE 26,4% según publicación primaria (no 25,6% como indica un agregador). Frente Amplio 5,4% separado de Podemos. Una sola encuesta Hamalgama Métrica pese a múltiples artículos sobre la misma ola."
     }
   ]
 };

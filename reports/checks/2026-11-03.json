@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-03",
+  "reviewStartedLocal": "2026-11-03T07:57:06+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "account": "queizan",
+  "baseline": {
+    "polls": 48,
+    "head": "460e3a0a02eca448f506eeac067c4ed31292d578"
+  },
+  "result": {
+    "pollsAdded": 3,
+    "pollsTotal": 51,
+    "programmesAdded": 0,
+    "supplementaryDocumentsAdded": 0
+  },
+  "addedPolls": [
+    {
+      "id": "nc-1102",
+      "published": "2026-11-02",
+      "sample": null,
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-29",
+      "sourceUrl": "https://www.larazon.es/espana/psoe-frena-efecto-remontada-derecha-consolida-mayoria-absoluta_202611026ae783220250123215703bb1.html?outputType=amp",
+      "notes": "Fuente primaria La Razón 02/11 03:00, campo 26–29/10; muestra no indicada en el texto consultado, conservada como null. Proyecciones por intervalos PP 138–140, PSOE 100–102, Vox 66–68 y Frente Amplio 9–10; no se inventa punto central. Frente Amplio 6,9% separado de Podemos 2,4%."
+    },
+    {
+      "id": "target-1102",
+      "published": "2026-11-02",
+      "sample": 1024,
+      "fieldworkStart": "2026-10-28",
+      "fieldworkEnd": "2026-10-30",
+      "sourceUrl": "https://www.eldebate.com/espana/20261102/accidente-frena-psoe-amplia-apoyo-pp-mayoria-absolutisima-derecha_475640.html",
+      "notes": "Fuente original El Debate 02/11 04:30; n=1.024 CAWI, campo 28/10 18:00–30/10 mañana. Intervalos publicados PP 131–135, PSOE 99–103, Vox 68–72, Frente Amplio 9–11; no se atribuye cifra puntual de escaños. Frente Amplio 6,6% separado de Podemos."
+    },
+    {
+      "id": "hamalgama-1102",
+      "published": "2026-11-02",
+      "sample": 1000,
+      "fieldworkStart": "2026-10-22",
+      "fieldworkEnd": "2026-10-28",
+      "sourceUrl": "https://www.vozpopuli.com/espana/politica/el-psoe-pierde-13-millones-de-votos-arrastrado-por-las-crisis-de-vivienda-ceuta-y-la-alta-velocidad.html",
+      "notes": "Fuente original Vozpópuli 02/11 04:44; 1.000 entrevistas CATI 22–28/10, margen 3,16%. PSOE 26,4% según publicación primaria (no 25,6% como indica un agregador). Frente Amplio 5,4% separado de Podemos. Una sola encuesta Hamalgama Métrica pese a múltiples artículos sobre la misma ola."
+    }
+  ],
+  "programmeReview": {
+    "PP": "Sin nuevo programa electoral completo oficial contrastado en esta revisión",
+    "PSOE": "Sin nuevo programa electoral completo oficial contrastado",
+    "Vox": "Sin nuevo programa electoral completo oficial contrastado",
+    "Sumar": "Sin nuevo programa electoral completo oficial contrastado",
+    "other": "Sin documentos oficiales nuevos verificados"
+  },
+  "excluded": [
+    {
+      "source": "https://electomania.es/encuesta-hmetrica-2-nov-pp-y-vox-suman-127-millones-de-votos-y-205-escanos/",
+      "reason": "Agregador atribuye PSOE 25,6%; fuente primaria Vozpópuli informa 26,4%. Se usa dato original."
+    },
+    {
+      "source": "https://www.rtve.es/noticias/20261005/encuestas-elecciones-generales-29n-pp-vox-diputados/17253873.shtml",
+      "reason": "Promedio de encuestas, no nueva encuesta independiente"
+    }
+  ],
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-03.json"
+  ],
+  "privacyAndIntegrity": {
+    "affinityBankUnchanged": true,
+    "selection30Unchanged": true,
+    "positionsUnchanged": true,
+    "supabaseUnchanged": true,
+    "countsUnchanged": true,
+    "individualResponsesUntouched": true,
+    "ipAndIdentifiersUntouched": true,
+    "notRepresentativeSurvey": true
+  },
+  "notes": "No se modificaron programas, posiciones, SQL, privacidad ni identificadores. NC Report: muestra no publicada en texto accesible, null. No se inventan estimaciones puntuales de escaños cuando solo se publican horquillas."
+}
