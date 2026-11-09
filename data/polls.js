@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-03",
+    "lastUpdated": "2026-11-09",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-02",
+    "to": "2026-11-08",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 51,
+    "totalPolls": 53,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1424,6 +1424,53 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-03",
       "note": "Fuente original Vozpópuli 02/11 04:44; 1.000 entrevistas CATI 22–28/10, margen 3,16%. PSOE 26,4% según publicación primaria (no 25,6% como indica un agregador). Frente Amplio 5,4% separado de Podemos. Una sola encuesta Hamalgama Métrica pese a múltiples artículos sobre la misma ola."
+    },
+    {
+      "id": "sondaxe-1108",
+      "pollster": "Sondaxe",
+      "publisher": "La Voz de Galicia",
+      "category": "prensa",
+      "published": "2026-11-08",
+      "fieldworkStart": "2026-11-02",
+      "fieldworkEnd": "2026-11-04",
+      "sample": 1200,
+      "vote": {
+        "PP": 29.7,
+        "PSOE": 27.3,
+        "VOX": 18.6,
+        "FRENTE_AMPLIO": 7.1
+      },
+      "seats": {},
+      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/06/feijoo-adelanta-pedro-sanchez-candidato-preferido-gobernar/00031793992905957222982.htm",
+      "sourceType": "original",
+      "addedAt": "2026-11-09",
+      "note": "Segunda ola nacional Sondaxe, campo 02–04/11, n=1200 CATI+CAWI, publicada 08/11. La Voz publica 29,7/27,3/18,6/7,1 por separado; Compromís aparece como candidatura territorial diferenciada en recopilación, sin sumarla a Frente Amplio. Sin escaños verificados en fuente primaria."
+    },
+    {
+      "id": "em-1108",
+      "pollster": "EM-Analytics",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-08",
+      "fieldworkStart": "2026-11-01",
+      "fieldworkEnd": "2026-11-06",
+      "sample": 1860,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 25.3,
+        "VOX": 19.2,
+        "FRENTE_AMPLIO": 6.1
+      },
+      "seats": {
+        "PP": 131,
+        "PSOE": 108,
+        "VOX": 66,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/electopanel-8-nov-el-bipartidismo-cede-terreno-vox-sube-en-escanos-y-eh-bildu-se-distancia-del-pnv/",
+      "sourceType": "original",
+      "addedAt": "2026-11-09",
+      "note": "ElectoPanel 08/11, n=1860 CAWI 01–06/11, 60% panel fijo, margen ±2,3%. Fuente primaria diferencia Frente Amplio 6,1% y Compromís–Front Valencià 1,5% (y Podemos 1,8%); advertencia editorial sobre coaliciones territoriales, no se suman. Oleada distinta a 01/11."
     }
   ]
 };
