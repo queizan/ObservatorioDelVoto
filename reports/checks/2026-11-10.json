@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-10",
+  "reviewStartedLocal": "2026-11-10T08:06:11+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "account": "queizan",
+  "baseline": {
+    "polls": 53,
+    "head": "bf3d43bdcc99d87709f68cdb7d7071c139aeb0d6"
+  },
+  "result": {
+    "pollsAdded": 2,
+    "pollsTotal": 55,
+    "programmesAdded": 0,
+    "supplementaryDocumentsAdded": 0
+  },
+  "addedPolls": [
+    {
+      "id": "40db-1109",
+      "published": "2026-11-09",
+      "fieldworkStart": "2026-11-02",
+      "fieldworkEnd": "2026-11-04",
+      "sample": 2000,
+      "sourceUrl": "https://elpais.com/espana/elecciones-generales/2026-11-09/el-bloque-de-la-derecha-mantiene-su-ventaja-pero-el-psoe-se-acerca-al-pp.html",
+      "notes": "Publicación primaria de El País y Cadena SER, 09/11; 2.000 entrevistas online del 02 al 04/11. PP 31,9%/129, PSOE 29,9%/119, Vox 18%/61, Frente Amplio 5%/10 según texto original. Otras recopilaciones discrepan (3,9% FA): se prioriza el dato explícito del medio original. No se incluyen respuestas individuales."
+    },
+    {
+      "id": "data10-1109",
+      "published": "2026-11-09",
+      "fieldworkStart": "2026-11-02",
+      "fieldworkEnd": "2026-11-03",
+      "sample": 1500,
+      "sourceUrl": "https://okdiario.com/espana/psoe-paga-tragedia-urda-hunde-hasta-97-escanos-mientras-pp-vox-suman-203-20728358",
+      "notes": "Fuente original OKDIARIO 09/11, ficha técnica: 1.500 entrevistas, campo 02–03/11, panel tabulado + CATI, margen ±2,8%. PP 32,4%/134 escaños sin añadir UPN (2 por separado), PSOE 24,7%/97, Vox 19,8%/69, Frente Amplio 6,9%/14; Podemos 3,1% por separado. Nueva ola distinta de 05/10."
+    }
+  ],
+  "reviewedNotAdded": [
+    {
+      "pollster": "NC Report",
+      "publisher": "La Razón",
+      "published": "2026-11-09",
+      "sourceUrl": "https://www.larazon.es/espana/gana-7-puntos-psoe-que-cae-100-escanos_202611096af1319903bbf30bb045239e.html",
+      "reason": "Nueva ola con cifras verificadas (PP 32,6; PSOE 25,6; Vox 19,3; FA 6,9) y campo 2–5 noviembre, pero no se verificó muestra técnica; no se inventa."
+    },
+    {
+      "pollster": "GAD3",
+      "publisher": "Vocento",
+      "published": "2026-11-09",
+      "reason": "Fuente primaria ABC inaccesible; requiere ficha y separación de candidaturas."
+    },
+    {
+      "pollster": "SW Demoscopia",
+      "publisher": "La Séptima",
+      "published": "2026-11-09",
+      "sourceUrl": "https://www.mundodeportivo.com/actualidad/20261109/1004249187/encuestas-elecciones-generales-2026-hoy-9-noviembre-psoe-sube-mayoria-absoluta-sigue-siendo-pp-vox-septima-dct.html",
+      "reason": "Tracking diario agregado con candidaturas territoriales y sin desglose ni ficha de ola nueva comprobables."
+    },
+    {
+      "pollster": "More in Common",
+      "published": "2026-11-03",
+      "reason": "Continúa pendiente verificar desglose territorial 7,8%."
+    }
+  ],
+  "programmeReview": [
+    {
+      "party": "PP",
+      "source": "https://www.pp.es/actualidad/documentos/",
+      "decision": "No se ha acreditado un programa completo nuevo de 2026 en las fuentes consultadas."
+    },
+    {
+      "party": "PSOE",
+      "source": "https://www.psoe.es/actualidad/documentos-de-interes/",
+      "decision": "Sin programa completo nuevo verificado."
+    },
+    {
+      "party": "Vox",
+      "source": "https://www.voxespana.es/",
+      "decision": "Sin programa completo nuevo verificado."
+    },
+    {
+      "party": "Sumar / Frente Amplio",
+      "source": "https://movimientosumar.es/",
+      "decision": "Sin programa completo nuevo verificado."
+    },
+    {
+      "party": "Otros partidos representados",
+      "decision": "Sin documento completo nuevo acreditado; revisión no exhaustiva."
+    }
+  ],
+  "privacyAndIntegrity": {
+    "affinityBankUnchanged": true,
+    "selection30Unchanged": true,
+    "positionsUnchanged": true,
+    "supabaseUnchanged": true,
+    "countsUnchanged": true,
+    "individualResponsesUntouched": true,
+    "ipAndIdentifiersUntouched": true,
+    "notRepresentativeSurvey": true
+  },
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-10.json"
+  ],
+  "verification": {
+    "schemaChecked": true,
+    "generatedJSMatchesRepositoryScriptFormat": true,
+    "ci": "pending",
+    "pages": "pending",
+    "mainHead": "pending"
+  }
+}
