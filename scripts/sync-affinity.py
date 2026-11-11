@@ -20,7 +20,8 @@ for question in d['questions']:
 assert set(d['parties'])==expected
 assert set(x['key'] for x in d['programmes'])==expected
 assert len(set(x['topic'] for x in d['questions'])) >= 15
-assert all(x.get('territory') and x.get('type') and x.get('year')==2023 for x in d['programmes'])
+assert all(x.get('territory') and x.get('type') and x.get('year') in (2023,2026) for x in d['programmes'])
+assert all(x.get('history') for x in d['programmes'] if x.get('year')==2026), '2026 programmes must preserve historical sources'
 for program in d['programmes']:
     assert program['url'].startswith('https://')
 tgt.write_text('/* AUTO-GENERATED from data/affinity.json */\nwindow.AFFINITY_BANK = '+json.dumps(d,ensure_ascii=False,indent=2)+';\n','utf8')

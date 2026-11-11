@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-11",
+  "reviewStartedLocal": "2026-11-11T07:55:29+01:00",
+  "timezone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "account": "queizan",
+  "baseline": {
+    "polls": 55,
+    "head": "7a246d5de6a1ffa75ddb1137507574c2ce5d53f0"
+  },
+  "result": {
+    "pollsAdded": 0,
+    "pollsTotal": 55,
+    "programmesReplaced": 1,
+    "supplementaryDocumentsAdded": 0
+  },
+  "newProgramme": {
+    "party": "PP",
+    "title": "La Reconstrucción Nacional",
+    "published": "2026-11-10",
+    "sourceUrl": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-LA-RECONSTRUCCION-NACIONAL.pdf",
+    "officialIndex": "https://www.pp.es/actualidad/documentos/",
+    "officialAnnouncement": "https://www.pp.es/actualidad/articulos/feijoo-presenta-el-programa-del-pp-como-la-cura-con-la-que-sanar-una-espana-herida-y-la-respuesta-para-reconstruir-el-pais/",
+    "status": "official-complete",
+    "oldProgrammePreservedIn": "data/affinity.json programmes[PP].history",
+    "limitation": "El PDF oficial de 12,28 MB supera el límite de extracción del navegador; comprobados título, publicación y carácter de programa completo en fuente oficial. No se han modificado posiciones del test sin lectura y prueba específica de cada cuestión."
+  },
+  "reviewedNotAdded": [
+    {
+      "pollster": "DYM",
+      "publisher": "20minutos",
+      "published": "2026-11-10",
+      "sourceUrl": "https://electomania.es/encuesta-dym-10-nov-pp-y-vox-conservan-la-absoluta-mientras-el-psoe-se-deja-un-punto/",
+      "reason": "Frente Amplio 5,6 % agregado con Compromís y UPC, sin desglose verificable; no insertar como FA exclusivo."
+    },
+    {
+      "pollster": "SW Demoscopia",
+      "publisher": "La Séptima",
+      "published": "2026-11-10",
+      "sourceUrl": "https://electomania.es/tracking-sw-demoscopia-10-nov-pp-y-vox-suman-un-escano-mas/",
+      "reason": "Frente Amplio 7,5 % agregado con candidaturas territoriales y sin desglose independiente."
+    },
+    {
+      "pollster": "GAD3",
+      "publisher": "ABC",
+      "published": "2026-11-10",
+      "sourceUrl": "https://electomania.es/",
+      "reason": "Ficha y desglose original no contrastados íntegramente."
+    }
+  ],
+  "programmeReview": [
+    {
+      "party": "PP",
+      "source": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-LA-RECONSTRUCCION-NACIONAL.pdf",
+      "decision": "Programa general completo 2026 oficial sustituye referencia vigente de 2023, conservada en historial. Posiciones sin alterar."
+    },
+    {
+      "party": "PSOE",
+      "source": "https://www.psoe.es/transparencia/informacion-politica-organizativa/programa/",
+      "decision": "No figura programa de generales 2026 en la página oficial consultada."
+    },
+    {
+      "party": "Vox",
+      "source": "https://www.voxespana.es/programa",
+      "decision": "No se acredita programa general 29N nuevo; PDF 2026 de Andalucía no aplica."
+    },
+    {
+      "party": "Sumar / Frente Amplio",
+      "source": "https://movimientosumar.es/programa-electoral-23j/",
+      "decision": "Sin nuevo programa general completo verificado."
+    },
+    {
+      "party": "Otras formaciones",
+      "source": "https://www.ondacero.es/elecciones/generales/que-sabe-programas-electorales-29n-propuestas-psoe-vox-frente-amplio-podemos_202610216ad750d3588d2f7b95b64cfd.html",
+      "decision": "No se verificó programa oficial completo nuevo."
+    }
+  ],
+  "privacyAndIntegrity": {
+    "questionBankUnchanged": true,
+    "selection30Unchanged": true,
+    "positionsUnchanged": true,
+    "supabaseUnchanged": true,
+    "countsUnchanged": true,
+    "individualResponsesUntouched": true,
+    "ipAndIdentifiersUntouched": true,
+    "notRepresentativeSurvey": true
+  },
+  "changedFiles": [
+    "data/affinity.json",
+    "data/affinity.js",
+    "scripts/sync-affinity.py",
+    "index.html",
+    "reports/checks/2026-11-11.json"
+  ],
+  "verification": {
+    "generatedJsFromJsonFormat": true,
+    "githubActions": "pending",
+    "pages": "pending",
+    "mainHead": "pending"
+  }
+}
