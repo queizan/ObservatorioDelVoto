@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Europe/Madrid",
+  "runLocalTime": "08:04 onwards",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "polls": {
+    "added": 1,
+    "total": 56,
+    "addedIds": [
+      "cis-1112"
+    ],
+    "sources": [
+      "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
+      "https://comparavoto.es/elecciones-generales-2026/encuestas/",
+      "https://mapaelectoral.es/actualidad/cis-preelectoral-29n/"
+    ],
+    "caveat": "CIS original PDF returned 403 automated access; study 3584, sample and party-specific FA 4.7 independently cross-checked. Sigma Dos and SW tracking excluded due territorial aggregates and lack of original verification."
+  },
+  "programmes": {
+    "fullReplacements": 0,
+    "complementsAdded": 1,
+    "party": "VOX",
+    "source": "https://www.voxespana.es/abascal/es-sentido-comun-estas-son-las-medidas-de-vox-para-el-29n-20261112",
+    "reason": "Official thirteen-area election proposals summary; retained 2023 programme until a full 2026 document can be verified."
+  },
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-11-13.json"
+  ],
+  "integrity": {
+    "pollIdsUnique": true,
+    "affinityBankQuestions": 54,
+    "quizSelection": 30,
+    "partyCount": 11,
+    "questionPositionsUnchanged": true,
+    "privacyUnchanged": true,
+    "supabaseUnchanged": true,
+    "sqlUnchanged": true,
+    "personalDataUnchanged": true,
+    "jsRegeneratedWithRepositoryScriptFormat": true
+  },
+  "publication": {
+    "mainUpdatesCommitted": true,
+    "ci": "pending verification",
+    "pages": "pending verification"
+  }
+}
