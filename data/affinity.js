@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-11-11-pp-official-programme",
+  "version": "2026-11-13-vox-official-13-areas-supplement",
   "programYear": 2026,
   "questionCount": 30,
   "parties": [
@@ -144,6 +144,15 @@ window.AFFINITY_BANK = {
           "url": "https://www.voxespana.es/wp-content/uploads/2026/06/Programa-2026-envio.pdf",
           "status": "complemento",
           "note": "Presentado oficialmente el 27/06/2026; localizado y verificado en revisión del 30/10/2026. Documento sectorial, no sustituye al programa de generales de 2023 ni acredita por sí solo posiciones del cuestionario. Fuente: voxespana.es/vox-contra-la-hiperregulacion y noticia oficial del 27/06."
+        },
+        {
+          "title": "Es sentido común — 13 áreas de propuestas para el 29N",
+          "year": 2026,
+          "date": "2026-11-12",
+          "type": "Publicación oficial de propuestas para elecciones generales 2026; resumen web en 13 áreas, complemento hasta verificar documento programático íntegro",
+          "url": "https://www.voxespana.es/abascal/es-sentido-comun-estas-son-las-medidas-de-vox-para-el-29n-20261112",
+          "status": "complemento",
+          "note": "Publicación oficial de VOX del 12/11/2026. El texto describe 13 áreas programáticas, pero no enlaza PDF íntegro; no sustituye por ahora el programa de 2023. Sin actualización automática de posiciones del cuestionario."
         }
       ]
     },
