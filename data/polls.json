@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-11-10",
+    "lastUpdated": "2026-11-13",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-09",
+    "to": "2026-11-12",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 55,
+    "totalPolls": 56,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1522,6 +1522,27 @@
       "sourceType": "original",
       "addedAt": "2026-11-10",
       "note": "Fuente original OKDIARIO 09/11, ficha técnica: 1.500 entrevistas, campo 02–03/11, panel tabulado + CATI, margen ±2,8%. PP 32,4%/134 escaños sin añadir UPN (2 por separado), PSOE 24,7%/97, Vox 19,8%/69, Frente Amplio 6,9%/14; Podemos 3,1% por separado. Nueva ola distinta de 05/10."
+    },
+    {
+      "id": "cis-1112",
+      "pollster": "CIS",
+      "publisher": "CIS · Preelectoral elecciones generales 2026 (estudio 3584)",
+      "category": "organismo",
+      "published": "2026-11-12",
+      "fieldworkStart": "2026-10-07",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 45074,
+      "vote": {
+        "PP": 25.5,
+        "PSOE": 33.3,
+        "VOX": 18.4,
+        "FRENTE_AMPLIO": 4.7
+      },
+      "seats": {},
+      "sourceUrl": "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
+      "sourceType": "original",
+      "addedAt": "2026-11-13",
+      "note": "Estudio CIS 3584, 45.074 entrevistas telefónicas, campo 07–30/10, publicado 12/11. Estimación PP 25,5%, PSOE 33,3%, Vox 18,4%, Frente Amplio 4,7% (separado de candidaturas territoriales); fuente oficial PDF devuelve 403 al acceso automatizado, cifras cotejadas con comparaVoto y Mapa Electoral. Se omiten escaños para evitar convertir horquillas en valores puntuales; PSOE 134–143, PP 98–106, Vox 57–65. No confundir con 6,9% agregado Sumar reportado por algunas fuentes."
     }
   ]
 }
