@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-11-13-vox-official-13-areas-supplement",
+  "version": "2026-11-14-vox-full-program-electopanel-57",
   "programYear": 2026,
   "questionCount": 30,
   "parties": [
@@ -131,10 +131,10 @@ window.AFFINITY_BANK = {
     {
       "key": "VOX",
       "label": "Vox",
-      "url": "https://www.voxespana.es/programa/programa-electoral-Vox",
+      "url": "https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf",
       "territory": "España",
-      "type": "Programa generales 2023",
-      "year": 2023,
+      "type": "Programa electoral generales 2026 — Programa completo 29N",
+      "year": 2026,
       "supplementaryDocuments": [
         {
           "title": "¡Al grano! Una vida más fácil — Programa de desregulación",
@@ -154,7 +154,19 @@ window.AFFINITY_BANK = {
           "status": "complemento",
           "note": "Publicación oficial de VOX del 12/11/2026. El texto describe 13 áreas programáticas, pero no enlaza PDF íntegro; no sustituye por ahora el programa de 2023. Sin actualización automática de posiciones del cuestionario."
         }
-      ]
+      ],
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://www.voxespana.es/programa/programa-electoral-Vox",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Sustituido por el programa completo oficial del 29N de 2026; se conserva para consulta histórica."
+        }
+      ],
+      "date": "2026-11-13",
+      "note": "La página oficial voxespana.es/programa identifica expresamente el PDF como programa completo para elecciones generales del 29N de 2026. PDF 14,5 MB, inaccesible íntegramente por límite de extracción; posiciones del cuestionario sin cambios hasta revisión de evidencia. Conservado 2023 en history."
     },
     {
       "key": "SUMAR",
