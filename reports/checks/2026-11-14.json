@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Europe/Madrid",
+  "runLocalTime": "07:58–08:00 approx",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "polls": {
+    "added": 1,
+    "total": 57,
+    "addedIds": [
+      "ep-1113"
+    ],
+    "source": "https://electomania.es/electopanel-13-nov-el-pp-mejora-y-vox-baja-ligeramente/",
+    "excluded": [
+      "40dB tracking 13 Nov",
+      "SW Demoscopia tracking 13 Nov",
+      "Sigma Dos tracking 13 Nov",
+      "Winston 13 Nov"
+    ],
+    "reason": "Territorial candidacy aggregation or insufficient original methodology verification"
+  },
+  "programmes": {
+    "fullReplacements": 1,
+    "party": "VOX",
+    "officialPage": "https://www.voxespana.es/programa",
+    "fullPDF": "https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf",
+    "note": "Official full programme linked on party site; PDF oversized for full text extraction, therefore positions not revised. 2023 preserved in history."
+  },
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "data/affinity.json",
+    "data/affinity.js",
+    "index.html",
+    "reports/checks/2026-11-14.json"
+  ],
+  "integrity": {
+    "pollIdsUnique": true,
+    "affinityBankQuestions": 54,
+    "quizSelection": 30,
+    "partyCount": 11,
+    "positionsUnchanged": true,
+    "privacyUnchanged": true,
+    "supabaseUnchanged": true,
+    "sqlUnchanged": true
+  },
+  "publication": {
+    "mainUpdatesCommitted": "pending",
+    "ci": "pending",
+    "pages": "pending"
+  }
+}
