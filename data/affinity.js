@@ -1,6 +1,6 @@
 /* AUTO-GENERATED from data/affinity.json */
 window.AFFINITY_BANK = {
-  "version": "2026-11-14-vox-full-program-electopanel-57",
+  "version": "2026-11-14-vox-programa-2026-revision-documental",
   "programYear": 2026,
   "questionCount": 30,
   "parties": [
@@ -166,7 +166,7 @@ window.AFFINITY_BANK = {
         }
       ],
       "date": "2026-11-13",
-      "note": "La página oficial voxespana.es/programa identifica expresamente el PDF como programa completo para elecciones generales del 29N de 2026. PDF 14,5 MB, inaccesible íntegramente por límite de extracción; posiciones del cuestionario sin cambios hasta revisión de evidencia. Conservado 2023 en history."
+      "note": "Programa oficial 29N 2026 contrastado con PDF completo (66 páginas). Posiciones explícitas revisadas en 11 preguntas; las restantes conservan su valor previo cuando no existe contradicción directa o permanecen sin evidencia. No interpretar ausencia de propuesta como oposición. Revisión documental 14/11/2026."
     },
     {
       "key": "SUMAR",
@@ -260,7 +260,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 1,
         "PSOE": 2,
-        "VOX": 0,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": 2,
         "JUNTS": null,
@@ -317,7 +317,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 0,
         "PSOE": 1,
-        "VOX": -1,
+        "VOX": 1,
         "SUMAR": 2,
         "ERC": 1,
         "JUNTS": null,
@@ -507,7 +507,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 2,
         "PSOE": -1,
-        "VOX": 1,
+        "VOX": 2,
         "SUMAR": -1,
         "ERC": null,
         "JUNTS": null,
@@ -545,7 +545,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 2,
         "PSOE": 2,
-        "VOX": 1,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": null,
         "JUNTS": null,
@@ -868,7 +868,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 2,
         "PSOE": 2,
-        "VOX": 1,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": 2,
         "JUNTS": 1,
@@ -982,7 +982,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 1,
         "PSOE": 2,
-        "VOX": null,
+        "VOX": 1,
         "SUMAR": null,
         "ERC": null,
         "JUNTS": null,
@@ -1115,7 +1115,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 1,
         "PSOE": 2,
-        "VOX": null,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": null,
         "JUNTS": null,
@@ -1172,7 +1172,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 2,
         "PSOE": 2,
-        "VOX": null,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": null,
         "JUNTS": null,
@@ -1191,7 +1191,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": null,
         "PSOE": 2,
-        "VOX": null,
+        "VOX": 2,
         "SUMAR": 2,
         "ERC": null,
         "JUNTS": null,
@@ -1229,7 +1229,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": null,
         "PSOE": 2,
-        "VOX": null,
+        "VOX": 1,
         "SUMAR": 2,
         "ERC": null,
         "JUNTS": null,
@@ -1248,7 +1248,7 @@ window.AFFINITY_BANK = {
       "positions": {
         "PP": 1,
         "PSOE": 1,
-        "VOX": null,
+        "VOX": 2,
         "SUMAR": null,
         "ERC": null,
         "JUNTS": null,
