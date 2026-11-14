@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-13",
+    "lastUpdated": "2026-11-14",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-12",
+    "to": "2026-11-13",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 56,
+    "totalPolls": 57,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1544,6 +1544,31 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-13",
       "note": "Estudio CIS 3584, 45.074 entrevistas telefónicas, campo 07–30/10, publicado 12/11. Estimación PP 25,5%, PSOE 33,3%, Vox 18,4%, Frente Amplio 4,7% (separado de candidaturas territoriales); fuente oficial PDF devuelve 403 al acceso automatizado, cifras cotejadas con comparaVoto y Mapa Electoral. Se omiten escaños para evitar convertir horquillas en valores puntuales; PSOE 134–143, PP 98–106, Vox 57–65. No confundir con 6,9% agregado Sumar reportado por algunas fuentes."
+    },
+    {
+      "id": "ep-1113",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-13",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-12",
+      "sample": 1901,
+      "vote": {
+        "PP": 30.4,
+        "PSOE": 26.1,
+        "VOX": 19,
+        "FRENTE_AMPLIO": 6.2
+      },
+      "seats": {
+        "PP": 125,
+        "PSOE": 110,
+        "VOX": 65,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/electopanel-13-nov-el-pp-mejora-y-vox-baja-ligeramente/",
+      "sourceType": "original",
+      "notes": "Tracking nacional CAWI; 60% panelistas fijos; margen ±2,3% al 95,5%. Frente Amplio 6,2% separado de Compromís–Front Valencià 1,6% y Podemos 1,5%. No es encuesta representativa del test de afinidad."
     }
   ]
 };
