@@ -45,8 +45,9 @@
     "sqlUnchanged": true
   },
   "publication": {
-    "mainUpdatesCommitted": "pending",
-    "ci": "pending",
-    "pages": "pending"
+    "mainUpdatesCommitted": true,
+    "ci": "not verifiable: workflow connector returned no runs",
+    "pages": "not verified",
+    "note": "Changes confirmed on main; public Pages deployment not asserted."
   }
 }
