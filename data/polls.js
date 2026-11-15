@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-14",
+    "lastUpdated": "2026-11-15",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-13",
+    "to": "2026-11-14",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 57,
+    "totalPolls": 58,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1569,6 +1569,32 @@ window.PULSO_DATA = {
       "sourceUrl": "https://electomania.es/electopanel-13-nov-el-pp-mejora-y-vox-baja-ligeramente/",
       "sourceType": "original",
       "notes": "Tracking nacional CAWI; 60% panelistas fijos; margen ±2,3% al 95,5%. Frente Amplio 6,2% separado de Compromís–Front Valencià 1,6% y Podemos 1,5%. No es encuesta representativa del test de afinidad."
+    },
+    {
+      "id": "ep-1114",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-14",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-13",
+      "sample": 2348,
+      "vote": {
+        "PP": 30.6,
+        "PSOE": 26.5,
+        "VOX": 18.8,
+        "FRENTE_AMPLIO": 6.1
+      },
+      "seats": {
+        "PP": 128,
+        "PSOE": 110,
+        "VOX": 62,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-14-nov-pp-y-psoe-avanzan-con-vox-a-la-baja/",
+      "sourceType": "original",
+      "addedAt": "2026-11-15",
+      "note": "Tracking ElectoPanel 14/11, fuente primaria 17:14; 2348 CAWI 09–13/11, 60% panelistas fijos, error ±2,1% (95,5%). Frente Amplio 6,1% separado de Compromís–Front Valencià 1,6% y Podemos 1,4%. Oleada distinta de 13/11."
     }
   ]
 };

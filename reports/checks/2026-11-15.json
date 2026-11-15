@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Europe/Madrid",
+  "runLocalTime": "07:56–08:00 approx",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "polls": {
+    "added": 1,
+    "total": 58,
+    "addedIds": [
+      "ep-1114"
+    ],
+    "source": "https://electomania.es/tracking-electopanel-14-nov-pp-y-psoe-avanzan-con-vox-a-la-baja/",
+    "excluded": [
+      "SW Demoscopia 14 Nov: Frente Amplio agregado con candidaturas territoriales",
+      "40dB daily tracking 14 Nov: insufficient original full methodology confirmation",
+      "Promedios de encuestas: no son nuevas encuestas"
+    ],
+    "reason": "No mezclar candidaturas ni duplicar oleadas"
+  },
+  "programmes": {
+    "newVerifiedFull": 0,
+    "newVerifiedComplementary": 0,
+    "reviewedOfficialSites": [
+      "https://www.pp.es/actualidad/documentos/",
+      "https://www.psoe.es/transparencia/informacion-politica-organizativa/programa/",
+      "https://www.voxespana.es/programa",
+      "https://movimientosumar.es/"
+    ],
+    "note": "No se acreditó nuevo programa general completo ni complemento oficial inequívoco; programas previos conservados."
+  },
+  "filesChanged": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-15.json"
+  ],
+  "integrity": {
+    "pollIdsUnique": true,
+    "pollCount": 58,
+    "fieldDatesValid": true,
+    "partiesSeparated": true,
+    "affinityUnchanged": true,
+    "privacyUnchanged": true,
+    "supabaseUnchanged": true,
+    "sqlUnchanged": true
+  },
+  "publication": {
+    "mainUpdatesCommitted": "pending",
+    "ci": "pending",
+    "pages": "pending"
+  }
+}
