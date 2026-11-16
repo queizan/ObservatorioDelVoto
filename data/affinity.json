@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-14-vox-programa-2026-revision-documental",
+  "version": "2026-11-16-psoe-programa-2026",
   "programYear": 2026,
   "questionCount": 30,
   "parties": [
@@ -122,10 +122,22 @@
     {
       "key": "PSOE",
       "label": "Partido Socialista Obrero Español",
-      "url": "https://www.psoe.es/actualidad/noticias-actualidad/programa-electoral-del-psoe-para-el-23j/",
+      "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26-1.pdf",
       "territory": "España",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "type": "Programa electoral generales 2026 — programa completo 29N",
+      "year": 2026,
+      "date": "2026-11-15",
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://www.psoe.es/actualidad/noticias-actualidad/programa-electoral-del-psoe-para-el-23j/",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Sustituido por el programa electoral oficial completo del 29N 2026, publicado el 15/11/2026."
+        }
+      ],
+      "note": "PDF completo oficial enlazado por el PSOE el 15/11/2026. La extracción íntegra del documento no ha sido posible por tamaño (aprox. 12 MB); las posiciones del cuestionario quedan pendientes de revisión individual con evidencia, sin modificaciones automáticas."
     },
     {
       "key": "VOX",
