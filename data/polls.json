@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-11-15",
+    "lastUpdated": "2026-11-17",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-14",
+    "to": "2026-11-16",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 58,
+    "totalPolls": 59,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1594,6 +1594,32 @@
       "sourceType": "original",
       "addedAt": "2026-11-15",
       "note": "Tracking ElectoPanel 14/11, fuente primaria 17:14; 2348 CAWI 09–13/11, 60% panelistas fijos, error ±2,1% (95,5%). Frente Amplio 6,1% separado de Compromís–Front Valencià 1,6% y Podemos 1,4%. Oleada distinta de 13/11."
+    },
+    {
+      "id": "ep-1116",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-16",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-15",
+      "sample": 3294,
+      "vote": {
+        "PP": 30.5,
+        "PSOE": 26.9,
+        "VOX": 18.9,
+        "FRENTE_AMPLIO": 6.1
+      },
+      "seats": {
+        "PP": 124,
+        "PSOE": 113,
+        "VOX": 65,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-16-nov-el-psoe-avanza-con-la-suma-de-pp-y-vox-en-189-escanos/",
+      "sourceType": "original",
+      "addedAt": "2026-11-17",
+      "note": "Tracking CAWI nacional 09–15/11, n=3294, ±1,7% al 95,5%, 60% panel fijo. Frente Amplio 6,1% separado de Compromís-Front Valencià 1,6%, Podemos 1,2% y ERC-Podemos 2,4%. Oleada 16/11 distinta de 14/11."
     }
   ]
 }
