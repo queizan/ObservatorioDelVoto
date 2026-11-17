@@ -24,13 +24,22 @@
   <link rel="stylesheet" href="styles.css?v=20261028-programas">
   <link rel="stylesheet" href="affinity.css">
   <script defer src="data/polls.js?v=20261117-59-polls"></script>
-  <script defer src="app.js?v=20261020-frente-amplio"></script>
+  <script defer src="app.js?v=20261117-timeline-range"></script>
   <script defer src="data/affinity.js?v=20261117-programas"></script>
   <script defer src="config/affinity-public.js"></script>
   <script defer src="affinity.js?v=20261021-pp"></script>
   <script defer src="program-documents.js?v=20261028"></script>
   <title>Observatorio del voto · 29N</title>
-</head>
+<style>
+.timeline-date-controls{margin:14px 0 12px;display:grid;gap:10px}
+.timeline-range-modes,.timeline-date-fields{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.timeline-date-fields[hidden]{display:none}
+.timeline-date-fields label{display:flex;gap:7px;align-items:center;font-size:.85rem}
+.timeline-date-fields input{font:inherit;padding:8px;border:1px solid #cbd0d0;border-radius:7px;background:#fff;color:#17232a;max-width:155px}
+.timeline-date-controls .chart-footnote{margin:0}
+.campaign-line{stroke:#e3a12e;stroke-width:2;stroke-dasharray:5 4}
+.campaign-label{fill:#996200;font-size:10px;font-weight:700}
+</style></head>
 <body>
   <div class="layout">
     <header class="topbar">
@@ -152,22 +161,28 @@
         <div class="section-heading lower-heading"><div><p class="eyebrow text-muted">03 / SERIE TEMPORAL</p><h2>Cómo cambia la media</h2><p>Evolución de la media disponible por fecha de publicación; se utiliza la última medición de cada instituto en cada corte.</p></div></div>
         <article class="panel timeline-panel">
           <div class="timeline-controls" id="timelineLegend"><button class="line-toggle active" data-party="PP" aria-pressed="true"><span style="--dot:#1767B2"></span>PP</button><button class="line-toggle active" data-party="PSOE" aria-pressed="true"><span style="--dot:#E0454D"></span>PSOE</button><button class="line-toggle active" data-party="VOX" aria-pressed="true"><span style="--dot:#5C9739"></span>Vox</button><button class="line-toggle active" data-party="SUMAR" aria-pressed="true"><span style="--dot:#D64D9B"></span>Sumar · histórico</button><button class="line-toggle active" data-party="FRENTE_AMPLIO" aria-pressed="true"><span style="--dot:#9B4BCA"></span>Frente Amplio</button></div>
+          <div class="timeline-date-controls" aria-label="Intervalo de fechas de la serie temporal">
+            <div class="timeline-range-modes" role="group" aria-label="Vista temporal">
+              <button type="button" id="timelineGlobal" class="line-toggle active" aria-pressed="true">Global · toda la evolución</button>
+              <button type="button" id="timelineCustom" class="line-toggle" aria-pressed="false">Acotar fechas</button>
+            </div>
+            <div class="timeline-date-fields" id="timelineDateFields" hidden>
+              <label>Desde <input type="date" id="timelineFrom" aria-label="Fecha inicial"></label>
+              <label>Hasta <input type="date" id="timelineTo" aria-label="Fecha final"></label>
+              <button type="button" id="timelineReset" class="line-toggle">Restablecer</button>
+            </div>
+            <p id="timelineRangeStatus" class="chart-footnote" aria-live="polite">Vista global · todas las fechas</p>
+            <p class="chart-footnote"><span style="display:inline-block;width:12px;height:12px;background:#f0ad38;border-radius:3px;vertical-align:middle"></span> Inicio de campaña: viernes 13 de noviembre de 2026.</p>
+          </div>
           <div id="timeline" class="timeline"></div>
-          <p class="chart-footnote">Sumar histórico y Frente Amplio aparecen en series distintas, sin conectar sus trazos: cada punto de coalición se calcula solo a partir de sondeos que la miden expresamente. La marca vertical señala el registro electoral de Frente Amplio el 16 de octubre de 2026. <a href="https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/" target="_blank" rel="noopener noreferrer">Fuente del cambio ↗</a></p>
+          <p class="chart-footnote">Sumar histórico y Frente Amplio aparecen en series distintas, sin conectar sus trazos: cada punto de coalición se calcula solo a partir de sondeos que la miden expresamente. Las marcas verticales señalan el registro de Frente Amplio (16 de octubre) y el inicio de campaña (13 de noviembre). <a href="https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/" target="_blank" rel="noopener noreferrer">Fuente del cambio ↗</a></p>
         </article>
         <div class="cta-strip"><div><span class="eyebrow">IR MÁS ALLÁ DE LA MEDIA</span><h3>Dos encuestas. Dos miradas.</h3><p>Compara sus cifras, las diferencias por partido y la ficha de cada sondeo.</p></div><a href="#comparador" class="button button-dark">Abrir comparador <span aria-hidden="true">↗</span></a></div>
         <section class="updates-section" aria-labelledby="updates-title">
           <div class="section-heading updates-heading"><div><p class="eyebrow text-muted">04 / NUEVAS PUBLICACIONES</p><h2 id="updates-title">Última actualización</h2><p>Las incorporaciones más recientes al archivo nacional, con fecha, medio e instituto.</p></div><span id="latestCut" class="section-aside"></span></div>
           <div class="panel updates-panel"><div id="latestUpdates" class="updates-list"></div><div class="updates-footer"><span>Datos procedentes de las fichas del archivo de encuestas.</span><a href="#archivo">Ver todas las encuestas ↗</a></div></div>
         </section>
-        <section class="affinity-overview" aria-labelledby="affinity-overview-title">
-          <div class="section-heading updates-heading"><div><p class="eyebrow text-muted">05 / PARTICIPACIÓN</p><h2 id="affinity-overview-title">La voz de los visitantes</h2><p>Estadísticas agregadas voluntarias de un test no oficial. No son una encuesta representativa ni una estimación de voto.</p></div></div>
-          <article class="panel affinity-overview-panel">
-            <div class="affinity-overview-top"><div><span class="panel-eyebrow">AFINIDADES COMPARTIDAS</span><h3>Distribución de primeras afinidades</h3></div><a class="button button-outline" href="#afinidad">Hacer el test de 30 preguntas ↗</a></div>
-            <div id="affinityPublicChart" class="affinity-public-chart" aria-live="polite"><p class="affinity-muted">Cargando participación…</p></div>
-            <p class="chart-footnote">Recuento voluntario y autoseleccionado de visitantes, no una estimación de voto. Cada envío suma una primera coincidencia; una misma persona puede participar más de una vez. No es una encuesta representativa.</p>
-          </article>
-        </section>
+
       </section>
 
       <section id="afinidad" class="page" aria-labelledby="affinity-title" hidden>
