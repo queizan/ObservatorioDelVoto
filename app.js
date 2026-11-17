@@ -138,24 +138,39 @@
     $('coalitionClear').addEventListener('click',()=>{coalitionSelectedKeys.clear();renderCoalition(currentCoalitionSeats);});
   }
 
-  const xyDate = iso => Math.round((new Date(iso+'T12:00:00Z')-new Date('2026-09-01T12:00:00Z'))/86400000);
+  const campaignStart='2026-11-13';
+  const timelineRange={custom:false,from:'',to:''};
+  const dayNumber=iso=>Date.parse(iso+'T12:00:00Z')/86400000;
   function drawTimeline(){
     const allowed=scoped(allPolls),dates=[...new Set(allowed.map(p=>p.published))].sort();
     if(!dates.length){$('timeline').innerHTML='';return;}
-    const W=1050,H=300,l=41,r=14,t=23,b=34,endDate=dates[dates.length-1],spanDays=Math.max(1,xyDate(endDate));
-    const x=day=>l+(xyDate(day)/spanDays)*(W-l-r),y=v=>t+(40-v)/40*(H-t-b);
+    const first=dates[0],last=dates[dates.length-1];
+    const from=timelineRange.custom?(timelineRange.from||first):first;
+    const to=timelineRange.custom?(timelineRange.to||last):last;
+    const global=$('timelineGlobal'),custom=$('timelineCustom');
+    global.classList.toggle('active',!timelineRange.custom);global.setAttribute('aria-pressed',String(!timelineRange.custom));
+    custom.classList.toggle('active',timelineRange.custom);custom.setAttribute('aria-pressed',String(timelineRange.custom));
+    $('timelineDateFields').hidden=!timelineRange.custom;
+    const visibleDates=dates.filter(day=>day>=from&&day<=to);
+    $('timelineRangeStatus').textContent=timelineRange.custom?
+      'Intervalo: '+fmtDate(from)+' — '+fmtDate(to)+' · '+visibleDates.length+' fechas con encuestas':
+      'Vista global · '+fmtDate(first)+' — '+fmtDate(last);
+    if(from>to){$('timeline').innerHTML='<p class="chart-footnote">La fecha inicial debe ser anterior o igual a la final.</p>';return;}
+    if(!visibleDates.length){$('timeline').innerHTML='<p class="chart-footnote">No hay encuestas publicadas en este intervalo. Selecciona otras fechas.</p>';return;}
+    const W=1050,H=320,l=43,r=18,t=29,b=39,span=Math.max(1,dayNumber(to)-dayNumber(from));
+    const x=day=>l+((dayNumber(day)-dayNumber(from))/span)*(W-l-r);
+    const y=v=>t+(40-v)/40*(H-t-b);
+    const tickFormat=day=>new Date(day+'T12:00:00Z').toLocaleDateString('es-ES',{day:'2-digit',month:'short',timeZone:'UTC'}).replace(/\\./g,'').toUpperCase();
     let lines='';for(let v of [0,10,20,30,40])lines+=`<line class="grid-line" x1="${l}" x2="${W-r}" y1="${y(v)}" y2="${y(v)}"/><text x="${l-11}" y="${y(v)+4}" text-anchor="end">${v}%</text>`;
-    const months=['2026-09-01','2026-10-01','2026-11-01'].filter(day=>day<=endDate),ticks=[months[0]];
-    if(endDate<='2026-10-15'&&endDate>='2026-09-15')ticks.push('2026-09-15');
-    ticks.push(...months.slice(1));if(!ticks.includes(endDate))ticks.push(endDate);
-    const tickFormat=day=>new Date(day+'T12:00:00Z').toLocaleDateString('es-ES',{day:'2-digit',month:'short',timeZone:'UTC'}).replace(/\./g,'').toUpperCase();
-    for(const [i,day] of ticks.entries()){if(i>0&&i<ticks.length-1&&xyDate(ticks[i+1])-xyDate(day)<8)continue;lines+=`<text x="${x(day)}" y="${H-7}" text-anchor="${i===0?'start':i===ticks.length-1?'end':'middle'}">${tickFormat(day)}</text>`;}
+    const tickCount=span<=14?Math.min(span,7):span<=45?6:4;
+    const ticks=[...new Set(Array.from({length:tickCount+1},(_,i)=>{const n=dayNumber(from)+Math.round(span*i/tickCount);return new Date(n*86400000).toISOString().slice(0,10)}))];
+    for(let i=0;i<ticks.length;i++)lines+=`<text x="${x(ticks[i])}" y="${H-9}" text-anchor="${i===0?'start':i===ticks.length-1?'end':'middle'}">${tickFormat(ticks[i])}</text>`;
     const transition=dataset.metadata.candidacyTransition;
-    if(transition&&transition.date>=dates[0]&&transition.date<=endDate){const xx=x(transition.date);lines+=`<line class="transition-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><text class="transition-label" x="${xx-5}" y="13" text-anchor="end">16 OCT · FRENTE AMPLIO</text>`;}
+    if(transition&&transition.date>=from&&transition.date<=to){const xx=x(transition.date);lines+=`<line class="transition-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><title>Registro Frente Amplio · 16 octubre</title>`;}
+    if(campaignStart>=from&&campaignStart<=to){const xx=x(campaignStart);lines+=`<line class="campaign-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><text class="campaign-label" x="${Math.min(W-r-8,xx+5)}" y="14" text-anchor="${xx>W-210?'end':'start'}">13 NOV · INICIO CAMPAÑA</text>`;}
     const rendered=parties.filter(p=>state.lines.has(p.key)).map(p=>{
       const isCandidacy=CANDIDACIES.includes(p.key),cohort=isCandidacy?allowed.filter(row=>candidacyOf(row)===p.key):allowed;
-      // For coalition series only plot dates with an actual survey of that precise candidate.
-      const seriesDates=isCandidacy?[...new Set(cohort.map(row=>row.published))].sort():dates;
+      const seriesDates=(isCandidacy?[...new Set(cohort.map(row=>row.published))].sort():dates).filter(day=>day>=from&&day<=to);
       const points=seriesDates.map(day=>{
         const recent=latestPerHouse(cohort.filter(row=>row.published<=day)),values=recent.map(row=>row.vote[p.key]).filter(Number.isFinite);
         if(!values.length)return null;const value=mean(values);return {date:day,size:values.length,coords:[x(day),y(value)],value};
@@ -165,7 +180,7 @@
       const circles=points.map(row=>`<circle cx="${row.coords[0]}" cy="${row.coords[1]}" r="3.4" fill="${p.color}" stroke="#fff" stroke-width="1"><title>${fmtDate(row.date)} · ${p.label}: ${pct(row.value)} · ${row.size} institutos</title></circle>`).join('');
       return `<path class="series-line" stroke="${p.color}" d="${path}"/>${circles}`;
     }).join('');
-    $('timeline').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Evolución histórica: Sumar y Frente Amplio se muestran como series distintas">${lines}${rendered}</svg>`;
+    $('timeline').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Evolución de encuestas desde ${fmtDate(from)} hasta ${fmtDate(to)}">${lines}${rendered}</svg>`;
   }
   function renderUpdates(){
     const byInsertion=[...allPolls].sort((a,b)=>(b.addedAt||b.published).localeCompare(a.addedAt||a.published) || b.published.localeCompare(a.published) || a.id.localeCompare(b.id));
@@ -279,6 +294,14 @@
     $('candidacyFilter').value=state.candidacy;
     $('candidacyFilter').addEventListener('change',ev=>{state.candidacy=ev.target.value;coalitionSelectedKeys.clear();renderOverview();});
     document.querySelectorAll('[data-party]').forEach(b=>b.addEventListener('click',()=>{if(state.lines.has(b.dataset.party)){state.lines.delete(b.dataset.party);b.classList.remove('active');b.setAttribute('aria-pressed','false');}else{state.lines.add(b.dataset.party);b.classList.add('active');b.setAttribute('aria-pressed','true');}drawTimeline();}));
+    const timelineDates=allPolls.map(p=>p.published).sort();
+    const minDate=timelineDates[0],maxDate=timelineDates[timelineDates.length-1];
+    for(const id of ['timelineFrom','timelineTo']){$(id).min=minDate;$(id).max=maxDate;}
+    $('timelineFrom').value=minDate;$('timelineTo').value=maxDate;
+    $('timelineGlobal').addEventListener('click',()=>{timelineRange.custom=false;drawTimeline();});
+    $('timelineCustom').addEventListener('click',()=>{timelineRange.custom=true;timelineRange.from=$('timelineFrom').value;timelineRange.to=$('timelineTo').value;drawTimeline();});
+    $('timelineReset').addEventListener('click',()=>{$('timelineFrom').value=minDate;$('timelineTo').value=maxDate;timelineRange.from=minDate;timelineRange.to=maxDate;drawTimeline();});
+    for(const [id,key] of [['timelineFrom','from'],['timelineTo','to']])$(id).addEventListener('change',()=>{timelineRange.custom=true;timelineRange[key]=$(id).value;drawTimeline();});
     $('archiveSearch').addEventListener('input',renderArchive);$('archiveMonth').addEventListener('change',renderArchive);$('archiveType').addEventListener('change',renderArchive);$('exportCSV').addEventListener('click',csvDownload);
     initCoalition();renderMeta();renderUpdates();
     initCompare();$('compareA').addEventListener('change',renderCompare);$('compareB').addEventListener('change',renderCompare);
