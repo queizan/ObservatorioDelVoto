@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16-psoe-programa-2026",
+  "version": "2026-11-17-programas-2026-revision",
   "programYear": 2026,
   "questionCount": 30,
   "parties": [
@@ -182,18 +182,42 @@
     {
       "key": "SUMAR",
       "label": "Sumar (coalición 2023)",
-      "url": "https://movimientosumar.es/wp-content/uploads/2023/07/Un-Programa-para-ti.pdf",
+      "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
       "territory": "España",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "type": "Programa electoral completo 29N 2026 (151 páginas)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://movimientosumar.es/wp-content/uploads/2023/07/Un-Programa-para-ti.pdf",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-15",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     },
     {
       "key": "ERC",
       "label": "ERC · Esquerra Republicana",
       "territory": "Cataluña",
-      "url": "https://beteve.cat/politica/programa-erc-eleccions-generals-2023/",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "url": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
+      "type": "Programa electoral generales 2026 (48 páginas)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://beteve.cat/politica/programa-erc-eleccions-generals-2023/",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-05",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     },
     {
       "key": "JUNTS",
@@ -215,33 +239,81 @@
       "key": "PNV",
       "label": "EAJ-PNV",
       "territory": "País Vasco",
-      "url": "https://www.eaj-pnv.eus/es/documentos/20945/con-voz-propia-programa-electoral-23-j",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "url": "https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/",
+      "type": "Programa electoral generales 2026 (web oficial)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://www.eaj-pnv.eus/es/documentos/20945/con-voz-propia-programa-electoral-23-j",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-12",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     },
     {
       "key": "BNG",
       "label": "BNG",
       "territory": "Galicia",
-      "url": "https://www.bng.gal/estaticas/programas-eleitorais.html",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
+      "type": "Programa electoral generales 2026 (91 páginas)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://www.bng.gal/estaticas/programas-eleitorais.html",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-03",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     },
     {
       "key": "PACMA",
       "label": "PACMA",
       "territory": "España",
-      "url": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf",
-      "type": "Programa generales 2023",
-      "year": 2023
+      "url": "https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf",
+      "type": "Programa electoral generales 2026 (82 páginas)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://pacma.es/wp-content/uploads/2023/07/PACMA_PE_GENERALES_23J23.pdf",
+          "type": "Programa generales 2023",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-13",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     },
     {
       "key": "CC",
       "label": "Coalición Canaria · coalición 23J",
       "territory": "Canarias",
-      "url": "https://coalicioncanaria.org/acuerdos/",
-      "type": "Manifiesto electoral 2023 (alcance limitado)",
-      "year": 2023
+      "url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
+      "type": "Programa electoral generales 2026 (PDF oficial)",
+      "year": 2026,
+      "history": [
+        {
+          "title": "Programa electoral generales 2023",
+          "url": "https://coalicioncanaria.org/acuerdos/",
+          "type": "Manifiesto electoral 2023 (alcance limitado)",
+          "year": 2023,
+          "status": "histórico",
+          "note": "Conservado al sustituirse la referencia vigente por el programa 29N de 2026."
+        }
+      ],
+      "date": "2026-11-09",
+      "note": "Fuente oficial 2026; posiciones del cuestionario pendientes de contraste individual con páginas y propuestas. No se modifican sin evidencia."
     }
   ],
   "questions": [
