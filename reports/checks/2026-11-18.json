@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-18",
+  "time": "08:00 Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "polls": {
+    "before": 59,
+    "after": 61,
+    "added": [
+      "ep-1115",
+      "ep-1117"
+    ],
+    "verifiedSources": [
+      "https://electomania.es/tracking-electopanel-15-nov-vox-recupera-el-19-y-arana-escanos-a-pp-y-psoe/",
+      "https://electomania.es/tracking-electopanel-17-nov-el-pp-sube-y-junto-al-psoe-arrebatan-varios-escanos-a-un-vox-en-torno-al-19/"
+    ],
+    "notAdded": [
+      {
+        "source": "https://enpapel.es/elecciones-29n/encuesta-data10-pp-vox-202-escanos-29n/",
+        "reason": "Ficha y publicación original no contrastadas completamente; no atribuir margen teórico como declarado."
+      },
+      {
+        "source": "https://electomania.es/tracking-sondaxe-17-nov-la-derecha-mantiene-distancia-sobre-la-absoluta-pese-a-la-subida-del-psoe/",
+        "reason": "Ficha primaria completa no contrastada."
+      }
+    ]
+  },
+  "programmes": {
+    "changed": false,
+    "note": "Sin programa completo oficial nuevo suficientemente verificado en esta revisión. Se mantienen referencias y posiciones existentes."
+  },
+  "files": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-18.json"
+  ],
+  "commits": [
+    "6b4ea393dead901c7544286f0d767d35356a0e23",
+    "c934c47f85711e0ca10818bc6161af241315edc8",
+    "9b6bdce7597050753200482ce363aa1780c96b66"
+  ],
+  "validation": "Integridad básica comprobada: fechas, porcentajes, unicidad de IDs, candidatura separada. JS serializado con el mismo formato de scripts/sync-data.py; script Python no ejecutado en entorno local.",
+  "deployment": "Pendiente de comprobar GitHub Actions/Pages",
+  "privacyChanged": false
+}
