@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-17",
+    "lastUpdated": "2026-11-18",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-16",
+    "to": "2026-11-17",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 59,
+    "totalPolls": 61,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1621,6 +1621,53 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-17",
       "note": "Tracking CAWI nacional 09–15/11, n=3294, ±1,7% al 95,5%, 60% panel fijo. Frente Amplio 6,1% separado de Compromís-Front Valencià 1,6%, Podemos 1,2% y ERC-Podemos 2,4%. Oleada 16/11 distinta de 14/11."
+    },
+    {
+      "id": "ep-1115",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-15",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-14",
+      "sample": 2617,
+      "vote": {
+        "PP": 30.7,
+        "PSOE": 26.7,
+        "VOX": 19,
+        "FRENTE_AMPLIO": 6
+      },
+      "seats": {},
+      "sourceUrl": "https://electomania.es/tracking-electopanel-15-nov-vox-recupera-el-19-y-arana-escanos-a-pp-y-psoe/",
+      "sourceType": "original",
+      "addedAt": "2026-11-18",
+      "note": "Tracking nacional CAWI 09–14/11, n=2617, margen ±2,0% al 95,5%, 60% panelistas fijos. Se omiten escaños no contrastados individualmente en la fuente."
+    },
+    {
+      "id": "ep-1117",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-17",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-16",
+      "sample": 4446,
+      "vote": {
+        "PP": 30.8,
+        "PSOE": 27,
+        "VOX": 18.8,
+        "FRENTE_AMPLIO": 6.1
+      },
+      "seats": {
+        "PP": 127,
+        "PSOE": 116,
+        "VOX": 61,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-17-nov-el-pp-sube-y-junto-al-psoe-arrebatan-varios-escanos-a-un-vox-en-torno-al-19/",
+      "sourceType": "original",
+      "addedAt": "2026-11-18",
+      "note": "Tracking nacional CAWI 09–16/11, n=4446, margen ±1,5% al 95,5%, 60% panelistas fijos. Frente Amplio medido separado de Podemos y Compromís–Front Valencià; oleada distinta de 16/11."
     }
   ]
 };
