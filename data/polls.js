@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-18",
+    "lastUpdated": "2026-11-19",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-17",
+    "to": "2026-11-18",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 61,
+    "totalPolls": 62,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1668,6 +1668,32 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-18",
       "note": "Tracking nacional CAWI 09–16/11, n=4446, margen ±1,5% al 95,5%, 60% panelistas fijos. Frente Amplio medido separado de Podemos y Compromís–Front Valencià; oleada distinta de 16/11."
+    },
+    {
+      "id": "ep-1118",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-18",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-17",
+      "sample": 4927,
+      "vote": {
+        "PP": 30.8,
+        "PSOE": 27,
+        "VOX": 18.9,
+        "FRENTE_AMPLIO": 6.1
+      },
+      "seats": {
+        "PP": 127,
+        "PSOE": 114,
+        "VOX": 61,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-18-nov-avance-de-eh-bildu-y-adelante-andalucia/",
+      "sourceType": "original",
+      "addedAt": "2026-11-19",
+      "note": "Sexta entrega tracking ElectoPanel 18/11; nacional, n=4927 CAWI 09–17/11, margen declarado ±1,4% al 95,5%, 60% panel fijo. Frente Amplio, Podemos y Compromís separados. Fuente primaria con ficha técnica íntegra; oleada distinta de 17/11."
     }
   ]
 };
