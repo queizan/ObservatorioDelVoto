@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-19",
+  "timeZone": "Europe/Madrid",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "polls": {
+    "before": 61,
+    "after": 62,
+    "added": [
+      {
+        "id": "ep-1118",
+        "published": "2026-11-18",
+        "source": "https://electomania.es/tracking-electopanel-18-nov-avance-de-eh-bildu-y-adelante-andalucia/",
+        "sample": 4927,
+        "fieldwork": "2026-11-09/2026-11-17",
+        "method": "CAWI",
+        "margin": "±1,4%"
+      }
+    ],
+    "reviewedNotAdded": [
+      "Sondaxe tracking 18/11: múltiples entregas, falta contraste de ficha original",
+      "40dB tracking 18/11: falta ficha técnica original completa",
+      "Sigma Dos 17/11: falta ficha original"
+    ]
+  },
+  "programmes": {
+    "changed": [],
+    "reviewed": [
+      "PP",
+      "PSOE",
+      "VOX",
+      "SUMAR/Frente Amplio",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "PACMA",
+      "CC"
+    ],
+    "note": "Sin nueva versión oficial completa contrastada en esta revisión. EH Bildu: referencias secundarias inconsistentes; pendiente enlace oficial íntegro."
+  },
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-19.json"
+  ],
+  "validation": {
+    "duplicateIds": false,
+    "datesValid": true,
+    "candidacySeparate": true,
+    "jsFormat": "Conforme a plantilla de scripts/sync-data.py; script Python no ejecutado en este entorno",
+    "ci": "Pendiente de comprobación",
+    "pages": "Pendiente de comprobación"
+  },
+  "commits": [
+    "b5c62a192304d96005f07a9e445b9474e127ab3a",
+    "279d37614105c441f81a69f2c05c6a0ae7bc67da",
+    "c5013cabcce0cb0cd342b35e58bb108a29ebf2ab"
+  ],
+  "safety": "No se alteraron preguntas, posiciones, privacidad, Supabase ni identificadores."
+}
