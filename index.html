@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="Encuestas nacionales, comparador y cuestionario independiente de afinidad programática.">
   <meta name="twitter:image" content="https://queizan.github.io/ObservatorioDelVoto/assets/observatorio-del-voto-og.jpg?v=20261015">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261028-programas">
+  <link rel="stylesheet" href="styles.css?v=20261120-timeline-tooltips">
   <link rel="stylesheet" href="affinity.css">
   <script defer src="data/polls.js?v=20261120-63-polls"></script>
-  <script defer src="app.js?v=20261120-campaign-zoom"></script>
+  <script defer src="app.js?v=20261120-timeline-events"></script>
   <script defer src="data/affinity.js?v=20261117-programas"></script>
   <script defer src="config/affinity-public.js"></script>
   <script defer src="affinity.js?v=20261021-pp"></script>
@@ -160,7 +160,10 @@
 
         <div class="section-heading lower-heading"><div><p class="eyebrow text-muted">03 / SERIE TEMPORAL</p><h2>Cómo cambia la media</h2><p>Evolución de la media disponible por fecha de publicación; se utiliza la última medición de cada instituto en cada corte.</p></div></div>
         <article class="panel timeline-panel">
-          <div class="timeline-controls" id="timelineLegend"><button class="line-toggle active" data-party="PP" aria-pressed="true"><span style="--dot:#1767B2"></span>PP</button><button class="line-toggle active" data-party="PSOE" aria-pressed="true"><span style="--dot:#E0454D"></span>PSOE</button><button class="line-toggle active" data-party="VOX" aria-pressed="true"><span style="--dot:#5C9739"></span>Vox</button><button class="line-toggle active" data-party="SUMAR" aria-pressed="true"><span style="--dot:#D64D9B"></span>Sumar · histórico</button><button class="line-toggle active" data-party="FRENTE_AMPLIO" aria-pressed="true"><span style="--dot:#9B4BCA"></span>Frente Amplio</button></div>
+          <div class="timeline-topbar">
+            <div class="timeline-controls" id="timelineLegend"><button class="line-toggle active" data-party="PP" aria-pressed="true"><span style="--dot:#1767B2"></span>PP</button><button class="line-toggle active" data-party="PSOE" aria-pressed="true"><span style="--dot:#E0454D"></span>PSOE</button><button class="line-toggle active" data-party="VOX" aria-pressed="true"><span style="--dot:#5C9739"></span>Vox</button><button class="line-toggle active" data-party="SUMAR" aria-pressed="true"><span style="--dot:#D64D9B"></span>Sumar · histórico</button><button class="line-toggle active" data-party="FRENTE_AMPLIO" aria-pressed="true"><span style="--dot:#9B4BCA"></span>Frente Amplio</button></div>
+            <div id="campaignVariation" class="campaign-variation" hidden aria-live="polite"></div>
+          </div>
           <div class="timeline-date-controls" aria-label="Intervalo de fechas de la serie temporal">
             <div class="timeline-range-modes" role="group" aria-label="Vista temporal">
               <button type="button" id="timelineGlobal" class="line-toggle active" aria-pressed="true">Global · toda la evolución</button>
@@ -173,7 +176,7 @@
               <button type="button" id="timelineReset" class="line-toggle">Restablecer</button>
             </div>
             <p id="timelineRangeStatus" class="chart-footnote" aria-live="polite">Vista global · todas las fechas</p>
-            <p class="chart-footnote"><span style="display:inline-block;width:12px;height:12px;background:#f0ad38;border-radius:3px;vertical-align:middle"></span> Inicio de campaña: viernes 13 de noviembre de 2026.</p>
+            <p class="chart-footnote timeline-event-key"><span aria-hidden="true"></span> Líneas amarillas: hitos de contexto verificados. Pasa el cursor por encima para ver qué ocurrió. Su coincidencia temporal no implica causalidad sobre las encuestas.</p>
           </div>
           <div id="timeline" class="timeline"></div>
           <p class="chart-footnote">Sumar histórico y Frente Amplio aparecen en series distintas, sin conectar sus trazos: cada punto de coalición se calcula solo a partir de sondeos que la miden expresamente. Las marcas verticales señalan el registro de Frente Amplio (16 de octubre) y el inicio de campaña (13 de noviembre). <a href="https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/" target="_blank" rel="noopener noreferrer">Fuente del cambio ↗</a></p>
