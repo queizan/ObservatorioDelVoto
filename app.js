@@ -140,11 +140,53 @@
 
   const campaignStart='2026-11-13';
   const timelineRange={mode:'global',from:'',to:''};
+  const timelineEvents=[
+    {
+      date:'2026-10-05',
+      title:'Convocatoria de las elecciones del 29N',
+      description:'El presidente del Gobierno anunció el adelanto electoral y la convocatoria de elecciones generales para el 29 de noviembre de 2026.',
+      source:'RTVE',
+      sourceUrl:'https://www.rtve.es/noticias/20261005/actualidad-politica-acampada-sol-ultima-hora-directo-cronica/17252760.shtml'
+    },
+    {
+      date:'2026-10-28',
+      title:'Accidente ferroviario de Urda (Toledo)',
+      description:'La colisión de dos trenes de alta velocidad en Urda alteró la precampaña: la mayoría de partidos suspendieron sus actos previstos ese día.',
+      source:'RTVE',
+      sourceUrl:'https://www.rtve.es/noticias/20261028/todos-partidos-salvo-vox-suspenden-actos-campana-accidente-tren-toledo/17286743.shtml'
+    },
+    {
+      date:'2026-11-13',
+      title:'Inicio de campaña y primer debate televisivo',
+      description:'Comenzó oficialmente la campaña del 29N. Esa noche laSexta celebró un debate sobre economía, vivienda, pensiones e infraestructuras con representantes de PP, PSOE, Vox y Frente Amplio.',
+      source:'laSexta',
+      sourceUrl:'https://amp.lasexta.com/elecciones/generales/vea-integro-debate-electoral-lasexta-cuerpo-psoe-bravo-bustinduy-frente-amplio-figaredo-vox_202611136af78ff9d3bddc0868b0f3c3.html'
+    },
+    {
+      date:'2026-11-14',
+      title:'Nueva actuación relacionada con el caso Koldo',
+      description:'El PSOE comunicó que había denunciado ante la Agencia Tributaria los pagos de Okdiario para la defensa de Koldo García. Se muestra como actuación denunciada, no como acreditación de delito.',
+      source:'EL PAÍS',
+      sourceUrl:'https://elpais.com/espana/elecciones-generales/2026-11-14/campana-elecciones-29n-y-actualidad-politica-en-directo.html'
+    },
+    {
+      date:'2026-11-19',
+      title:'Cara a cara Sánchez–Feijóo',
+      description:'Pedro Sánchez y Alberto Núñez Feijóo celebraron el cara a cara de la campaña. El debate abordó vivienda, economía, servicios públicos, corrupción, migración y política exterior.',
+      source:'RTVE',
+      sourceUrl:'https://www.rtve.es/noticias/20261120/debate-electoral-pedro-sanchez-feijoo-elecciones-2026-cronica/17318763.shtml'
+    }
+  ];
   const dayNumber=iso=>Date.parse(iso+'T12:00:00Z')/86400000;
   const madridToday=()=>{
     const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
     const get=type=>parts.find(p=>p.type===type)?.value||'';
     return get('year')+'-'+get('month')+'-'+get('day');
+  };
+  const signedPP=value=>{
+    const rounded=Math.round(value*10)/10;
+    if(Math.abs(rounded)<0.05)return '0,0 pp';
+    return (rounded>0?'+':'−')+fmt(Math.abs(rounded))+' pp';
   };
   function drawTimeline(){
     const allowed=scoped(allPolls),dates=[...new Set(allowed.map(p=>p.published))].sort();
@@ -180,6 +222,19 @@
       return {party:p,points};
     }).filter(row=>row.points.length);
 
+    const variation=$('campaignVariation');
+    if(timelineRange.mode==='campaign'){
+      const rows=seriesData.map(({party:p,points})=>{
+        const firstPoint=points[0],lastPoint=points[points.length-1],delta=lastPoint.value-firstPoint.value;
+        const arrow=delta>0.049?'↑':delta<-0.049?'↓':'→';
+        return '<div class="variation-chip" title="Cambio entre '+fmtDate(firstPoint.date)+' y '+fmtDate(lastPoint.date)+'"><span class="variation-dot" style="--variation-color:'+p.color+'"></span><strong>'+escapeHTML(p.label)+'</strong><b>'+arrow+' '+signedPP(delta)+'</b></div>';
+      }).join('');
+      variation.hidden=false;
+      variation.innerHTML='<span class="variation-heading">VARIACIÓN CAMPAÑA</span><div class="variation-list">'+rows+'</div>';
+    }else{
+      variation.hidden=true;variation.innerHTML='';
+    }
+
     const allValues=seriesData.flatMap(row=>row.points.map(point=>point.value));
     let yMin=0,yMax=40;
     const zoomed=timelineRange.mode!=='global'&&allValues.length;
@@ -202,16 +257,82 @@
     const tickCount=span<=14?Math.min(Math.max(2,Math.round(span)),7):span<=45?6:4;
     const ticks=[...new Set(Array.from({length:tickCount+1},(_,i)=>{const n=dayNumber(from)+Math.round(span*i/tickCount);return new Date(n*86400000).toISOString().slice(0,10)}))];
     for(let i=0;i<ticks.length;i++)lines+=`<text x="${x(ticks[i])}" y="${H-9}" text-anchor="${i===0?'start':i===ticks.length-1?'end':'middle'}">${tickFormat(ticks[i])}</text>`;
+
     const transition=dataset.metadata.candidacyTransition;
-    if(transition&&transition.date>=from&&transition.date<=to){const xx=x(transition.date);lines+=`<line class="transition-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><title>Registro Frente Amplio · 16 octubre</title>`;}
-    if(campaignStart>=from&&campaignStart<=to){const xx=x(campaignStart);lines+=`<line class="campaign-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><text class="campaign-label" x="${Math.min(W-r-8,xx+5)}" y="14" text-anchor="${xx>W-210?'end':'start'}">13 NOV · INICIO CAMPAÑA</text>`;}
-    const rendered=seriesData.map(({party:p,points})=>{
+    if(transition&&transition.date>=from&&transition.date<=to){
+      const xx=x(transition.date);
+      lines+=`<line class="transition-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><title>Registro Frente Amplio · 16 octubre</title>`;
+    }
+
+    const activeEvents=timelineEvents.filter(event=>event.date>=from&&event.date<=to);
+    const eventMarks=activeEvents.map((event,i)=>{
+      const xx=x(event.date);
+      const label=event.date===campaignStart?`<text class="campaign-label" x="${Math.min(W-r-8,xx+5)}" y="14" text-anchor="${xx>W-210?'end':'start'}">13 NOV · INICIO CAMPAÑA</text>`:'';
+      return `<line class="timeline-event-line" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/><circle class="timeline-event-dot" cx="${xx}" cy="${t+3}" r="4.5"/><line class="timeline-event-hit" data-event-index="${i}" x1="${xx}" x2="${xx}" y1="${t}" y2="${H-b}"/>${label}`;
+    }).join('');
+
+    const renderedSeries=seriesData.map(({party:p,points},seriesIndex)=>{
       const mapped=points.map(row=>({...row,coords:[x(row.date),y(row.value)]}));
       const path=mapped.map((row,i)=>`${i===0?'M':'L'}${row.coords[0].toFixed(2)} ${row.coords[1].toFixed(2)}`).join(' ');
-      const circles=mapped.map(row=>`<circle cx="${row.coords[0]}" cy="${row.coords[1]}" r="3.4" fill="${p.color}" stroke="#fff" stroke-width="1"><title>${fmtDate(row.date)} · ${p.label}: ${pct(row.value)} · ${row.size} institutos</title></circle>`).join('');
-      return `<path class="series-line" stroke="${p.color}" d="${path}"/>${circles}`;
-    }).join('');
-    $('timeline').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Evolución de encuestas desde ${fmtDate(from)} hasta ${fmtDate(to)}; eje Y de ${yMin}% a ${yMax}%">${lines}${rendered}</svg>`;
+      const circles=mapped.map(row=>`<circle class="timeline-point" cx="${row.coords[0]}" cy="${row.coords[1]}" r="3.4" fill="${p.color}" stroke="#fff" stroke-width="1"/>`).join('');
+      return {party:p,points:mapped,svg:`<path class="series-line" stroke="${p.color}" d="${path}"/><path class="series-hover-hit" data-series-index="${seriesIndex}" d="${path}"/>${circles}`};
+    });
+    const rendered=renderedSeries.map(row=>row.svg).join('');
+
+    $('timeline').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Evolución de encuestas desde ${fmtDate(from)} hasta ${fmtDate(to)}; eje Y de ${yMin}% a ${yMax}%">${lines}${eventMarks}${rendered}</svg><div id="timelineTooltip" class="timeline-tooltip" hidden></div>`;
+
+    const chart=$('timeline'),svg=chart.querySelector('svg'),tooltip=$('timelineTooltip');
+    let hideTimer=null;
+    const hideTooltip=()=>{clearTimeout(hideTimer);hideTimer=setTimeout(()=>{tooltip.hidden=true;},90);};
+    const cancelHide=()=>clearTimeout(hideTimer);
+    const placeTooltip=(clientX,clientY,content)=>{
+      cancelHide();
+      tooltip.innerHTML=content;tooltip.hidden=false;
+      const rect=chart.getBoundingClientRect();
+      const width=tooltip.offsetWidth||250,height=tooltip.offsetHeight||90;
+      let left=clientX-rect.left+14,top=clientY-rect.top-height-12;
+      if(left+width>rect.width-6)left=Math.max(6,clientX-rect.left-width-14);
+      if(top<4)top=Math.min(rect.height-height-4,clientY-rect.top+14);
+      tooltip.style.left=Math.max(4,left)+'px';tooltip.style.top=Math.max(4,top)+'px';
+    };
+    tooltip.addEventListener('pointerenter',cancelHide);tooltip.addEventListener('pointerleave',hideTooltip);
+
+    chart.querySelectorAll('[data-series-index]').forEach(hit=>{
+      hit.addEventListener('pointermove',event=>{
+        const row=renderedSeries[Number(hit.dataset.seriesIndex)];
+        if(!row?.points?.length)return;
+        const rect=svg.getBoundingClientRect(),svgX=(event.clientX-rect.left)/rect.width*W;
+        const nearest=row.points.reduce((best,point)=>Math.abs(point.coords[0]-svgX)<Math.abs(best.coords[0]-svgX)?point:best,row.points[0]);
+        placeTooltip(event.clientX,event.clientY,
+          '<div class="timeline-tooltip-party"><span style="--tooltip-color:'+row.party.color+'"></span><strong>'+escapeHTML(row.party.label)+'</strong></div>'+
+          '<b class="timeline-tooltip-value">'+pct(nearest.value)+'</b>'+
+          '<small>'+fmtDate(nearest.date)+' · media de '+nearest.size+' instituto'+(nearest.size===1?'':'s')+'</small>'
+        );
+      });
+      hit.addEventListener('pointerleave',hideTooltip);
+    });
+
+    chart.querySelectorAll('[data-event-index]').forEach(hit=>{
+      hit.addEventListener('pointerenter',event=>{
+        const item=activeEvents[Number(hit.dataset.eventIndex)];if(!item)return;
+        placeTooltip(event.clientX,event.clientY,
+          '<div class="timeline-tooltip-event"><span></span><strong>'+escapeHTML(item.title)+'</strong></div>'+
+          '<small class="timeline-tooltip-date">'+fmtDate(item.date)+'</small>'+
+          '<p>'+escapeHTML(item.description)+'</p>'+
+          '<a href="'+attr(item.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Fuente · '+escapeHTML(item.source)+' ↗</a>'
+        );
+      });
+      hit.addEventListener('pointermove',event=>{
+        const item=activeEvents[Number(hit.dataset.eventIndex)];if(!item)return;
+        placeTooltip(event.clientX,event.clientY,
+          '<div class="timeline-tooltip-event"><span></span><strong>'+escapeHTML(item.title)+'</strong></div>'+
+          '<small class="timeline-tooltip-date">'+fmtDate(item.date)+'</small>'+
+          '<p>'+escapeHTML(item.description)+'</p>'+
+          '<a href="'+attr(item.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Fuente · '+escapeHTML(item.source)+' ↗</a>'
+        );
+      });
+      hit.addEventListener('pointerleave',hideTooltip);
+    });
   }
   function renderUpdates(){
     const byInsertion=[...allPolls].sort((a,b)=>(b.addedAt||b.published).localeCompare(a.addedAt||a.published) || b.published.localeCompare(a.published) || a.id.localeCompare(b.id));
