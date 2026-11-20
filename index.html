@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="styles.css?v=20261028-programas">
   <link rel="stylesheet" href="affinity.css">
   <script defer src="data/polls.js?v=20261120-63-polls"></script>
-  <script defer src="app.js?v=20261117-timeline-range"></script>
+  <script defer src="app.js?v=20261120-campaign-zoom"></script>
   <script defer src="data/affinity.js?v=20261117-programas"></script>
   <script defer src="config/affinity-public.js"></script>
   <script defer src="affinity.js?v=20261021-pp"></script>
@@ -164,6 +164,7 @@
           <div class="timeline-date-controls" aria-label="Intervalo de fechas de la serie temporal">
             <div class="timeline-range-modes" role="group" aria-label="Vista temporal">
               <button type="button" id="timelineGlobal" class="line-toggle active" aria-pressed="true">Global · toda la evolución</button>
+              <button type="button" id="timelineCampaign" class="line-toggle" aria-pressed="false">Campaña · 13 nov → hoy</button>
               <button type="button" id="timelineCustom" class="line-toggle" aria-pressed="false">Acotar fechas</button>
             </div>
             <div class="timeline-date-fields" id="timelineDateFields" hidden>
