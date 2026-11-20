@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-20",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-18",
+    "to": "2026-11-19",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 62,
+    "totalPolls": 63,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1693,6 +1693,32 @@
       "sourceType": "original",
       "addedAt": "2026-11-19",
       "note": "Sexta entrega tracking ElectoPanel 18/11; nacional, n=4927 CAWI 09–17/11, margen declarado ±1,4% al 95,5%, 60% panel fijo. Frente Amplio, Podemos y Compromís separados. Fuente primaria con ficha técnica íntegra; oleada distinta de 17/11."
+    },
+    {
+      "id": "ep-1119",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-19",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-18",
+      "sample": 5704,
+      "vote": {
+        "PP": 30.4,
+        "PSOE": 27.6,
+        "VOX": 18.7,
+        "FRENTE_AMPLIO": 5.8
+      },
+      "seats": {
+        "PP": 127,
+        "PSOE": 120,
+        "VOX": 60,
+        "FRENTE_AMPLIO": 11
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-19-nov-sanchez-mete-el-turbo-a-costa-de-su-izquierda-con-la-derecha-en-187-escanos/",
+      "sourceType": "original",
+      "addedAt": "2026-11-20",
+      "note": "Séptima entrega del tracking diario ElectoPanel, nacional, CAWI n=5704 (09–18/11), margen ±1,3% al 95,5%, 60% panelistas fijos. Frente Amplio, Podemos y Compromís–Front Valencià diferenciados. Datos de ficha técnica y resultados de publicación original 19/11 a las 19:31."
     }
   ]
 }
