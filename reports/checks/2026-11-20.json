@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Europe/Madrid",
+  "scope": "queizan/ObservatorioDelVoto main",
+  "polls": {
+    "before": 62,
+    "after": 63,
+    "added": [
+      "ep-1119"
+    ],
+    "source": "https://electomania.es/tracking-electopanel-19-nov-sanchez-mete-el-turbo-a-costa-de-su-izquierda-con-la-derecha-en-187-escanos/",
+    "sample": 5704,
+    "fieldwork": [
+      "2026-11-09",
+      "2026-11-18"
+    ],
+    "method": "CAWI tracking 60% panel fijo ±1.3% (95.5%)",
+    "otherCandidatesReviewed": [
+      "SW Demoscopia",
+      "Sigma Dos",
+      "40dB",
+      "Data10"
+    ],
+    "otherCandidatesStatus": "No incorporadas sin contraste íntegro de fuente primaria y ficha técnica"
+  },
+  "programmes": {
+    "newVerifiedComplete": [],
+    "changed": [],
+    "reviewed": [
+      "PP",
+      "PSOE",
+      "VOX",
+      "SUMAR/Frente Amplio",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "PACMA",
+      "CC"
+    ],
+    "note": "Sin nuevos documentos oficiales completos suficientemente verificados"
+  },
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-20.json"
+  ],
+  "commits": [
+    "c3713eb049ebc78910c46fbe5d895b15db5ddf7e",
+    "76df32eb44e4c8978aa1b8e4944d49ce3cd048e4",
+    "1e191f5dca795a478d8f2efc1de453af4a455dfa"
+  ],
+  "validation": {
+    "uniqueIds": true,
+    "dates": true,
+    "candidaciesSeparated": true,
+    "jsonJsEquivalent": true,
+    "mainReadback": true,
+    "originalPythonScriptExecuted": false,
+    "note": "JS generado con serialización equivalente a scripts/sync-data.py; script Python no ejecutado localmente"
+  },
+  "ci": {
+    "commitWorkflowRuns": [],
+    "commitStatuses": [],
+    "pagesDeploymentVerified": false
+  },
+  "privacyChanged": false,
+  "affinityChanged": false
+}
