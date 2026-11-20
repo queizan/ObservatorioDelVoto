@@ -188,6 +188,7 @@
     if(Math.abs(rounded)<0.05)return '0,0 pp';
     return (rounded>0?'+':'−')+fmt(Math.abs(rounded))+' pp';
   };
+  const exactPct=value=>Number(value).toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' %';
   function drawTimeline(){
     const allowed=scoped(allPolls),dates=[...new Set(allowed.map(p=>p.published))].sort();
     if(!dates.length){$('timeline').innerHTML='';return;}
@@ -305,7 +306,7 @@
         const nearest=row.points.reduce((best,point)=>Math.abs(point.coords[0]-svgX)<Math.abs(best.coords[0]-svgX)?point:best,row.points[0]);
         placeTooltip(event.clientX,event.clientY,
           '<div class="timeline-tooltip-party"><span style="--tooltip-color:'+row.party.color+'"></span><strong>'+escapeHTML(row.party.label)+'</strong></div>'+
-          '<b class="timeline-tooltip-value">'+pct(nearest.value)+'</b>'+
+          '<b class="timeline-tooltip-value">'+exactPct(nearest.value)+'</b>'+
           '<small>'+fmtDate(nearest.date)+' · media de '+nearest.size+' instituto'+(nearest.size===1?'':'s')+'</small>'
         );
       });
