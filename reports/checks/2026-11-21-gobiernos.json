@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-21",
+  "type": "feature",
+  "title": "Gobiernos a examen — España desde 2000",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "presidents": 4,
+  "mandates": 8,
+  "annualSeriesYears": "2000–2025",
+  "indicators": [
+    "Deuda/PIB",
+    "Paro estimado OIT",
+    "Saldo nominal AAPP",
+    "Gasto total/PIB"
+  ],
+  "methodology": "Años naturales de referencia por gobierno; en años de transición conviven políticas de dos ejecutivos; no inferir causalidad. Nota N/D pendiente de rúbrica amplia y contrastada.",
+  "promises": "N/D hasta cotejar programas electorales históricos y compromisos individuales",
+  "justice": "Responsabilidad civil y causas penales separadas; caso Gürtel 2018 descrito por su naturaleza jurídica y fechas de hechos",
+  "changedFiles": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "governments.js",
+    "data/governments.json",
+    "data/governments.js",
+    "scripts/sync-governments.py",
+    "scripts/test-governments.js",
+    "README.md",
+    ".github/workflows/validate.yml",
+    "reports/checks/2026-11-21-gobiernos.json"
+  ],
+  "sources": [
+    "https://www.lamoncloa.gob.es/presidente/presidentes-desde-1823/Paginas/index.aspx",
+    "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=es",
+    "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=ES",
+    "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table",
+    "https://www.boe.es/"
+  ],
+  "pollsUnchanged": true,
+  "programmesUnchanged": true,
+  "privacyUnchanged": true
+}

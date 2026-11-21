@@ -11,9 +11,11 @@ jobs:
         run: python3 scripts/sync-data.py
       - name: Validar programas y regenerar JS
         run: python3 scripts/sync-programmes.py
+      - name: Validar datos históricos de gobiernos y regenerar JS
+        run: python3 scripts/sync-governments.py
       - name: Comprobar que los archivos generados están publicados
-        run: git diff --exit-code -- data/polls.js data/programmes.js
+        run: git diff --exit-code -- data/polls.js data/programmes.js data/governments.js
       - name: Comprobar sintaxis JavaScript
-        run: node --check app.js && node --check data/polls.js && node --check data/programmes.js && node --check program-documents.js
+        run: node --check app.js && node --check data/polls.js && node --check data/programmes.js && node --check program-documents.js && node --check data/governments.js && node --check governments.js
       - name: Comprobar separación de candidaturas y comparador de programas
-        run: node scripts/test-candidacy.js && node scripts/test-programmes.js
+        run: node scripts/test-candidacy.js && node scripts/test-programmes.js && node scripts/test-governments.js

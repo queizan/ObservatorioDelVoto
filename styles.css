@@ -193,3 +193,62 @@
 .programme-position-grid.all-parties{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:1000px){.programme-position-grid.all-parties{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.programme-position-grid.all-parties{grid-template-columns:1fr}.programme-comparison-intro{padding:14px 17px}}
+
+/* Gobiernos a examen — histórico 2000-2025 */
+.gov-warning{margin-bottom:23px;border-left:3px solid #809e77;background:#eef5ed;border-radius:0 9px 9px 0;padding:17px 22px}
+.gov-warning strong{font-size:13px;color:#294e41}.gov-warning p{font-size:12px;color:#657970;margin:7px 0 0;line-height:1.7}
+.gov-selectors{display:grid;grid-template-columns:1fr 40px 1fr;align-items:end;gap:14px;padding:22px 25px}
+.gov-selectors label,.gov-chart-title label{display:block;min-width:0;color:#647a70;font-weight:800;letter-spacing:.08em;font-size:10px}
+.gov-selectors select,.gov-chart-title select{display:block;max-width:100%;width:100%;height:45px;margin-top:9px;padding:0 12px;border:1px solid #d7e2da;border-radius:7px;background:#fff;color:#2c403a;font-weight:700;font-size:12px}
+.gov-swap{height:45px;background:#eef3ee;border:1px solid #d4e3d7;border-radius:7px;font-size:21px;color:#436757;cursor:pointer}
+.gov-tabs{margin-top:27px}.gov-view-heading{font-size:23px;letter-spacing:-.04em;margin:23px 0}
+.gov-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.gov-panel{padding:24px 25px;min-width:0}
+.gov-person{display:flex;gap:15px;align-items:center;padding-bottom:19px;border-bottom:1px solid #e3eae3}
+.gov-person-icon{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:50%;background:var(--gov-color);color:#fff;font-weight:850;font-size:16px}
+.gov-party-label{background:color-mix(in srgb,var(--gov-color) 12%,white);color:var(--gov-color);border-radius:4px;font-weight:900;padding:4px 7px;font-size:10px}
+.gov-person small{font-size:10px;color:#78897f;margin-left:8px}.gov-person h3{font-size:18px;margin:10px 0 3px;letter-spacing:-.04em}.gov-person p{margin:0;font-size:11px;color:#81938b}
+.gov-context{font-size:12px;line-height:1.75;color:#687d71;margin:20px 0}
+.gov-indicators{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.gov-metric{background:#f7f9f6;border:1px solid #e5ece5;border-radius:8px;padding:13px;min-width:0}
+.gov-metric header{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.gov-metric header strong{font-size:12px;color:#334f40}.gov-metric header b{font-size:11px;color:#536a5a}
+.gov-metric>p{display:flex;justify-content:space-between;align-items:center;gap:5px;color:#94a098;font-size:10px;margin:14px 0 12px}
+.gov-metric>p span{min-width:0}.gov-metric>p span strong{display:block;color:#29433a;font-size:14px;margin-top:3px}
+.gov-metric button,.gov-actions button{color:#416e5d;font-size:11px;text-decoration:underline;text-underline-offset:3px;border:0;background:transparent;padding:0;cursor:pointer;text-align:left}
+.gov-unrated{background:#f9f7f0;border:1px solid #ece6ce;border-radius:8px;padding:16px;margin-top:18px}
+.gov-unrated strong{font-size:13px;color:#74643d}.gov-unrated p{font-size:11px;line-height:1.7;color:#7b7867;margin:7px 0 0}
+.gov-panel>h4,.gov-panel h5{margin:20px 0 10px;color:#365448}
+.gov-actions{display:grid;gap:13px}.gov-actions article,.gov-judicial{border:1px solid #e1eae2;padding:17px;border-radius:8px;background:#f9fbf8}
+.gov-actions small,.gov-judicial small{font-size:10px;color:#7a8b7f}.gov-actions h5,.gov-judicial h5{font-size:15px;margin:7px 0 6px}
+.gov-actions p,.gov-judicial p{font-size:12px;color:#657a6d;line-height:1.7;margin:6px 0 12px}
+.gov-judicial a{color:#3b6756;font-size:11px}
+.gov-muted{font-size:12px;line-height:1.8;color:#7d8a80;padding:10px}
+.gov-chart-panel{padding:27px;margin-top:28px}
+.gov-chart-title{display:flex;justify-content:space-between;gap:18px;align-items:end}
+.gov-chart-title h2{font-size:23px;letter-spacing:-.04em;margin:7px 0}
+.gov-chart-title label{width:220px}
+.gov-chart-head{display:flex;justify-content:space-between;gap:14px;align-items:center;font-size:12px;margin:26px 0 12px}
+.gov-chart-head a{color:#3c6b59;font-size:11px}
+.gov-bars{display:flex;align-items:end;gap:4px;height:215px;border-bottom:1px solid #dce5dc;padding:8px 0 20px}
+.gov-bar-col{flex:1;display:flex;flex-direction:column;height:100%;align-items:center;justify-content:flex-end;min-width:0;position:relative}
+.gov-bar{display:block;width:100%;max-width:24px;background:linear-gradient(180deg,#4a8b72,#9bbfa4);border-radius:3px 3px 0 0;cursor:help}
+.gov-bar:focus{outline:3px solid #456f5d}.gov-bar-col small{position:absolute;bottom:-19px;font-size:9px;color:#82938a}
+.gov-small{color:#81928a;font-size:11px;margin:30px 0 0;line-height:1.6}
+.gov-party-block{margin:40px 0}.gov-party-summaries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.gov-party-average{border:1px solid #e0e8e0;border-radius:9px;background:#fff;padding:21px}
+.gov-party-average>b{font-size:18px;color:#31564b}.gov-party-average>span{font-size:11px;color:#809086;margin-left:10px}
+.gov-party-average p{font-size:12px;color:#718274;margin:14px 0 0}.gov-party-average strong{font-size:16px;color:#2e5648;margin-left:8px}
+.gov-sources{padding:27px;margin:20px 0 30px}.gov-sources h3{font-size:22px;margin:0 0 15px}
+.gov-sources>p,.gov-sources li{font-size:12px;line-height:1.8;color:#667d71}.gov-sources a{color:#365d50}
+.gov-pending{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.gov-pending article{background:#f7f9f6;border:1px solid #e5ebe5;padding:12px;border-radius:6px}
+.gov-pending article strong{font-size:12px;color:#496651}.gov-pending article p{font-size:11px;line-height:1.6;color:#819086;margin:7px 0 0}
+.gov-dialog{border:none;border-radius:11px;max-width:630px;width:calc(100vw - 30px);padding:28px 30px;box-shadow:0 16px 60px #1a40333d;color:#344b40}
+.gov-dialog::backdrop{background:#10291d80}.gov-dialog header{display:flex;justify-content:space-between;align-items:center}
+.gov-dialog header button{font-size:19px;border:0;background:transparent;cursor:pointer}
+.gov-dialog h2{font-size:24px;margin:15px 0}.gov-modal-row{border-top:1px solid #e5eae4;padding:13px 0}
+.gov-modal-row strong{font-size:12px;color:#315a45}.gov-modal-row p{font-size:13px;line-height:1.7;color:#586e60}
+.gov-dialog a{font-size:12px;color:#346c51}
+@media(max-width:800px){.gov-comparison-grid{grid-template-columns:1fr}.gov-panel{padding:20px}.gov-pending{grid-template-columns:1fr}}
+@media(max-width:570px){.gov-selectors{grid-template-columns:1fr 32px 1fr;gap:7px;padding:14px}.gov-swap{width:32px}.gov-selectors select{font-size:11px}.gov-indicators{grid-template-columns:1fr 1fr}.gov-chart-title{flex-direction:column;align-items:stretch}.gov-chart-title label{width:100%}.gov-party-summaries{grid-template-columns:1fr}.gov-bars{height:155px;gap:2px}.gov-dialog{padding:20px}.gov-tabs{flex-wrap:wrap}.gov-tabs .programme-tab{flex:1;white-space:normal}}

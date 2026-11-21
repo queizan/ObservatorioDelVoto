@@ -1,0 +1,498 @@
+/* AUTO-GENERATED from data/governments.json; run python3 scripts/sync-governments.py */
+window.GOVERNMENTS_DATA = {
+  "schemaVersion": 1,
+  "updated": "2026-11-21",
+  "scope": "España · gobiernos desde 2000 · datos anuales hasta 2025",
+  "leaders": {
+    "aznar": {
+      "name": "José María Aznar",
+      "party": "PP",
+      "color": "#1767b2"
+    },
+    "zapatero": {
+      "name": "José Luis Rodríguez Zapatero",
+      "party": "PSOE",
+      "color": "#e0454d"
+    },
+    "rajoy": {
+      "name": "Mariano Rajoy",
+      "party": "PP",
+      "color": "#1767b2"
+    },
+    "sanchez": {
+      "name": "Pedro Sánchez",
+      "party": "PSOE",
+      "color": "#e0454d"
+    }
+  },
+  "terms": [
+    {
+      "id": "aznar2",
+      "leader": "aznar",
+      "period": "Aznar II · VII legislatura",
+      "start": "2000-04-27",
+      "end": "2004-04-17",
+      "from": 2000,
+      "to": 2003,
+      "context": "Crecimiento y expansión inmobiliaria previos al cambio de ciclo; el atentado del 11-M se produjo en marzo de 2004, antes del relevo.",
+      "events": []
+    },
+    {
+      "id": "zapatero1",
+      "leader": "zapatero",
+      "period": "Zapatero I · VIII legislatura",
+      "start": "2004-04-17",
+      "end": "2008-04-12",
+      "from": 2004,
+      "to": 2007,
+      "context": "Expansión económica y descenso del desempleo hasta 2007, antes de la crisis financiera internacional.",
+      "events": [
+        {
+          "type": "ley",
+          "title": "Matrimonio entre personas del mismo sexo",
+          "year": 2005,
+          "objective": "Extender el acceso al matrimonio civil.",
+          "action": "Aprobación de la Ley 13/2005.",
+          "result": "Modificación del Código Civil para reconocer el matrimonio con independencia del sexo de los contrayentes.",
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2005-11364"
+        },
+        {
+          "type": "ley",
+          "title": "Sistema para la dependencia",
+          "year": 2006,
+          "objective": "Establecer un sistema público de apoyo a personas en situación de dependencia.",
+          "action": "Aprobación de la Ley 39/2006.",
+          "result": "Reconocimiento legal del derecho de acceso a prestaciones y servicios de dependencia conforme a sus requisitos.",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-21990"
+        },
+        {
+          "type": "ley",
+          "title": "Ley para la igualdad efectiva",
+          "year": 2007,
+          "objective": "Garantizar igualdad de trato y oportunidades.",
+          "action": "Aprobación de la Ley Orgánica 3/2007.",
+          "result": "Normas y obligaciones sobre igualdad efectiva de mujeres y hombres; su aplicación exige evaluación adicional.",
+          "url": "https://www.boe.es/eli/es/lo/2007/03/22/3/con/"
+        }
+      ]
+    },
+    {
+      "id": "zapatero2",
+      "leader": "zapatero",
+      "period": "Zapatero II · IX legislatura",
+      "start": "2008-04-12",
+      "end": "2011-12-21",
+      "from": 2008,
+      "to": 2011,
+      "context": "Crisis financiera global, estallido de la burbuja inmobiliaria, aumento del desempleo y crisis de deuda europea. No atribuir toda la evolución a decisiones nacionales.",
+      "events": []
+    },
+    {
+      "id": "rajoy1",
+      "leader": "rajoy",
+      "period": "Rajoy I · X legislatura",
+      "start": "2011-12-21",
+      "end": "2016-10-31",
+      "from": 2012,
+      "to": 2015,
+      "context": "Crisis bancaria y deuda soberana europea al inicio; recuperación posterior y elevado nivel de desempleo.",
+      "events": [
+        {
+          "type": "decreto",
+          "title": "Reforma laboral de 2012",
+          "year": 2012,
+          "objective": "Reformar contratación, relaciones laborales y ajustes empresariales.",
+          "action": "Real Decreto-ley 3/2012.",
+          "result": "Modificación de reglas sobre contratación, flexibilidad interna y extinción de contratos. El impacto causal exige estudios separados.",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2012-2076"
+        },
+        {
+          "type": "ley",
+          "title": "Ley de transparencia",
+          "year": 2013,
+          "objective": "Regular el acceso a información pública y obligaciones de buen gobierno.",
+          "action": "Aprobación de la Ley 19/2013.",
+          "result": "Creación de un marco general de transparencia y acceso a la información.",
+          "url": "https://www.boe.es/eli/es/l/2013/12/09/19"
+        },
+        {
+          "type": "ley",
+          "title": "Ley de seguridad ciudadana",
+          "year": 2015,
+          "objective": "Regular las actuaciones administrativas de protección de la seguridad ciudadana.",
+          "action": "Aprobación de la Ley Orgánica 4/2015.",
+          "result": "Actualización del régimen jurídico de seguridad ciudadana; objeto de debate y controversia pública.",
+          "url": "https://www.boe.es/eli/es/lo/2015/03/30/4"
+        }
+      ]
+    },
+    {
+      "id": "rajoy2",
+      "leader": "rajoy",
+      "period": "Rajoy II · XII legislatura",
+      "start": "2016-10-31",
+      "end": "2018-06-01",
+      "from": 2016,
+      "to": 2017,
+      "context": "Recuperación económica y descenso del paro. La legislatura concluyó con la moción de censura de junio de 2018.",
+      "events": []
+    },
+    {
+      "id": "sanchez1",
+      "leader": "sanchez",
+      "period": "Sánchez I · XII-XIII legislaturas",
+      "start": "2018-06-02",
+      "end": "2020-01-08",
+      "from": 2018,
+      "to": 2019,
+      "context": "Relevo por moción de censura y etapa de inestabilidad parlamentaria hasta la coalición de 2020.",
+      "events": []
+    },
+    {
+      "id": "sanchez2",
+      "leader": "sanchez",
+      "period": "Sánchez II · XIV legislatura",
+      "start": "2020-01-08",
+      "end": "2023-11-17",
+      "from": 2020,
+      "to": 2022,
+      "context": "Pandemia de COVID-19, shock energético y aumento de precios internacional, con posterior recuperación económica.",
+      "events": [
+        {
+          "type": "ley",
+          "title": "Ingreso mínimo vital",
+          "year": 2021,
+          "objective": "Definir una prestación dirigida a prevenir el riesgo de pobreza y exclusión.",
+          "action": "Aprobación de la Ley 19/2021, tras regulación inicial por real decreto-ley en 2020.",
+          "result": "Prestación no contributiva de la Seguridad Social sujeta a requisitos de acceso.",
+          "url": "https://www.boe.es/eli/es/l/2021/12/20/19"
+        },
+        {
+          "type": "reforma",
+          "title": "Reforma laboral de 2021",
+          "year": 2021,
+          "objective": "Abordar la temporalidad y modernizar mecanismos de contratación.",
+          "action": "Aprobación del Real Decreto-ley 32/2021 tras acuerdo social.",
+          "result": "Modificación del Estatuto de los Trabajadores y de modalidades de contratación; la atribución de resultados exige análisis contrafactual.",
+          "url": "https://www.boe.es/eli/es/rdl/2021/12/28/32/con"
+        }
+      ]
+    },
+    {
+      "id": "sanchez3",
+      "leader": "sanchez",
+      "period": "Sánchez III · XV legislatura",
+      "start": "2023-11-17",
+      "end": null,
+      "from": 2023,
+      "to": 2025,
+      "context": "Legislatura en curso. Los indicadores terminan en 2025 para usar años completos comparables; los resultados de 2026 no están cerrados.",
+      "events": [
+        {
+          "type": "ley",
+          "title": "Ley por el derecho a la vivienda",
+          "year": 2023,
+          "objective": "Regular el acceso a vivienda y herramientas de contención de alquileres en áreas tensionadas.",
+          "action": "Aprobación de la Ley 12/2023, anterior al inicio de este mandato en noviembre de 2023.",
+          "result": "La norma se aprobó durante el mandato anterior; se muestra como antecedente regulatorio, no como ley promulgada en este periodo.",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-12203",
+          "referenceOnly": true
+        }
+      ]
+    }
+  ],
+  "series": {
+    "2000": {
+      "debtGDP": 57.8,
+      "unemploymentILO": 13.8,
+      "balanceMEUR": -7520,
+      "expenditureGDP": null
+    },
+    "2001": {
+      "debtGDP": 54.1,
+      "unemploymentILO": 10.3,
+      "balanceMEUR": -3189,
+      "expenditureGDP": null
+    },
+    "2002": {
+      "debtGDP": 51.2,
+      "unemploymentILO": 11.1,
+      "balanceMEUR": -2356,
+      "expenditureGDP": null
+    },
+    "2003": {
+      "debtGDP": 47.7,
+      "unemploymentILO": 11.3,
+      "balanceMEUR": -3009,
+      "expenditureGDP": 38.3
+    },
+    "2004": {
+      "debtGDP": 45.3,
+      "unemploymentILO": 11.1,
+      "balanceMEUR": -941,
+      "expenditureGDP": null
+    },
+    "2005": {
+      "debtGDP": 42.4,
+      "unemploymentILO": 9.1,
+      "balanceMEUR": 11421,
+      "expenditureGDP": null
+    },
+    "2006": {
+      "debtGDP": 39,
+      "unemploymentILO": 8.5,
+      "balanceMEUR": 21322,
+      "expenditureGDP": 38.4
+    },
+    "2007": {
+      "debtGDP": 35.7,
+      "unemploymentILO": 8.2,
+      "balanceMEUR": 20287,
+      "expenditureGDP": 39.2
+    },
+    "2008": {
+      "debtGDP": 39.6,
+      "unemploymentILO": 11.3,
+      "balanceMEUR": -50731,
+      "expenditureGDP": 41.3
+    },
+    "2009": {
+      "debtGDP": 53.1,
+      "unemploymentILO": 17.9,
+      "balanceMEUR": -120576,
+      "expenditureGDP": 46.1
+    },
+    "2010": {
+      "debtGDP": 60.3,
+      "unemploymentILO": 19.9,
+      "balanceMEUR": -102193,
+      "expenditureGDP": 45.8
+    },
+    "2011": {
+      "debtGDP": 69.5,
+      "unemploymentILO": 21.4,
+      "balanceMEUR": -103575,
+      "expenditureGDP": 45.9
+    },
+    "2012": {
+      "debtGDP": 89.6,
+      "unemploymentILO": 24.8,
+      "balanceMEUR": -119094,
+      "expenditureGDP": 49.2
+    },
+    "2013": {
+      "debtGDP": 100,
+      "unemploymentILO": 26.1,
+      "balanceMEUR": -76805,
+      "expenditureGDP": 46.2
+    },
+    "2014": {
+      "debtGDP": 104.4,
+      "unemploymentILO": 24.4,
+      "balanceMEUR": -62716,
+      "expenditureGDP": 45
+    },
+    "2015": {
+      "debtGDP": 102.5,
+      "unemploymentILO": 22.1,
+      "balanceMEUR": -57248,
+      "expenditureGDP": 43.7
+    },
+    "2016": {
+      "debtGDP": 102,
+      "unemploymentILO": 19.6,
+      "balanceMEUR": -47401,
+      "expenditureGDP": 42.1
+    },
+    "2017": {
+      "debtGDP": 101.2,
+      "unemploymentILO": 17.2,
+      "balanceMEUR": -35903,
+      "expenditureGDP": 41
+    },
+    "2018": {
+      "debtGDP": 99.8,
+      "unemploymentILO": 15.3,
+      "balanceMEUR": -30943,
+      "expenditureGDP": 41.5
+    },
+    "2019": {
+      "debtGDP": 97.7,
+      "unemploymentILO": 14.1,
+      "balanceMEUR": -38422,
+      "expenditureGDP": 42
+    },
+    "2020": {
+      "debtGDP": 119.3,
+      "unemploymentILO": 15.5,
+      "balanceMEUR": -111897,
+      "expenditureGDP": 51.4
+    },
+    "2021": {
+      "debtGDP": 115.7,
+      "unemploymentILO": 14.9,
+      "balanceMEUR": -82174,
+      "expenditureGDP": 49.5
+    },
+    "2022": {
+      "debtGDP": 109.3,
+      "unemploymentILO": 13,
+      "balanceMEUR": -63105,
+      "expenditureGDP": 46.3
+    },
+    "2023": {
+      "debtGDP": 105.2,
+      "unemploymentILO": 12.2,
+      "balanceMEUR": -50027,
+      "expenditureGDP": 45.4
+    },
+    "2024": {
+      "debtGDP": 101.6,
+      "unemploymentILO": 11.4,
+      "balanceMEUR": -51267,
+      "expenditureGDP": 45.5
+    },
+    "2025": {
+      "debtGDP": 100.7,
+      "unemploymentILO": 10.4,
+      "balanceMEUR": -40330,
+      "expenditureGDP": 45.3
+    }
+  },
+  "indicatorDefs": [
+    {
+      "id": "debtGDP",
+      "title": "Deuda pública",
+      "unit": "% PIB",
+      "source": "Banco de España / Eurostat",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=es",
+      "direction": "lower",
+      "note": "Deuda PDE de todas las Administraciones Públicas al cierre anual. La variación del ratio depende también del PIB nominal."
+    },
+    {
+      "id": "unemploymentILO",
+      "title": "Desempleo",
+      "unit": "%",
+      "source": "OIT / Banco Mundial",
+      "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=ES",
+      "direction": "lower",
+      "note": "Media anual estimada OIT, serie 2000–2025; NO confundir con la EPA trimestral del INE."
+    },
+    {
+      "id": "balanceMEUR",
+      "title": "Saldo público",
+      "unit": "M€",
+      "source": "Banco de España / Eurostat",
+      "url": "https://deudapublica.es/",
+      "direction": "higher",
+      "note": "Capacidad/necesidad de financiación nominal anual de todas las administraciones. Valores negativos indican déficit; no comparar importes absolutos como si fueran ratios PIB."
+    },
+    {
+      "id": "expenditureGDP",
+      "title": "Gasto público",
+      "unit": "% PIB",
+      "source": "Eurostat GOV_10A_MAIN",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table",
+      "direction": "neutral",
+      "note": "Gasto total consolidado de las Administraciones Públicas; no equivale a gasto discrecional del ejecutivo. Hay N/D cuando falta contraste anual."
+    }
+  ],
+  "moreDomains": [
+    {
+      "label": "Sanidad",
+      "status": "N/D",
+      "reason": "Falta integrar una serie consolidada homogénea de gasto sanitario público (% PIB) con una fuente y años contrastados."
+    },
+    {
+      "label": "Educación",
+      "status": "N/D",
+      "reason": "Pendiente serie oficial homogénea de gasto público en educación (% PIB)."
+    },
+    {
+      "label": "Defensa",
+      "status": "N/D",
+      "reason": "Pendiente serie fiscal COFOG de defensa (% PIB)."
+    },
+    {
+      "label": "I+D",
+      "status": "N/D",
+      "reason": "Pendiente serie oficial I+D sobre PIB y gasto público comparable."
+    },
+    {
+      "label": "Vivienda",
+      "status": "N/D",
+      "reason": "Precio, alquiler, emancipación y parque público usan series con coberturas diferentes; no hay aún tabla homogénea."
+    },
+    {
+      "label": "Protección social",
+      "status": "N/D",
+      "reason": "Pendiente gastos COFOG y prestaciones públicas comparables."
+    },
+    {
+      "label": "Salarios y poder adquisitivo",
+      "status": "N/D",
+      "reason": "Pendiente serie de salario real y renta disponible ajustada por inflación."
+    },
+    {
+      "label": "Inflación",
+      "status": "N/D",
+      "reason": "Pendiente serie histórica armonizada validada para los años de comparación."
+    },
+    {
+      "label": "Inmigración, población y natalidad",
+      "status": "N/D",
+      "reason": "Pendiente separar stock poblacional, flujos migratorios y nacimientos en series verificadas."
+    },
+    {
+      "label": "Desigualdad y pobreza",
+      "status": "N/D",
+      "reason": "Pendiente comparar AROPE/Gini controlando rupturas metodológicas."
+    }
+  ],
+  "judicial": [
+    {
+      "id": "gurtel-2018",
+      "periodId": "rajoy2",
+      "date": "2018-05-24",
+      "title": "Sentencia de la primera época del caso Gürtel",
+      "status": "Sentencia judicial · responsabilidad civil",
+      "classification": "Partícipe a título lucrativo (responsabilidad civil, no condena penal al partido)",
+      "summary": "La Audiencia Nacional declaró al PP responsable civil como partícipe a título lucrativo en determinados hechos de Majadahonda y Pozuelo. Los hechos investigados pertenecen a años anteriores al mandato de Rajoy; la sentencia se dictó durante su segundo gobierno.",
+      "amountProven": null,
+      "amountRecovered": null,
+      "amountIllegalBenefit": null,
+      "source": "https://www.rtve.es/noticias/20180524/caso-guertel-audiencia-nacional-condena-pp-por-lucrarse-trama-guertel-acredita-caja-b/1738968.shtml"
+    }
+  ],
+  "method": {
+    "startYear": 2000,
+    "endYear": 2025,
+    "yearPolicy": "Años naturales completos de referencia elegidos para cada mandato (from→to). Años de transición de gobierno pueden reflejar dos ejecutivos; no implican atribución exclusiva.",
+    "score": "N/D: sin nota global ni ranking por falta de una rúbrica completa y validada de cumplimiento, impacto, gasto sectorial y procedimientos judiciales. La nota no se inventa.",
+    "promise": "Estado N/D hasta disponer de programas históricos cotejados y compromisos verificables por mandato.",
+    "judicial": "Separar sentencia firme, sentencia no firme, investigación y responsabilidad civil. La ausencia de entrada no significa ausencia de causas. No sumar sospechas ni importes investigados como perjuicio probado.",
+    "disclaimer": "La evolución de un indicador coincide temporalmente con un gobierno, pero no demuestra por sí sola causalidad: influyen el ciclo, las autonomías, el exterior y revisiones estadísticas.",
+    "sources": [
+      {
+        "label": "La Moncloa · fechas de presidentes",
+        "url": "https://www.lamoncloa.gob.es/presidente/presidentes-desde-1823/Paginas/index.aspx"
+      },
+      {
+        "label": "Banco de España y Eurostat · deuda y saldo",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table?lang=es"
+      },
+      {
+        "label": "OIT / Banco Mundial · desempleo anual",
+        "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=ES"
+      },
+      {
+        "label": "Eurostat · gasto total",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table"
+      },
+      {
+        "label": "BOE · legislación",
+        "url": "https://www.boe.es/"
+      }
+    ]
+  }
+};
