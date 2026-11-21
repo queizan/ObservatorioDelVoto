@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-20",
+    "lastUpdated": "2026-11-21",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-19",
+    "to": "2026-11-20",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 63,
+    "totalPolls": 64,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1720,6 +1720,32 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-20",
       "note": "Séptima entrega del tracking diario ElectoPanel, nacional, CAWI n=5704 (09–18/11), margen ±1,3% al 95,5%, 60% panelistas fijos. Frente Amplio, Podemos y Compromís–Front Valencià diferenciados. Datos de ficha técnica y resultados de publicación original 19/11 a las 19:31."
+    },
+    {
+      "id": "ep-1120",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-20",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-20",
+      "sample": 6559,
+      "vote": {
+        "PP": 31,
+        "PSOE": 27.6,
+        "VOX": 18.2,
+        "FRENTE_AMPLIO": 6
+      },
+      "seats": {
+        "PP": 129,
+        "PSOE": 121,
+        "VOX": 56,
+        "FRENTE_AMPLIO": 12
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-20-nov-el-pp-sale-reforzado-del-cara-a-cara/",
+      "sourceType": "original",
+      "addedAt": "2026-11-21",
+      "note": "Octava entrega tracking nacional ElectoPanel, n=6559 CAWI (09–20/11, cierre 14:00), margen declarado ±1,2% al 95,5%, 60% panel fijo. Frente Amplio separado de Podemos y Compromís. Fuente primaria con ficha técnica."
     }
   ]
 };
