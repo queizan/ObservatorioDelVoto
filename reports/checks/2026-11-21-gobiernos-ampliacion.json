@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-21",
+  "type": "feature_enrichment",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "reason": "Completar al menos una medida normativa documentada para cada mandato en Gobiernos a examen",
+  "totalVerifiedLegalActions": 17,
+  "addedSources": [
+    "https://www.boe.es/buscar/doc.php?id=BOE-A-2002-12756",
+    "https://www.boe.es/eli/es/l/2011/8/1/27",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12902",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481",
+    "https://www.boe.es/eli/es/rdl/2019/03/01/6",
+    "https://www.boe.es/eli/es/lo/2024/06/10/1",
+    "https://www.boe.es/eli/es/lo/2025/01/02/1/con"
+  ],
+  "correction": "Ley de Vivienda de mayo 2023 reclasificada del mandato Sánchez III al Sánchez II. Los años de los indicadores no son necesariamente los de todos los actos del mandato.",
+  "dataPollsUnchanged": true,
+  "programmesUnchanged": true
+}

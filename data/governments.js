@@ -35,7 +35,17 @@ window.GOVERNMENTS_DATA = {
       "from": 2000,
       "to": 2003,
       "context": "Crecimiento y expansión inmobiliaria previos al cambio de ciclo; el atentado del 11-M se produjo en marzo de 2004, antes del relevo.",
-      "events": []
+      "events": [
+        {
+          "type": "ley",
+          "year": 2002,
+          "title": "Ley Orgánica de Partidos Políticos",
+          "objective": "Regular la organización democrática y la actividad de los partidos.",
+          "action": "Aprobación de la Ley Orgánica 6/2002.",
+          "result": "Nueva regulación de partidos, su actividad y los supuestos de ilegalización conforme a la ley.",
+          "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2002-12756"
+        }
+      ]
     },
     {
       "id": "zapatero1",
@@ -85,7 +95,17 @@ window.GOVERNMENTS_DATA = {
       "from": 2008,
       "to": 2011,
       "context": "Crisis financiera global, estallido de la burbuja inmobiliaria, aumento del desempleo y crisis de deuda europea. No atribuir toda la evolución a decisiones nacionales.",
-      "events": []
+      "events": [
+        {
+          "type": "ley",
+          "year": 2011,
+          "title": "Reforma del sistema de pensiones",
+          "objective": "Actualizar las reglas de jubilación y la sostenibilidad del sistema.",
+          "action": "Aprobación de la Ley 27/2011.",
+          "result": "Modificaciones progresivas de requisitos de jubilación y otras reglas de la Seguridad Social.",
+          "url": "https://www.boe.es/eli/es/l/2011/8/1/27"
+        }
+      ]
     },
     {
       "id": "rajoy1",
@@ -135,7 +155,17 @@ window.GOVERNMENTS_DATA = {
       "from": 2016,
       "to": 2017,
       "context": "Recuperación económica y descenso del paro. La legislatura concluyó con la moción de censura de junio de 2018.",
-      "events": []
+      "events": [
+        {
+          "type": "ley",
+          "year": 2017,
+          "title": "Nueva Ley de Contratos del Sector Público",
+          "objective": "Adaptar las reglas de contratación pública a directivas europeas.",
+          "action": "Aprobación de la Ley 9/2017.",
+          "result": "Reforma de procedimientos y garantías de contratación del sector público.",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-12902"
+        }
+      ]
     },
     {
       "id": "sanchez1",
@@ -146,7 +176,35 @@ window.GOVERNMENTS_DATA = {
       "from": 2018,
       "to": 2019,
       "context": "Relevo por moción de censura y etapa de inestabilidad parlamentaria hasta la coalición de 2020.",
-      "events": []
+      "events": [
+        {
+          "type": "ley",
+          "year": 2019,
+          "title": "Medidas urgentes de vivienda y alquiler",
+          "objective": "Actualizar el marco de alquiler y atender las dificultades de acceso a vivienda.",
+          "action": "Real Decreto-ley 7/2019.",
+          "result": "Cambios en la normativa de arrendamientos urbanos y medidas de apoyo al alquiler asequible.",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108"
+        },
+        {
+          "type": "ley",
+          "year": 2019,
+          "title": "Registro obligatorio de jornada",
+          "objective": "Mejorar el control de los tiempos de trabajo y las horas extraordinarias.",
+          "action": "Real Decreto-ley 8/2019.",
+          "result": "Obligación empresarial de llevar registro diario de jornada con las excepciones legalmente previstas.",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3481"
+        },
+        {
+          "type": "ley",
+          "year": 2019,
+          "title": "Igualdad en el empleo",
+          "objective": "Reforzar las garantías de igualdad de trato y oportunidades laborales entre mujeres y hombres.",
+          "action": "Real Decreto-ley 6/2019.",
+          "result": "Cambios en el marco de permisos, planes de igualdad y derechos laborales asociados.",
+          "url": "https://www.boe.es/eli/es/rdl/2019/03/01/6"
+        }
+      ]
     },
     {
       "id": "sanchez2",
@@ -175,6 +233,16 @@ window.GOVERNMENTS_DATA = {
           "action": "Aprobación del Real Decreto-ley 32/2021 tras acuerdo social.",
           "result": "Modificación del Estatuto de los Trabajadores y de modalidades de contratación; la atribución de resultados exige análisis contrafactual.",
           "url": "https://www.boe.es/eli/es/rdl/2021/12/28/32/con"
+        },
+        {
+          "type": "ley",
+          "title": "Ley por el derecho a la vivienda",
+          "year": 2023,
+          "objective": "Regular el acceso a vivienda y herramientas de contención de alquileres en áreas tensionadas.",
+          "action": "Aprobación de la Ley 12/2023, anterior al inicio de este mandato en noviembre de 2023.",
+          "result": "Se aprobó durante el gobierno Sánchez II antes de iniciarse el Sánchez III; sus medidas requieren evaluación posterior de resultados.",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-12203",
+          "referenceOnly": false
         }
       ]
     },
@@ -190,13 +258,21 @@ window.GOVERNMENTS_DATA = {
       "events": [
         {
           "type": "ley",
-          "title": "Ley por el derecho a la vivienda",
-          "year": 2023,
-          "objective": "Regular el acceso a vivienda y herramientas de contención de alquileres en áreas tensionadas.",
-          "action": "Aprobación de la Ley 12/2023, anterior al inicio de este mandato en noviembre de 2023.",
-          "result": "La norma se aprobó durante el mandato anterior; se muestra como antecedente regulatorio, no como ley promulgada en este periodo.",
-          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-12203",
-          "referenceOnly": true
+          "year": 2024,
+          "title": "Ley de amnistía para la normalización institucional en Cataluña",
+          "objective": "Establecer un régimen legal de amnistía para hechos determinados relacionados con el proceso independentista catalán.",
+          "action": "Aprobación de la Ley Orgánica 1/2024.",
+          "result": "La ley fija supuestos, exclusiones y procedimiento de aplicación; su alcance ha sido objeto de controversia y resoluciones judiciales posteriores.",
+          "url": "https://www.boe.es/eli/es/lo/2024/06/10/1"
+        },
+        {
+          "type": "ley",
+          "year": 2025,
+          "title": "Reforma de la organización de la Justicia",
+          "objective": "Reorganizar la primera instancia y mejorar la eficiencia de servicios judiciales.",
+          "action": "Aprobación de la Ley Orgánica 1/2025.",
+          "result": "Implantación progresiva de Tribunales de Instancia y Oficinas de Justicia; el efecto sobre tiempos de resolución necesita evaluación.",
+          "url": "https://www.boe.es/eli/es/lo/2025/01/02/1/con"
         }
       ]
     }
