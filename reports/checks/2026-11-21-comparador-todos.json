@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-21",
+  "type": "ui_fix",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "change": "Mostrar por defecto todas las 11 formaciones en el comparador por tema, en lugar de solo PP y PSOE.",
+  "displayDefault": {
+    "mode": "all_parties",
+    "topic": "vivienda",
+    "partyCount": 11,
+    "topicsAvailable": 15
+  },
+  "optionalModes": [
+    "all_topics",
+    "two_parties"
+  ],
+  "dataChanges": false,
+  "privacyChanges": false,
+  "tests": "Smoke test de DOM: 11 partidos por tema, 165 tarjetas en todos los temas y 30 en modo dos partidos sobre 15 temas.",
+  "changedFiles": [
+    "index.html",
+    "program-documents.js",
+    "styles.css",
+    "scripts/test-programmes.js",
+    "reports/checks/2026-11-21-comparador-todos.json"
+  ]
+}

@@ -15,3 +15,41 @@ assert(!html.includes('id="afinidad"')&&!html.includes('affinity.js')&&!html.inc
 assert(!html.includes('id="affinityApp"')&&!html.includes('30 preguntas'));
 assert(!js.includes('AFFINITY_BANK')&&!js.includes('submit_affinity_vote')&&!js.includes('supabase'));
 console.log('OK: programme comparison + library, 11 parties, 15 topics, no questionnaire. Documented cells:',total);
+
+/* UI regression: 11 formations must be shown without clicking a hidden control. */
+const vm=require('vm');
+const elements=new Map();
+function domEl(id){
+  if(!elements.has(id)){
+    elements.set(id,{id,value:'',textContent:'',innerHTML:'',hidden:false,attributes:{},listeners:{},
+      children:[],classList:{toggle(){},add(){},remove(){}},
+      setAttribute(key,val){this.attributes[key]=String(val);},
+      addEventListener(event,callback){this.listeners[event]=callback;},
+      appendChild(child){this.children.push(child);return child;}});
+  }
+  return elements.get(id);
+}
+const tabButtons=['compare','library'].map(tab=>({...domEl('tab-'+tab),dataset:{programmeTab:tab}}));
+const document={
+  readyState:'complete',
+  getElementById:domEl,
+  createElement(tag){return domEl(tag+'-'+Math.random());},
+  querySelectorAll(selector){return selector==='[data-programme-tab]'?tabButtons:[];}
+};
+vm.runInNewContext(js,{window:{PROGRAMMES_DATA:d},document,console,URL},{filename:'program-documents.js'});
+const initial=domEl('programmeComparison').innerHTML;
+const cardCount=(initial.match(/<article class="programme-position"/g)||[]).length;
+assert.equal(domEl('compareProgrammeTopic').value,'vivienda','Default to a meaningful topic');
+assert.equal(cardCount,d.parties.length,'Initially show EVERY party, not only PP and PSOE');
+assert.equal(domEl('comparisonPair').hidden,true,'Pair controls must be hidden in all-party view');
+for(const p of d.parties)assert(initial.includes(p.label),p.key+' missing from initial comparison');
+assert(domEl('comparisonResultCount').textContent.includes('11 formaciones'));
+domEl('compareProgrammeTopic').value='all';
+domEl('compareProgrammeTopic').listeners.change();
+const allCount=(domEl('programmeComparison').innerHTML.match(/<article class="programme-position"/g)||[]).length;
+assert.equal(allCount,d.parties.length*d.topics.length,'All-topic comparison should show all 165 cells');
+domEl('programmeShowAll').listeners.click();
+assert.equal(domEl('comparisonPair').hidden,false,'Pair controls visible when requested');
+const pairCount=(domEl('programmeComparison').innerHTML.match(/<article class="programme-position"/g)||[]).length;
+assert.equal(pairCount,2*d.topics.length,'Two-party view remains available');
+console.log('OK: default all '+d.parties.length+' parties; '+d.topics.length+' themes; optional two-party mode.');

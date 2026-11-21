@@ -12,13 +12,13 @@
   const clean=x=>String(x??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const docDate=x=>/^\d{4}-\d{2}-\d{2}$/.test(x||'')?new Date(x+'T12:00:00Z').toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}):'';
   const a=el('compareProgrammeA'),b=el('compareProgrammeB'),t=el('compareProgrammeTopic'),result=el('programmeComparison');
-  let allMode=false;
+  let allMode=true; // Start by comparing all eleven formations; two-party view is optional.
   function fill(){
     for(const p of data.parties)for(const s of [a,b,el('documentsParty')]){
       const o=document.createElement('option');o.value=p.key;o.textContent=p.label;s.appendChild(o);
     }
     for(const topic of data.topics){const o=document.createElement('option');o.value=topic.key;o.textContent=topic.label;t.appendChild(o);}
-    a.value='PP';b.value='PSOE';el('documentsParty').value='all';
+    a.value='PP';b.value='PSOE';t.value='vivienda';el('documentsParty').value='all';
   }
   function policyCard(p,topic){
     const info=data.positions[p.key]?.[topic.key]||null;
@@ -41,7 +41,7 @@
     </section>`);
     result.innerHTML=sections.join('');
     el('comparisonResultCount').textContent=allMode?`${selected.length} formaciones · ${topics.length} tema`+(topics.length!==1?'s':''):`${topics.length} tema${topics.length!==1?'s':''} · ${selected.length} partidos`;
-    el('programmeShowAll').textContent=allMode?'Comparar solo dos partidos':'Ver todas las formaciones';
+    el('programmeShowAll').textContent=allMode?'Comparar dos partidos':'Ver todas las formaciones';
     el('programmeShowAll').setAttribute('aria-pressed',String(allMode));
     el('comparisonPair').hidden=allMode;
     el('comparisonPairSwap').hidden=allMode;
@@ -80,7 +80,7 @@
   fill();
   for(const node of [a,b,t])node.addEventListener('change',drawCompare);
   el('comparisonPairSwap').addEventListener('click',()=>{const v=a.value;a.value=b.value;b.value=v;drawCompare();});
-  el('programmeShowAll').addEventListener('click',()=>{allMode=!allMode;if(allMode&&t.value==='all')t.value='vivienda';drawCompare();});
+  el('programmeShowAll').addEventListener('click',()=>{allMode=!allMode;drawCompare();});
   for(const btn of document.querySelectorAll('[data-programme-tab]'))btn.addEventListener('click',()=>showTab(btn.dataset.programmeTab));
   for(const id of ['documentsParty','documentsKind'])el(id).addEventListener('change',drawLibrary);
   el('documentsSearch').addEventListener('input',drawLibrary);

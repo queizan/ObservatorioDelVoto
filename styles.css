@@ -183,3 +183,13 @@
 @media(max-width:1000px){.programme-position-grid.all-parties{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.programme-comparison-controls{padding:18px}.programme-select-pair{grid-template-columns:1fr 32px 1fr;gap:7px}.programme-swap{width:32px}.programme-control-bottom{flex-direction:column;align-items:stretch;gap:14px}.programme-control-bottom>label{max-width:none;width:100%}.programme-control-bottom>.button{width:100%}.programme-position-grid,.programme-position-grid.all-parties{grid-template-columns:1fr}.programme-position{border-right:0;padding:20px}.programme-topic-heading{padding:20px}.programme-comparison-counter{display:block}.programme-comparison-counter span{display:block;margin-bottom:5px}.programme-tab{font-size:12px;padding:12px 10px}}
 @media(max-width:400px){.programme-select-pair{grid-template-columns:1fr 1fr}.programme-swap{grid-column:1/-1;width:100%;height:33px;grid-row:2}}
+
+/* All eleven programme positions shown initially, with optional pair comparison. */
+.programme-comparison-intro{background:#edf4ec;border-left:3px solid #78996f;padding:16px 22px;border-radius:0 8px 8px 0;margin:0 0 22px}
+.programme-comparison-intro strong{font-size:13px;color:#315847}
+.programme-comparison-intro p{font-size:12px;line-height:1.75;color:#657c6e;margin:6px 0 0}
+.programme-select-pair[hidden],#comparisonPairSwap[hidden]{display:none!important}
+.programme-control-bottom>label{max-width:none}
+.programme-position-grid.all-parties{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1000px){.programme-position-grid.all-parties{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.programme-position-grid.all-parties{grid-template-columns:1fr}.programme-comparison-intro{padding:14px 17px}}

@@ -201,6 +201,7 @@
           <button type="button" class="programme-tab" data-programme-tab="library" role="tab" aria-selected="false" aria-controls="programmeLibraryView">Biblioteca de documentos</button>
         </div>
         <div id="programmeCompareView" role="tabpanel" aria-label="Comparador de programas">
+          <div class="programme-comparison-intro"><strong>Todos los partidos, tema por tema.</strong><p>Se muestran las 11 formaciones de nuestro archivo. Elige un tema para comparar sus propuestas o utiliza «Todos los temas» para ver la comparación completa. También puedes limitar la vista a dos partidos.</p></div>
           <div class="programme-comparison-controls panel">
             <div class="programme-select-pair" id="comparisonPair">
               <label>PARTIDO A<select id="compareProgrammeA" aria-label="Primera formación"></select></label>
@@ -209,10 +210,10 @@
             </div>
             <div class="programme-control-bottom">
               <label>TEMA DE LA COMPARACIÓN<select id="compareProgrammeTopic" aria-label="Tema"><option value="all">Todos los temas</option></select></label>
-              <button type="button" id="programmeShowAll" class="button button-outline" aria-pressed="false">Ver todas las formaciones</button>
+              <button type="button" id="programmeShowAll" class="button button-outline" aria-pressed="true">Comparar dos partidos</button>
             </div>
           </div>
-          <div class="programme-comparison-counter"><span id="comparisonResultCount"></span><span>Textos resumidos; abre la fuente para comprobar el detalle.</span></div>
+          <div class="programme-comparison-counter"><span id="comparisonResultCount"></span><span>Textos resumidos y documentados. En las fuentes sin propuesta verificable se indica expresamente.</span></div>
           <div id="programmeComparison" class="programme-comparison-results"></div>
         </div>
         <div id="programmeLibraryView" role="tabpanel" aria-label="Biblioteca de programas y documentos" hidden>
