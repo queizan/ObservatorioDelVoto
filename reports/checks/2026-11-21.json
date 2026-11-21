@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-21",
+  "timezone": "Europe/Madrid",
+  "scope": "queizan/ObservatorioDelVoto main",
+  "polls": {
+    "before": 63,
+    "after": 64,
+    "added": [
+      "ep-1120"
+    ],
+    "originalSource": "https://electomania.es/tracking-electopanel-20-nov-el-pp-sale-reforzado-del-cara-a-cara/",
+    "sample": 6559,
+    "fieldwork": [
+      "2026-11-09",
+      "2026-11-20"
+    ],
+    "method": "CAWI tracking; 60% panelistas fijos; margen declarado ±1,2% al 95,5%",
+    "otherReviewed": [
+      "Sigma Dos",
+      "SW Demoscopia",
+      "40dB",
+      "Data10",
+      "More In Common"
+    ],
+    "otherStatus": "No incorporados sin cotejo completo de fuente original, ficha técnica y desduplicación"
+  },
+  "programmes": {
+    "reviewed": [
+      "PP",
+      "PSOE",
+      "VOX",
+      "SUMAR/Frente Amplio",
+      "ERC",
+      "JUNTS",
+      "BILDU",
+      "PNV",
+      "BNG",
+      "PACMA",
+      "CC"
+    ],
+    "newVerifiedComplete": [],
+    "changed": [],
+    "note": "Sin sustitución de documentos: novedades secundarias requieren comprobación de PDF oficial y versiones"
+  },
+  "changedFiles": [
+    "data/polls.json",
+    "data/polls.js",
+    "index.html",
+    "reports/checks/2026-11-21.json"
+  ],
+  "commits": [
+    "1af7ec101484afe29334e33596a45623871400e5",
+    "193ebb58b43ad236f6a2045b23dee888b04b9b76",
+    "8c23a403cd291efdd1a286aa667c580db6ac85c6"
+  ],
+  "validation": {
+    "uniquePollIds": true,
+    "validDates": true,
+    "validVoteFields": true,
+    "jsGenerated": "Equivalent JSON serialization; original Python script not executed",
+    "privacyUntouched": true,
+    "questionCount": 30,
+    "sqlUntouched": true
+  },
+  "publication": {
+    "main": "Confirmed after write",
+    "ci": "Pending verification",
+    "pages": "Pending verification"
+  }
+}
