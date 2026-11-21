@@ -10,7 +10,7 @@ assert(d.terms.some(t=>t.leader==='aznar'&&t.from===2000));
 assert(d.terms.some(t=>t.leader==='sanchez'&&t.to===2025));
 for(const t of d.terms){assert(t.to>=t.from);assert(d.leaders[t.leader]);assert(d.series[t.from]&&d.series[t.to]);}
 for(const x of d.judicial){assert(d.terms.some(t=>t.id===x.periodId));assert(x.source.startsWith('https://'));}
-for(const id of ['gobiernos','governmentComparison','govPeriodA','govPeriodB','govView','govSeries','govPartySummary','govSources','govDialog'])assert(html.includes('id="'+id+'"'),'missing '+id);
+for(const id of ['gobiernos','governmentComparison','govPeriodA','govPeriodB','govViewTitle','govSeries','govPartySummary','govSources','govDialog'])assert(html.includes('id="'+id+'"'),'missing '+id);
 assert(html.includes('data-nav="gobiernos"'));assert(html.includes('data/governments.js'));assert(html.includes('governments.js'));
 assert(!html.includes('Gobiernos a examen <small>(Próximamente)</small>'));
 assert(!/AFFINITY_BANK|submit_affinity_vote|supabase/.test(code));
