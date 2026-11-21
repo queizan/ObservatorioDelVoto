@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-21",
+  "type": "feature_release",
+  "repository": "queizan/ObservatorioDelVoto",
+  "branch": "main",
+  "feature": "Eliminar test de afinidad; añadir comparador de programas y biblioteca",
+  "parties": 11,
+  "topics": 15,
+  "verifiedSummaries": 118,
+  "methodology": "Compromisos electorales atribuidos a fuentes documentales enlazadas. La ausencia de resumen se muestra como sin propuesta verificable, nunca como afirmación de silencio.",
+  "newProgramme": {
+    "party": "EH Bildu",
+    "year": 2026,
+    "url": "https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-CAS.pdf"
+  },
+  "correctedPPpdf": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf",
+  "privacy": "Se retiran la interfaz y configuración de envío del test. No se modifica ni se elimina información de un posible Supabase externo.",
+  "pollsUnchanged": true,
+  "sources": [
+    {
+      "party": "PP",
+      "url": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-RECONSTRUCCION-NACIONAL.pdf",
+      "year": 2026
+    },
+    {
+      "party": "PSOE",
+      "url": "https://www.psoe.es/media-content/2026/11/PROGRAMAPSOE29N26-1.pdf",
+      "year": 2026
+    },
+    {
+      "party": "VOX",
+      "url": "https://www.voxespana.es/wp-content/uploads/2026/11/Programa-completo-A5-1.pdf",
+      "year": 2026
+    },
+    {
+      "party": "FRENTE_AMPLIO",
+      "url": "https://frenteamplio.info/pdf/ProgramaFrenteAmplio.pdf",
+      "year": 2026
+    },
+    {
+      "party": "ERC",
+      "url": "https://img.beteve.cat/wp-content/uploads/2026/11/ERC-programa-electoral-29-N-2026-2026-11-12.pdf",
+      "year": 2026
+    },
+    {
+      "party": "JUNTS",
+      "url": "https://img.beteve.cat/wp-content/uploads/2023/07/programa-junts-per-catalunya-eleccions-generals-2023.pdf",
+      "year": 2023
+    },
+    {
+      "party": "BILDU",
+      "url": "https://posibleegin.ehbildu.eus/wp-content/uploads/2026/11/PROGRAMA-CAS.pdf",
+      "year": 2026
+    },
+    {
+      "party": "PNV",
+      "url": "https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/",
+      "year": 2026
+    },
+    {
+      "party": "BNG",
+      "url": "https://www.bng.gal/media/bnggaliza/files/2026/11/03/26_bng_xerais_documentos_programa_electoral.pdf",
+      "year": 2026
+    },
+    {
+      "party": "PACMA",
+      "url": "https://pacma.es/wp-content/uploads/2026/11/PE_GENERALES_29N26.pdf",
+      "year": 2026
+    },
+    {
+      "party": "CC",
+      "url": "https://coalicioncanaria.org/wp-content/uploads/2026/11/CCA-26-Programa_Electoral-29NOV.pdf",
+      "year": 2026
+    }
+  ]
+}

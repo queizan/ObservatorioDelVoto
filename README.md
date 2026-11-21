@@ -1,117 +1,30 @@
-# Observatorio del voto · 29N
+# Observatorio del Voto · 29N
+Web estática en GitHub Pages que presenta encuestas nacionales españolas y documentación electoral verificada, con separación histórica entre Sumar y Frente Amplio en los sondeos.
 
-Dashboard web estático y sin dependencias para seguir y comparar encuestas de intención de voto de las **elecciones generales españolas del 29 de noviembre de 2026**.
+## Puesta en marcha
+Sirve los archivos estáticos con un servidor web o publica `main` en GitHub Pages. No requiere npm ni una base de datos. La página carga `data/polls.js`, `app.js`, `data/programmes.js` y `program-documents.js`.
 
-**Estado de los datos:** corte revisado del **20 de octubre de 2026**. Contiene **37 encuestas nacionales** publicadas desde el 1 de septiembre. La fecha del sondeo y la de su publicación se distinguen en la ficha individual. Incluye el CIS. La web NO busca encuestas automáticamente.
-
-## Publicar gratis en GitHub Pages
-
-1. Crea un repositorio nuevo en GitHub (por ejemplo, `Observatorio-del-voto`).
-2. Sube **todo el contenido de esta carpeta** a la raíz de la rama `main`: `index.html`, `app.js`, `styles.css`, `data/`, `assets/`, `scripts/`, `.nojekyll`, etc. Es importante que `index.html` quede en la **raíz**, no dentro de otra carpeta.
-3. En GitHub abre **Settings → Pages**. En **Build and deployment**, elige **Deploy from a branch**; selecciona rama **main** y carpeta **/(root)** y guarda.
-4. La página se publicará en `https://queizan.github.io/ObservatorioDelVoto/`. Si el repositorio es `TU_USUARIO.github.io`, quedará en `https://TU_USUARIO.github.io/`.
-
-El dashboard y el cuestionario funcionan sin Vite ni npm. La **gráfica de participaciones agregadas** usa Supabase, que requiere completar una única migración SQL de los contadores. Las únicas credenciales públicas del frontend son la URL y la clave publicable de Supabase. También puedes abrir `index.html` directamente en el navegador para verla localmente.
-
-## Estructura
-
-- `index.html`: estructura del dashboard, páginas, accesibilidad y textos editoriales.
-- `styles.css`: diseño responsive, tema claro y colores de los principales partidos.
-- `app.js`: cálculos de promedios, filtros, gráficos SVG, comparación, tablas, fichas y descarga CSV.
-- `data/polls.json`: **archivo fuente para editar las encuestas**. Las fechas están en formato ISO `AAAA-MM-DD`.
-- `data/polls.js`: copia generada automáticamente para que la web funcione incluso desde `file://`.
-- `scripts/sync-data.py`: valida y sincroniza los datos JSON a JS con Python 3 (sin paquetes externos).
-- `.github/workflows/validate.yml`: comprobaciones automáticas en cada push.
-- `assets/favicon.svg`: favicon original del proyecto.
-
-## Añadir o actualizar encuestas
-
-1. Edita `data/polls.json`. Copia un objeto existente dentro del array `polls` y cambia los campos. Da a cada encuesta un `id` **único**.
-2. Completa `pollster`, `publisher`, `category`, `published`, `fieldworkStart`, `fieldworkEnd`, `sample`, `vote` (`PP`, `PSOE`, `VOX`, `SUMAR`), `seats` (solo si se publican), `sourceUrl` y `sourceType`.
-3. Una encuesta nueva sin proyección de escaños debe llevar `"seats": {}`. **No inventes escaños** a partir de porcentajes nacionales. Si la proyección se da en un intervalo, en `seats` puedes introducir el punto medio y en `seatIntervals` el rango original.
-4. Actualiza el límite `metadata.to` y `metadata.lastUpdated` a la última fecha incorporada. Si quieres modificar el texto fijo «Último corte de datos» del HTML y el nombre del archivo CSV exportado, edita también `index.html` y `app.js`.
-5. Ejecuta desde la raíz del proyecto: `python3 scripts/sync-data.py`.
-6. Sube **ambos** archivos `data/polls.json` y `data/polls.js` a GitHub. Los gráficos se recalculan al cargar la página.
-
-El repositorio incluye un flujo de comprobación que te avisará si `data/polls.js` no coincide con `data/polls.json`.
-
-## Metodología
-
-Por defecto, la media de intención de voto usa una única encuesta —la última publicada— por cada instituto demoscópico dentro del periodo. Cada instituto tiene el mismo peso. Existe otra opción para incluir todas las publicaciones por igual, más el filtro para mostrar u ocultar el CIS. **Ninguna de las dos es un pronóstico oficial ni un modelo probabilístico**.
-
-Las cifras de voto se muestran para PP, PSOE, Vox y Sumar. «Resto» es el porcentaje restante hasta 100 e incluye otros partidos nacionales y territoriales, incluido Podemos. Es una agrupación visual y no una estimación específica de un partido.
-
-El bloque de escaños es la media de las **proyecciones publicadas**, no una transformación matemática del promedio de voto. Donde existe una horquilla de escaños, para la media se emplea su punto medio y la gráfica de rango utiliza los límites originales. El remanente hasta los 350 se identifica como «Otros». Debido a que los intervalos y las proyecciones de distintas empresas no son un modelo electoral coherente común, el resultado agregado es **ilustrativo**.
-
-El estudio nacional del CEO catalán queda fuera de la media porque su universo es Cataluña y no España.
-
-Los sondeos están fechados por **publicación** y también tienen la fecha de campo. Se excluyen reestimaciones independientes sobre la misma muestra del CIS y encuestas internas partidistas sin porcentajes completos. La fuente `sourceType: "recopilacion"` identifica enlaces de archivo secundarios que se deberán sustituir por enlaces directos si están disponibles.
-
-## Precisión y revisión
-
-Las publicaciones originales pueden actualizar cifras, títulos o estimaciones, y algunos resúmenes son de acceso restringido. El archivo es una recopilación editorial de datos y debe revisarse regularmente con fichas técnicas de los institutos. No repliques cifras de portada que sean escaños como si fueran porcentajes. Para comprobar la procedencia general:
-
-- [CIS — catálogo de estudios](https://www.cis.es/es/estudios/catalogo)
-- [Convocatoria oficial — BOE 806/2026](https://www.boe.es/buscar/doc.php?id=BOE-A-2026-20742)
-- [Histórico recopilatorio — Wikipedia](https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election)
-
-## Consideración legal sobre encuestas
-
-Durante los **cinco días anteriores a la votación** existe una restricción legal a publicar o difundir sondeos electorales en España (LOREG art. 69.7). Antes de mantener un sitio público activo durante ese periodo, revisa la aplicación de la normativa con asesoramiento jurídico. Este repositorio constituye un corte de datos de octubre.
-
-## Licencia
-
-El repositorio definitivo conserva la licencia **CC0 1.0 Universal** que estableció su propietario (ver `LICENSE`). Esta declaración se refiere a los materiales que el titular puede licenciar; los programas electorales enlazados, datos de terceros, marcas y nombres comerciales conservan sus derechos respectivos. Los enlaces se ofrecen para identificar y verificar fuentes.
-
-
-## Interacciones
-
-El simulador de mayorías permite arrastrar o seleccionar PP, PSOE, Vox y Sumar para comprobar el umbral aritmético de 176 escaños. Los valores proceden del reparto ilustrativo; «Resto» agrupa varias formaciones y no se ofrece como bloque seleccionable. No modela pactos ni predice un gobierno.
-
-El apartado **Última actualización** utiliza automáticamente las encuestas contenidas en `data/polls.json`, mostrando fecha de publicación, medio e instituto. Para las nuevas incorporaciones se recomienda establecer el campo opcional `addedAt` (`AAAA-MM-DD`) con la fecha de subida al archivo; cuando falta, se ordena por publicación.
-
-Los meses del archivo, la fecha de corte visible y la escala temporal se actualizan cuando se regeneran los datos.
-
-## Explorador de afinidad programática (v3 · 15 de octubre de 2026)
-
-**Experimento didáctico, independiente y NO OFICIAL. No representa una encuesta estadística de intención de voto, ni una recomendación de partido o voto.**
-
-- Cada visita recibe **30 preguntas aleatorias** de un banco de **54 preguntas** en **21 temas**. La selección estratificada cubre todos los temas al menos una vez antes de repetirlos.
-- Las respuestas avanzan automáticamente y pueden revisarse con «Anterior». Se requieren al menos 18 respuestas sustantivas.
-- Documentos de **2023** para **11 formaciones**: PP, PSOE, Vox, Sumar, ERC, Junts, EH Bildu, PNV, BNG, PACMA y Coalición Canaria (esta última representada por un manifiesto electoral de su coalición de 2023).
-- Los programas y las fuentes están enlazados. Los partidos territoriales no se presentan en todas las circunscripciones. La inclusión no supone respaldar candidaturas futuras del 29N.
-- Codificación editorial aproximada −2 a +2. Las posiciones no documentadas se guardan como `null`, **no como 0 (neutral)**. El resultado muestra cobertura: número de respuestas comparables por partido. Por debajo de seis, la puntuación se omite. Esta diversidad documental limita las comparaciones.
-- Los archivos fuente y versión del programa son `data/affinity.json`; la versión web sincronizada es `data/affinity.js`. Nuevos partidos y nuevas propuestas se incorporan editando ese JSON y ejecutando `python3 scripts/sync-affinity.py`.
-- La segunda afinidad se muestra solo localmente. El recuento colectivo **solo contabiliza la primera afinidad**, una etiqueta por envío.
-- **No almacenamos respuestas, resultados individuales, identificadores de navegador, IP o historiales de participación en nuestra base de datos.** Las respuestas viven solo en memoria del navegador mientras se realiza el test; no se escriben en `localStorage`. El código limpia entradas del prototipo anterior si las hubiera.
-- **No hay comprobación de persona única**: un participante puede realizar el test y compartirlo varias veces. Esto significa que el recuento es voluntario y puede sufrir manipulación, no es una muestra representativa. El SQL no incluye rate limiting.
-- Al publicar voluntariamente, el frontend envía **solo una etiqueta de primera afinidad** a Supabase, que incrementa un contador. Los proveedores pueden procesar metadatos técnicos de conexión; por eso **no prometemos ausencia absoluta de rastros ni que ningún tercero procese esos datos**.
-
-### Activar el recuento público: único paso pendiente
-
-La dirección pública y la **publishable key** de Supabase están ya incorporadas en `config/affinity-public.js`; NO son claves secretas.
-
-**Hay que ejecutar una única vez** en el SQL Editor del proyecto Supabase el archivo
-[backend/supabase_affinity.sql](backend/supabase_affinity.sql).
-
-Este script es **re-ejecutable**, amplía los cuatro partidos anteriores a once sin perder sus recuentos y actualiza la función `submit_affinity_vote(text)`. Tras pulsar **Run** y ver once filas, la web detecta el esquema actualizado automáticamente y habilita el envío para quienes marquen el consentimiento. Mientras falten partidos en la base de datos, el formulario seguirá bloqueado por seguridad y la portada explicará la migración pendiente. No se crean cifras ficticias.
-
-### Privacidad y publicación responsable
-
-Consulta [la nota de privacidad pendiente](docs/PRIVACIDAD-PENDIENTE.md). La interfaz ya avisa de que es un test no oficial, no representativo, de que se envía solo la primera etiqueta y de que los proveedores pueden tratar registros técnicos. Antes de promocionar la recopilación de afinidades políticas debe completarse la evaluación jurídica y el aviso identificando al responsable del proyecto; el consentimiento por sí solo puede ser insuficiente para legitimar determinados tratamientos en España. **No se ha verificado que esta instalación cumpla por sí sola todos los requisitos de RGPD y LOPDGDD.**
-
-### Mantenimiento
-
-Edita `data/affinity.json` y ejecuta `python3 scripts/sync-affinity.py`. La validación de GitHub Actions comprueba diversidad, estructura y archivos sincronizados. Las encuestas demoscópicas se mantienen independientes del cuestionario voluntario.
-
-## Candidaturas Sumar (histórico) y Frente Amplio (2026)
-
-- Desde el registro electoral de Frente Amplio del **16 de octubre de 2026**, las encuestas que miden explícitamente esa coalición se codifican como `FRENTE_AMPLIO`, y no bajo `SUMAR`. Se conserva intacto el histórico de Sumar.
-- La fotografía conjunta, el reparto de escaños y el simulador de mayorías usan **solo encuestas de la candidatura seleccionada**. No se combinan resultados procedentes de poblaciones de sondeos con candidaturas incompatibles. Se muestran por defecto las mediciones de Frente Amplio; el selector permite consultar Sumar histórico. Al comienzo la media actual puede tener **menos institutos**.
-- La gráfica temporal muestra series independientes para Sumar y Frente Amplio, sin unirlas artificialmente. El archivo, la ficha de cada sondeo, el comparador y el CSV permiten consultar ambas columnas; «—» indica que ese sondeo no mide la candidatura.
-- Esta separación afecta únicamente a las **encuestas**. El test de afinidad sigue asociado al programa de **Sumar 2023**, sin extrapolar automáticamente posiciones a Frente Amplio ni modificar Supabase.
-- Fuentes de la nueva denominación: [Sigma Dos, 19/10](https://www.sigmados.com/noticia?id=EIJOKGN2GFZmhHt), [Electomanía, 18/10](https://electomania.es/electopanel-18-oct-erc-y-frente-amplio-ceden-ante-el-psoe-podemos-en-el-limite-de-ser-extraparlamentario/) y [registro de coalición, SER](https://cadenaser.com/nacional/2026/10/16/podemos-y-frente-amplio-no-acuerdan-una-candidatura-unitaria-e-iran-por-separado-en-todos-los-territorios-excepto-canarias-y-comunidad-valenciana-cadena-ser/).
+## Encuestas
+- Fuente de verdad: `data/polls.json`.
+- Generación: `python3 scripts/sync-data.py`.
+- Mantener `data/polls.js` sincronizado, un sondeo por instituto y medición; evitar duplicados de medios y no sumar simultáneamente candidaturas distintas.
+- La media es descriptiva, no pronóstico electoral.
 
 ## Programas y documentos
+- Sección principal: `#documentos`, con pestañas **Comparar programas** y **Biblioteca de documentos**.
+- El comparador permite elegir dos formaciones, intercambiarlas, filtrar por 15 temas y mostrar todas las formaciones para un tema.
+- Las propuestas son resúmenes editoriales neutros y verificables, con enlace a la fuente. Las casillas `null` se muestran como **sin propuesta verificable en las fuentes revisadas**; no atribuir silencio al partido sin leer íntegramente el texto.
+- Se distingue entre programas completos de 2026, referencias históricas de 2023 y complementos de campaña. Para sustituir un programa, comprobar que el nuevo es oficial y completo y conservar el anterior en `history`.
+- Datos: `data/programmes.json`. Se genera con `python3 scripts/sync-programmes.py` → `data/programmes.js`.
+- Para actualizar una posición añadir `positions[partido][tema]={summary,sourceTitle,sourceUrl,year,sourceKind,reviewed}`; usar `null` cuando la propuesta no esté suficientemente contrastada. Revisar que la fuente sea la versión vigente de ese partido.
+- Los programas de Cataluña, Euskadi, Galicia y Canarias presentan propuestas de alcance territorial específico; contextualizarlas, no generalizarlas como si fueran medidas para todo el Estado.
 
-La pestaña `#documentos` presenta por formación los programas o manifiestos existentes en `data/affinity.json` y sus documentos oficiales de campaña complementarios (`supplementaryDocuments`). Dispone de filtros por formación/tipo, búsqueda textual, distintivos de año y enlaces de lectura a la fuente documentada, sin guardar datos personales ni cambiar las posiciones del test. Los programas de 2023 se muestran como históricos hasta la verificación de documentos completos posteriores. `program-documents.js` usa `window.AFFINITY_BANK` para que las altas realizadas en el JSON se publiquen automáticamente en esta biblioteca tras ejecutar el generador.
+## Eliminación de cuestionario
+El test de afinidad, sus 54 preguntas, scripts, configuración de envío a Supabase y consulta de resultados han sido eliminados de esta web y del repositorio operativo. Ninguna de las nuevas secciones recoge respuestas ni solicita identificadores personales. **Borrar el código de GitHub no elimina automáticamente una base de datos externa de Supabase** si fue activada antes: ese servicio requeriría una gestión independiente por su administrador. Los commits antiguos de GitHub conservan su historia.
+
+## Validaciones
+`python3 scripts/sync-data.py && python3 scripts/sync-programmes.py && node scripts/test-candidacy.js && node scripts/test-programmes.js`
+La CI valida la integridad y la sintaxis JS y comprueba que los archivos generados están confirmados en la rama.
+
+## Auditoría y publicación
+Las auditorías verificadas se guardan en `reports/checks/`. Los cambios deben publicarse exclusivamente en `queizan/ObservatorioDelVoto`, rama `main` y comprobar GitHub Actions y GitHub Pages. Sin novedades no publicar despliegues solo para emitir un informe.

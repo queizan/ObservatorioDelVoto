@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate survey data and regenerate bundle
+      - name: Validar encuestas y regenerar JS
         run: python3 scripts/sync-data.py
-      - name: Validate and regenerate affinity data
-        run: python3 scripts/sync-affinity.py
-      - name: Verify derived data is committed
-        run: git diff --exit-code -- data/polls.js data/affinity.js
-      - name: Verify JavaScript syntax
-        run: node --check app.js && node --check data/polls.js && node --check affinity.js && node --check data/affinity.js && node --check program-documents.js
-      - name: Test separate Sumar and Frente Amplio candidacies
-        run: node scripts/test-candidacy.js
+      - name: Validar programas y regenerar JS
+        run: python3 scripts/sync-programmes.py
+      - name: Comprobar que los archivos generados están publicados
+        run: git diff --exit-code -- data/polls.js data/programmes.js
+      - name: Comprobar sintaxis JavaScript
+        run: node --check app.js && node --check data/polls.js && node --check data/programmes.js && node --check program-documents.js
+      - name: Comprobar separación de candidaturas y comparador de programas
+        run: node scripts/test-candidacy.js && node scripts/test-programmes.js
