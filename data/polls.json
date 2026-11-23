@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-11-21",
+    "lastUpdated": "2026-11-23",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-20",
+    "to": "2026-11-22",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 64,
+    "totalPolls": 65,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1745,6 +1745,32 @@
       "sourceType": "original",
       "addedAt": "2026-11-21",
       "note": "Octava entrega tracking nacional ElectoPanel, n=6559 CAWI (09–20/11, cierre 14:00), margen declarado ±1,2% al 95,5%, 60% panel fijo. Frente Amplio separado de Podemos y Compromís. Fuente primaria con ficha técnica."
+    },
+    {
+      "id": "ep-1122",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-22",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-21",
+      "sample": 7982,
+      "vote": {
+        "PP": 31.2,
+        "PSOE": 28.4,
+        "VOX": 18.3,
+        "FRENTE_AMPLIO": 5.8
+      },
+      "seats": {
+        "PP": 129,
+        "PSOE": 122,
+        "VOX": 57,
+        "FRENTE_AMPLIO": 9
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-22-nov-psoe-y-pp-meten-el-turbo-en-la-recta-final-de-campana-con-mas-escanos-cojos-que-nunca/",
+      "sourceType": "original",
+      "addedAt": "2026-11-23",
+      "note": "Décima entrega tracking nacional ElectoPanel. Ficha técnica original: 7.982 cuestionarios CAWI, campo 09–21/11/2026, error declarado ±1,1% (95,5%), 60% panel fijo. Frente Amplio separado de Podemos y Compromís. La entrega 21/11 sigue pendiente por ficha técnica incompleta."
     }
   ]
 }
