@@ -1,12 +1,12 @@
 // AUTO-GENERATED from data/polls.json; run python3 scripts/sync-data.py
 window.PULSO_DATA = {
   "metadata": {
-    "lastUpdated": "2026-11-23",
+    "lastUpdated": "2026-11-25",
     "electionDate": "2026-11-29",
     "from": "2026-09-01",
-    "to": "2026-11-22",
+    "to": "2026-11-23",
     "scope": "España · elecciones al Congreso",
-    "totalPolls": 65,
+    "totalPolls": 66,
     "reference": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Spanish_general_election",
     "candidacyTransition": {
       "date": "2026-10-16",
@@ -1263,27 +1263,6 @@ window.PULSO_DATA = {
       "note": "Segundo barómetro Winston para Artículo14, publicado 26/10/2026; 1.200 entrevistas del 21 al 23 de octubre. Porcentajes y escaños comprobados en publicación original. Frente Amplio (5,6%, 9 escaños) separado de Sumar y de Podemos; no duplicar primera ola del 2/10."
     },
     {
-      "id": "sondaxe-1101",
-      "pollster": "Sondaxe",
-      "publisher": "La Voz de Galicia",
-      "category": "prensa",
-      "published": "2026-11-01",
-      "fieldworkStart": "2026-10-26",
-      "fieldworkEnd": "2026-10-28",
-      "sample": 1200,
-      "vote": {
-        "PP": 29.2,
-        "PSOE": 26.9,
-        "VOX": 19.2,
-        "FRENTE_AMPLIO": 7.2
-      },
-      "seats": {},
-      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm",
-      "sourceType": "original",
-      "addedAt": "2026-11-02",
-      "note": "Fuente primaria La Voz de Galicia, ficha técnica: ámbito nacional, n=1.200, CATI+CAWI, campo 26–28/10. Frente Amplio 7,2% separado de Podemos 2%. No hay proyección de escaños verificable en el texto consultado."
-    },
-    {
       "id": "em-1101",
       "pollster": "EM-Analytics",
       "publisher": "Electomanía",
@@ -1308,6 +1287,27 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-02",
       "note": "ElectoPanel original del 01/11 12:52; campo 28–30/10, n=1.527 CAWI, tracking con 60% panel fijo. Frente Amplio 6,2% excluye Compromís-Front Valencià 1,4% y se mantiene separado de Podemos 1,7%. Es una ola distinta de 25/10."
+    },
+    {
+      "id": "sigma-1101",
+      "pollster": "Sigma Dos",
+      "publisher": "El Mundo",
+      "category": "prensa",
+      "published": "2026-11-01",
+      "fieldworkStart": "2026-10-29",
+      "fieldworkEnd": "2026-10-30",
+      "sample": 2505,
+      "vote": {
+        "PP": 31.1,
+        "PSOE": 24.6,
+        "VOX": 19.3,
+        "FRENTE_AMPLIO": 7.1
+      },
+      "seats": {},
+      "sourceUrl": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-02",
+      "note": "Encuesta nacional Sigma Dos para El Mundo, n=2.505, metodología CATI+CAWI, campo 29–30/10. La publicación original está restringida a lectura automatizada; cifras y ficha contrastadas en Electográfica, PollingForecast y otros archivos que enlazan a El Mundo. Frente Amplio 7,1 % EXCLUYE Compromís–Front Valencià 0,9 %, reportado por separado; el 8,0 % mostrado por agregadores es la suma de ambas formaciones. Proyección de escaños difundida en intervalos: PP 133–139; PSOE 97–103; Vox 63–69; Frente Amplio 9–11. No se inventa un escaño puntual."
     },
     {
       "id": "socio-1101",
@@ -1336,25 +1336,51 @@ window.PULSO_DATA = {
       "note": "Tracking acumulado n=4.893 CAWI desde 01/09; la fuente primaria no precisa el día de la última entrevista, por lo que fieldworkEnd=01/11 representa la fecha de corte/publicación, NO un fin de campo confirmado. Datos primarios: PP 32,2% y 137 escaños (139 incluyendo 2 de UPN), PSOE 26,6%/106, Vox 19,1%/64, Frente Amplio 4,4%/5. Agregadores atribuyen erróneamente al PP 32,7% y a FA 5,8% por coaliciones; no se mezclan."
     },
     {
-      "id": "sigma-1101",
-      "pollster": "Sigma Dos",
-      "publisher": "El Mundo",
+      "id": "sondaxe-1101",
+      "pollster": "Sondaxe",
+      "publisher": "La Voz de Galicia",
       "category": "prensa",
       "published": "2026-11-01",
-      "fieldworkStart": "2026-10-29",
-      "fieldworkEnd": "2026-10-30",
-      "sample": 2505,
+      "fieldworkStart": "2026-10-26",
+      "fieldworkEnd": "2026-10-28",
+      "sample": 1200,
       "vote": {
-        "PP": 31.1,
-        "PSOE": 24.6,
-        "VOX": 19.3,
-        "FRENTE_AMPLIO": 7.1
+        "PP": 29.2,
+        "PSOE": 26.9,
+        "VOX": 19.2,
+        "FRENTE_AMPLIO": 7.2
       },
       "seats": {},
-      "sourceUrl": "https://www.elmundo.es/espana/encuestas/2026/11/01/6ae77446e4d4d8f3698b458a.html",
+      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm",
       "sourceType": "original",
       "addedAt": "2026-11-02",
-      "note": "Encuesta nacional Sigma Dos para El Mundo, n=2.505, metodología CATI+CAWI, campo 29–30/10. La publicación original está restringida a lectura automatizada; cifras y ficha contrastadas en Electográfica, PollingForecast y otros archivos que enlazan a El Mundo. Frente Amplio 7,1 % EXCLUYE Compromís–Front Valencià 0,9 %, reportado por separado; el 8,0 % mostrado por agregadores es la suma de ambas formaciones. Proyección de escaños difundida en intervalos: PP 133–139; PSOE 97–103; Vox 63–69; Frente Amplio 9–11. No se inventa un escaño puntual."
+      "note": "Fuente primaria La Voz de Galicia, ficha técnica: ámbito nacional, n=1.200, CATI+CAWI, campo 26–28/10. Frente Amplio 7,2% separado de Podemos 2%. No hay proyección de escaños verificable en el texto consultado."
+    },
+    {
+      "id": "hamalgama-1102",
+      "pollster": "Hamalgama Métrica",
+      "publisher": "Vozpópuli",
+      "category": "prensa",
+      "published": "2026-11-02",
+      "fieldworkStart": "2026-10-22",
+      "fieldworkEnd": "2026-10-28",
+      "sample": 1000,
+      "vote": {
+        "PP": 32,
+        "PSOE": 26.4,
+        "VOX": 19.9,
+        "FRENTE_AMPLIO": 5.4
+      },
+      "seats": {
+        "PP": 135,
+        "PSOE": 106,
+        "VOX": 70,
+        "FRENTE_AMPLIO": 7
+      },
+      "sourceUrl": "https://www.vozpopuli.com/espana/politica/el-psoe-pierde-13-millones-de-votos-arrastrado-por-las-crisis-de-vivienda-ceuta-y-la-alta-velocidad.html",
+      "sourceType": "original",
+      "addedAt": "2026-11-03",
+      "note": "Fuente original Vozpópuli 02/11 04:44; 1.000 entrevistas CATI 22–28/10, margen 3,16%. PSOE 26,4% según publicación primaria (no 25,6% como indica un agregador). Frente Amplio 5,4% separado de Podemos. Una sola encuesta Hamalgama Métrica pese a múltiples artículos sobre la misma ola."
     },
     {
       "id": "nc-1102",
@@ -1400,53 +1426,6 @@ window.PULSO_DATA = {
       "note": "Fuente original El Debate 02/11 04:30; n=1.024 CAWI, campo 28/10 18:00–30/10 mañana. Intervalos publicados PP 131–135, PSOE 99–103, Vox 68–72, Frente Amplio 9–11; no se atribuye cifra puntual de escaños. Frente Amplio 6,6% separado de Podemos."
     },
     {
-      "id": "hamalgama-1102",
-      "pollster": "Hamalgama Métrica",
-      "publisher": "Vozpópuli",
-      "category": "prensa",
-      "published": "2026-11-02",
-      "fieldworkStart": "2026-10-22",
-      "fieldworkEnd": "2026-10-28",
-      "sample": 1000,
-      "vote": {
-        "PP": 32,
-        "PSOE": 26.4,
-        "VOX": 19.9,
-        "FRENTE_AMPLIO": 5.4
-      },
-      "seats": {
-        "PP": 135,
-        "PSOE": 106,
-        "VOX": 70,
-        "FRENTE_AMPLIO": 7
-      },
-      "sourceUrl": "https://www.vozpopuli.com/espana/politica/el-psoe-pierde-13-millones-de-votos-arrastrado-por-las-crisis-de-vivienda-ceuta-y-la-alta-velocidad.html",
-      "sourceType": "original",
-      "addedAt": "2026-11-03",
-      "note": "Fuente original Vozpópuli 02/11 04:44; 1.000 entrevistas CATI 22–28/10, margen 3,16%. PSOE 26,4% según publicación primaria (no 25,6% como indica un agregador). Frente Amplio 5,4% separado de Podemos. Una sola encuesta Hamalgama Métrica pese a múltiples artículos sobre la misma ola."
-    },
-    {
-      "id": "sondaxe-1108",
-      "pollster": "Sondaxe",
-      "publisher": "La Voz de Galicia",
-      "category": "prensa",
-      "published": "2026-11-08",
-      "fieldworkStart": "2026-11-02",
-      "fieldworkEnd": "2026-11-04",
-      "sample": 1200,
-      "vote": {
-        "PP": 29.7,
-        "PSOE": 27.3,
-        "VOX": 18.6,
-        "FRENTE_AMPLIO": 7.1
-      },
-      "seats": {},
-      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/06/feijoo-adelanta-pedro-sanchez-candidato-preferido-gobernar/00031793992905957222982.htm",
-      "sourceType": "original",
-      "addedAt": "2026-11-09",
-      "note": "Segunda ola nacional Sondaxe, campo 02–04/11, n=1200 CATI+CAWI, publicada 08/11. La Voz publica 29,7/27,3/18,6/7,1 por separado; Compromís aparece como candidatura territorial diferenciada en recopilación, sin sumarla a Frente Amplio. Sin escaños verificados en fuente primaria."
-    },
-    {
       "id": "em-1108",
       "pollster": "EM-Analytics",
       "publisher": "Electomanía",
@@ -1471,6 +1450,27 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-09",
       "note": "ElectoPanel 08/11, n=1860 CAWI 01–06/11, 60% panel fijo, margen ±2,3%. Fuente primaria diferencia Frente Amplio 6,1% y Compromís–Front Valencià 1,5% (y Podemos 1,8%); advertencia editorial sobre coaliciones territoriales, no se suman. Oleada distinta a 01/11."
+    },
+    {
+      "id": "sondaxe-1108",
+      "pollster": "Sondaxe",
+      "publisher": "La Voz de Galicia",
+      "category": "prensa",
+      "published": "2026-11-08",
+      "fieldworkStart": "2026-11-02",
+      "fieldworkEnd": "2026-11-04",
+      "sample": 1200,
+      "vote": {
+        "PP": 29.7,
+        "PSOE": 27.3,
+        "VOX": 18.6,
+        "FRENTE_AMPLIO": 7.1
+      },
+      "seats": {},
+      "sourceUrl": "https://www.lavozdegalicia.es/amp/noticia/espana/2026/11/06/feijoo-adelanta-pedro-sanchez-candidato-preferido-gobernar/00031793992905957222982.htm",
+      "sourceType": "original",
+      "addedAt": "2026-11-09",
+      "note": "Segunda ola nacional Sondaxe, campo 02–04/11, n=1200 CATI+CAWI, publicada 08/11. La Voz publica 29,7/27,3/18,6/7,1 por separado; Compromís aparece como candidatura territorial diferenciada en recopilación, sin sumarla a Frente Amplio. Sin escaños verificados en fuente primaria."
     },
     {
       "id": "40db-1109",
@@ -1597,6 +1597,27 @@ window.PULSO_DATA = {
       "note": "Tracking ElectoPanel 14/11, fuente primaria 17:14; 2348 CAWI 09–13/11, 60% panelistas fijos, error ±2,1% (95,5%). Frente Amplio 6,1% separado de Compromís–Front Valencià 1,6% y Podemos 1,4%. Oleada distinta de 13/11."
     },
     {
+      "id": "ep-1115",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-15",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-14",
+      "sample": 2617,
+      "vote": {
+        "PP": 30.7,
+        "PSOE": 26.7,
+        "VOX": 19,
+        "FRENTE_AMPLIO": 6
+      },
+      "seats": {},
+      "sourceUrl": "https://electomania.es/tracking-electopanel-15-nov-vox-recupera-el-19-y-arana-escanos-a-pp-y-psoe/",
+      "sourceType": "original",
+      "addedAt": "2026-11-18",
+      "note": "Tracking nacional CAWI 09–14/11, n=2617, margen ±2,0% al 95,5%, 60% panelistas fijos. Se omiten escaños no contrastados individualmente en la fuente."
+    },
+    {
       "id": "ep-1116",
       "pollster": "ElectoPanel",
       "publisher": "Electomanía",
@@ -1621,27 +1642,6 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-17",
       "note": "Tracking CAWI nacional 09–15/11, n=3294, ±1,7% al 95,5%, 60% panel fijo. Frente Amplio 6,1% separado de Compromís-Front Valencià 1,6%, Podemos 1,2% y ERC-Podemos 2,4%. Oleada 16/11 distinta de 14/11."
-    },
-    {
-      "id": "ep-1115",
-      "pollster": "ElectoPanel",
-      "publisher": "Electomanía",
-      "category": "digital",
-      "published": "2026-11-15",
-      "fieldworkStart": "2026-11-09",
-      "fieldworkEnd": "2026-11-14",
-      "sample": 2617,
-      "vote": {
-        "PP": 30.7,
-        "PSOE": 26.7,
-        "VOX": 19,
-        "FRENTE_AMPLIO": 6
-      },
-      "seats": {},
-      "sourceUrl": "https://electomania.es/tracking-electopanel-15-nov-vox-recupera-el-19-y-arana-escanos-a-pp-y-psoe/",
-      "sourceType": "original",
-      "addedAt": "2026-11-18",
-      "note": "Tracking nacional CAWI 09–14/11, n=2617, margen ±2,0% al 95,5%, 60% panelistas fijos. Se omiten escaños no contrastados individualmente en la fuente."
     },
     {
       "id": "ep-1117",
@@ -1772,6 +1772,32 @@ window.PULSO_DATA = {
       "sourceType": "original",
       "addedAt": "2026-11-23",
       "note": "Décima entrega tracking nacional ElectoPanel. Ficha técnica original: 7.982 cuestionarios CAWI, campo 09–21/11/2026, error declarado ±1,1% (95,5%), 60% panel fijo. Frente Amplio separado de Podemos y Compromís. La entrega 21/11 sigue pendiente por ficha técnica incompleta."
+    },
+    {
+      "id": "ep-1123",
+      "pollster": "ElectoPanel",
+      "publisher": "Electomanía",
+      "category": "digital",
+      "published": "2026-11-23",
+      "fieldworkStart": "2026-11-09",
+      "fieldworkEnd": "2026-11-23",
+      "sample": 9456,
+      "vote": {
+        "PP": 31.5,
+        "PSOE": 28.9,
+        "VOX": 17.9,
+        "FRENTE_AMPLIO": 5.9
+      },
+      "seats": {
+        "PP": 130,
+        "PSOE": 122,
+        "VOX": 55,
+        "FRENTE_AMPLIO": 9
+      },
+      "sourceUrl": "https://electomania.es/tracking-electopanel-23-nov-la-prohibicion-de-publicar-sondeos-entra-en-vigor-con-pp-y-psoe-en-empate-tecnico-y-un-vox-en-descenso/",
+      "sourceType": "original",
+      "addedAt": "2026-11-25",
+      "note": "Undécima y última entrega del tracking diario ElectoPanel. Ficha técnica original: 9.456 cuestionarios CAWI, campo 09–23/11/2026 (cierre 12:00), error declarado ±2,7% al 95,5% considerando efecto de diseño, 60% panel fijo. Frente Amplio se mantiene separado de Podemos y de las candidaturas territoriales."
     }
   ]
 };
